@@ -1,0 +1,6 @@
+sequence 0 
+loop
+frame mlg_frame0.tga 0.1
+frame mlg_frame1.tga 0.1
+frame mlg_frame2.tga 0.1
+frame mlg_frame3.tga 0.1

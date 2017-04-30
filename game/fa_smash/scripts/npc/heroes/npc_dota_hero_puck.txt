@@ -1,0 +1,88 @@
+	// King Boo by Champi
+	"npc_dota_hero_puck"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"		"models/heroes/nyan/nyan_cat.vmdl"
+		"Portrait"		""
+		"IdleExpression"		""
+		"SoundSet"		"Hero_Windrunner"
+		"PickSound"		"windrunner_wind_spawn_01"
+		"BanSound"		"windrunner_wind_anger_01"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+		"Rolelevels"	"0,0,0,0,0,0,0,0,0"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"BotImplemented"		"0"
+		"ModelScale"		"1.20000"
+		"LoadoutScale"		"1.200000"
+		"HeroGlowColor"		"185 220 20"
+		"CMEnabled"		"1"
+		"NameAliases"		"wr"
+		"url"		"Windranger"
+		"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+		"HeroSelectSoundEffect"		""
+		"DisableWearables" "1"
+		
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"king_boo_invis"
+		"Ability2"		"nyan_cat_mine_mushroom"
+		"Ability3"		"nyan_cat_youtube"
+		"Ability4"		"nyan_cat_john_cena"
+		"Ability10"		"special_bonus_attack_damage_20"
+		"Ability11"		"special_bonus_mp_regen_6"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_intelligence_15"
+		"Ability14"		"special_bonus_spell_amplify_15"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_attack_range_175"
+		"Ability17"		"special_bonus_cooldown_reduction_15"
+		
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"			"-1"
+		"MagicalResistance" 	"50"
+		
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"15"
+		"AttackDamageMax"		"22"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.200000"
+		"AttackAcquisitionRange"		"670"
+		"AttackRange"		"450"
+		"ProjectileModel"		"particles/nyan/base_attack/base_attack.vpcf"
+		"ProjectileSpeed"		"1150"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"175"		// Base health.
+		"StatusHealthRegen"			"1"			// Health regeneration rate.
+		"StatusMana"				"150"			// Base mana.
+		"StatusManaRegen" 			"5" // Mana regeneration rate.
+		
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"10"
+		"AttributeStrengthGain"		"3.000000"
+		"AttributeBaseIntelligence"		"15"
+		"AttributeIntelligenceGain"		"3.00000"
+		"AttributeBaseAgility"		"12"
+		"AttributeAgilityGain"		"2.500000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"160"
+		
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"		"310"
+		"MovementTurnRate"		"0.600000"
+		"particle_folder"		""
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		"VoiceFile"		""
+	}

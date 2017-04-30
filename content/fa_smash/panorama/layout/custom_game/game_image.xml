@@ -1,0 +1,22 @@
+<root>       
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+	</styles>
+    <Panel>      
+	
+	<Image src="file://{images}/heroes/npc_dota_hero_antimage.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_axe.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_bounty_hunter.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_omniknight.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_sven.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_tusk.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_ursa.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_viper.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_windrunner.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_doom_bringer.png"></Image>
+	<Image src="file://{images}/heroes/npc_dota_hero_queenofpain.png"></Image>
+
+	</Panel>
+	
+
+</root>

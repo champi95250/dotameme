@@ -1,0 +1,162 @@
+"Brucelee.Miaul.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/bruce/blink01.vsnd"
+							"value1"		"sounds/spell/bruce/blink02.vsnd"
+							"value2"		"sounds/spell/bruce/blink03.vsnd"
+						}
+					}
+					"volume"            {   "value"     "9.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Brucelee.Kick.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/bruce/cast02.vsnd"
+						}
+					}
+					"volume"            {   "value"     "9.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Brucelee.Ouya.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/bruce/ouya.vsnd"
+						}
+					}
+					"volume"            {   "value"     "9.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Brucelee.ultisound.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/bruce/ultisound.vsnd"
+						}
+					}
+					"volume"            {   "value"     "9.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Brucelee.waouya.Cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/bruce/waouya.vsnd"
+						}
+					}
+					"volume"            {   "value"     "9.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+

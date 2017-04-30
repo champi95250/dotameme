@@ -1,0 +1,116 @@
+	// KING BOO Ability by Champi
+	// 2017
+	// ----------------------------------------------
+	// 001 - king_boo_invis
+	//-----------------------------------------------
+	"king_boo_invis"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/king_boo_invis"
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		"soundfile"   "sounds/weapons/hero/riki/riki_backstab.vsnd"
+		"soundfile"	"sounds/weapons/hero/riki/riki_attack1.vsnd"
+		"particle"	"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+		"particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
+		 
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"7.0 6.0 5.0 4.0"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_invisibility_fade_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				
+				"Duration"	"%fade_time"
+				"EffectName"	"particles/generic_hero_status/status_invisibility_start.vpcf"
+				"EffectAttachType"	"follow_origin"
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"							"MODIFIER_STATE_VALUE_DISABLED" 
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_DISABLED" 
+				}
+				
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_permanent_invisibility_datadriven"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_invisible"
+					}
+				}  
+			}
+			"modifier_backstab_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_permanent_invisibility_datadriven"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_invisible"
+					}
+					"ApplyModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"modifier_invisibility_fade_datadriven"
+					}
+				}
+			}
+
+			"modifier_permanent_invisibility_datadriven"	
+			{	
+				"IsHidden"	"1"
+				"Passive"	"0"
+				
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"							"MODIFIER_STATE_VALUE_ENABLED" 
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED" 
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"Target"
+						{
+							"Center"	"CASTER"
+							"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"ModifierName"	"modifier_invisible"
+					}
+				}
+			}
+		}
+	}

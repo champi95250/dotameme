@@ -1,0 +1,11 @@
+"settings"
+{
+	"clampv"		"1"
+	"clampw"		"1"
+	"nocompress"		"1"
+	"nolod"		"1"
+	"maxres"		"4096"
+	"picmip0res"		"4096"
+	"nomip"		"1"
+	"output_format"		"16_bit_int"
+}

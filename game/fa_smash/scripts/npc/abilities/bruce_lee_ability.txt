@@ -1,0 +1,462 @@
+	// Bruce Lee Ability by Sly and Champi
+	// 2017
+	// ----------------------------------------------
+	// 001 - bruce_lee_blink
+	//-----------------------------------------------
+	"bruce_lee_blink"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/bruce_lee_blink"
+		"AbilityProcsMagicStick"		"1"
+		"CastFilterRejectCaster" 		"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"sounds/weapons/hero/riki/riki_blinkstrike.vsnd"
+			"particle"			"particles/units/heroes/hero_riki/riki_blink_strike.vpcf"
+			"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 11 8 5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 55 60 65"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30 60 90 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"600 700 800 900"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Brucelee.Miaul.Cast"
+				"Target"			"CASTER"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_riki/riki_blink_strike.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"spell/bruce_lee/bruce_blink.lua"
+				"Function"		"BlinkStrike"
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 002 - bruce_lee_dash
+	//-----------------------------------------------
+	"bruce_lee_dash"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/bruce_lee_dash"	
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8 7 6 5"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_proc_distance"		"360"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_proc_distance"		"710 820 930 1040"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rush_speed"			"900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"		"7.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed"			"900"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_phantom_rush_datadriven"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				
+				"OnOrder"
+				{				
+					"RunScript"
+					{
+						"ScriptFile"	"spell/bruce_lee/bruce_lee_dash.lua"
+						"Function"		"ApplyBuff"
+					}
+				}
+			}
+			
+			"modifier_check_distance"
+			{
+				"IsHidden"	"1"
+				
+				"OnUnitMoved"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/bruce_lee/bruce_lee_dash.lua"
+						"Function"		"DistanceCheck"
+					}
+				}
+			}
+			
+			"modifier_speed_buff"
+			{
+				"Duration"	"%buff_duration"
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_PhantomLancer.PhantomEdge"
+						"Target" 		"CASTER"
+					}
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"%rush_speed"
+				}
+				
+				"OnOrder"
+				{				
+					"RunScript"
+					{
+						"ScriptFile"	"spell/bruce_lee/bruce_lee_dash.lua"
+						"Function"		"RemoveBuff"
+					}
+				}
+			}
+		}
+	}
+	// ----------------------------------------------
+	// 003 - bruce_lee_aoe
+	//-----------------------------------------------
+	"bruce_lee_aoe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/bruce_lee_aoe"
+		"AOERadius"						"%radius"
+		"AbilityProcsMagicStick"		"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"			"particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf"
+			"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
+		}
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 11.0 8.0 5.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"275"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"  // exemple pour une vague de 6 unité = 156
+				"damage_unit_extra"			"5 15 25 35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"  // exemple pour 2 hero = 116
+				"damage_hero_extra"			"15 30 45 60"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER" // ajouts des base damage a l'exemple = 442
+				"base_damage"				"50 90 130 170"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Brucelee.Ouya.Cast"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"spell/bruce_lee/bruce_aoe.lua"
+				"Function"		"stack_damage"
+				"Target"
+				{
+					"Center"  		"CASTER"
+					"Radius" 		"%radius"
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 004 - bruce_lee_kick
+	//-----------------------------------------------
+	
+	"bruce_lee_kick"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/bruce_lee_kick"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityProcsMagicStick"		"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
+			"particle"			"particles/units/heroes/hero_lion/lion_spell_impale.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.1 0.1 0.1"
+		"HasScepterUpgrade" "1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0 40.0 35.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"critical"			"150 250 350"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"critical_scepter"	"250 350 450"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"air_time"			"0.6 0.7 0.8"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"air_time_check"	"0.7 0.8 0.9"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"distance"			"800 900 1000"
+			}
+			"06"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"stun_touch"		"1.0 2.0 3.0"
+			}
+			"07"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"cd_scepter"		"15.0 12.5 10.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Brucelee.ultisound.Cast"
+				"Target"		"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Brucelee.waouya.Cast"
+				"Target"		"CASTER"
+			}
+
+			"Knockback"
+			{
+				"Target"	"TARGET"
+				"Center"	"CASTER"
+				"Distance"	"%distance"
+				"Duration"	"%air_time"
+				"Height"	"0"
+				"IsFixedDistance"	"1"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"spell/bruce_lee/bruce_lee_kick.lua"
+				"Function"		"critiquedamage"
+			}
+
+			"DelayedAction"
+			{
+				"Delay"		"%air_time"
+
+				"Action"
+				{
+					"Stun"
+					{
+						"Target"		"TARGET"
+						"Duration"		"%stun_touch"
+					}
+				}
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_critique_buff"
+			{
+				"IsHidden"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%critical"
+				}
+
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"follow_origin"
+							"TARGET"	"follow_origin"
+						}
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Hero_PhantomAssassin.CoupDeGrace"
+						"Target"		"TARGET"
+					}
+				}
+			}
+			"modifier_critique_buff_aghanim"
+			{
+				"IsHidden"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%critical_scepter"
+				}
+
+				"OnAttackLanded"
+				{
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"follow_origin"
+							"TARGET"	"follow_origin"
+						}
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Hero_PhantomAssassin.CoupDeGrace"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+
+	}
+	

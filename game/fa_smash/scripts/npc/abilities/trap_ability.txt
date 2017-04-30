@@ -1,0 +1,833 @@
+	// TRAP Ability by Champi and VALVE
+	// 2017
+	// ----------------------------------------------
+	// 001 - spike_trap 
+	//-----------------------------------------------
+	"spike_trap"
+	{
+		"BaseClass"           			"ability_lua"
+		"ScriptFile"					"spike_trap"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"				   
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"150"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"light_strike_array_aoe"	"192"
+			}
+			
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_delay_time"	"0.65"
+			}
+						
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_stun_duration"	"1.6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_animation"			"12"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"light_strike_array_damage"			"600"
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 002 - spike_bomb
+	//-----------------------------------------------
+	"spike_bomb"
+	{
+		"BaseClass"           			"ability_lua"
+		"ScriptFile"					"spell/traps/spike_bomb"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"				   
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"750"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"light_strike_array_aoe"	"350"
+			}
+			
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_delay_time"	"7.5"
+			}
+						
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_stun_duration"	"0.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_animation"			"12"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"light_strike_array_damage"			"750"
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 002 - spike_gold
+	//-----------------------------------------------
+	
+	"spike_gold"
+	{
+		"BaseClass"           			"ability_lua"
+		"ScriptFile"					"spell/traps/spike_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
+		"AbilityCastPoint"				"2.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gold_give"	"500"
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 003 - healing_traps
+	//-----------------------------------------------
+	
+	"healing_traps"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/nyan_cat01"
+		"AbilityProcsMagicStick"		"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"1.2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"healing"					"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"3"
+			}
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_techies/techies_suicide.vpcf"
+			"particle"		"particles/econ/items/juggernaut/bladekeeper_healing_ward/juggernaut_healing_ward_dc.vpcf"
+			"soundfile"		"soundevents/game_sounds_nyan.vsndevts"	
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"modifier_healing_aura_effect"
+				"Duration"			"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_healing_aura_effect"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%healing"
+				}
+			}
+		}
+		
+	}
+	
+	// ----------------------------------------------
+	// 003 - spike_explosion
+	//-----------------------------------------------
+	
+	"spike_explosion"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_aoe.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"miss_duration"			"7.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"750"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.7"
+			}
+			// Extra
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tree_radius"			"150"
+			}
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.BlindingLight"
+				"Target" 		"CASTER"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_aoe.vpcf"
+				"EffectAttachType"  "start_at_customorigin"
+				"TargetPoint"		"POINT"
+
+				"ControlPoints"
+				{
+					"01"	"POINT"
+					"02"	"%radius 0 0"
+				}
+				
+			}
+			
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"Knockback"
+					{
+						"Target"            "TARGET"
+						"Center" 	        "POINT"
+						"Distance"	        "%knockback_distance"
+						"Duration"	        "%knockback_duration"
+						"Height"	        "%knockback_height"
+						"IsFixedDistance"	"1"
+						"ShouldStun"        "0"	
+					}
+
+					"DelayedAction"
+					{
+						"Delay"     "%knockback_duration"
+						"Action"    
+						{
+							"DestroyTrees"
+							{
+								"Target" 		"TARGET"
+								"Radius"		"%tree_radius"
+							}
+							
+						}
+					}				
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_blinding_light_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%miss_duration"
+					}
+				}
+			}		
+		}
+		"Modifiers"
+		{
+			"modifier_blinding_light_datadriven"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_rate" 
+				}			
+			}
+		} 
+	}
+	
+	// 006 - Black Hole
+	
+	"black_hole_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"enigma_black_hole"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
+			"soundfile"		"sounds/weapons/hero/enigma/black_hole_loop.vsnd"
+			"soundfile"		"sounds/weapons/hero/enigma/black_hole_stop.vsnd"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastPoint"				"0.3"
+		"AbilityChannelTime"			"4.0"
+		"AoERadius" 					"410"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pull_speed"			"40 40 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"far_radius"			"420"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"near_radius"			"160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_tick_rate"		"0.3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_tick_rate"		"1.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"800"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_black_hole_datadriven"
+				"Target" 		"POINT"
+			}
+			
+				"RunScript"
+			  {
+				  "ScriptFile"	"spell/traps/blackhole.lua"
+				  "Function"		"GiveVision"
+			  }
+		}
+		
+		"Modifiers"
+		{
+			"modifier_black_hole_datadriven"
+			{
+				"Aura"					"modifier_black_hole_debuff"
+				"Aura_Radius"			"%far_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Duration"				"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/traps/blackhole.lua"
+						"Function"		"ChannelSound"
+					}
+					
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+						"ControlPoints"
+						{
+							"00" "0 0 0"
+							"01" "%far_radius %far_radius %far_radius"
+						}
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"spell/traps/blackhole.lua"
+						"Function"		"MoveUnits"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Enigma.Black_Hole.Stop"
+						"Target"		"TARGET"
+					}
+				}
+				
+				"ThinkInterval"	"%move_tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/traps/blackhole.lua"
+						"Function"		"MoveUnits"
+					}
+				}
+			}
+			
+			"modifier_black_hole_debuff"
+			{
+				"IsPurgable"	"0"
+
+				"OverrideAnimation"     "ACT_DOTA_FLAIL"
+
+				"ThinkInterval"	"%damage_tick_rate"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%damage"
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	
+	"torrent_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"kunkka_torrent"
+		"AOERadius"						"%radius"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.5"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"350"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"320"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed_bonus"			"-45"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"4.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.53"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delay"						"1.3"
+			}
+			// Extra variables
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tick_count"				"10"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_duration"			"4.73"				// delay time + 3.13 sec vision time
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_height"			"410"
+			}
+		}
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------	
+		"precache"
+		{
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+			"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
+			"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"				"spell/traps/torrent.lua"
+				"Function"					"torrent_bubble_allies"
+				"Target"					"POINT"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"				"spell/traps/torrent.lua"
+				"Function"					"torrent_vision"
+				"Target"					"POINT"
+			}
+			
+			"DelayedAction"
+			{
+				"Delay"						"%delay"
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"spell/traps/torrent.lua"
+						"Function"				"torrent_emit_sound"
+						"Target"				"POINT"
+					}
+				
+					"FireEffect"
+					{
+						"Target"				"POINT"
+						"EffectName"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
+						"EffectAttachType"		"start_at_customorigin"
+						"EffectRadius"			"%radius"
+						"ControlPoints"
+						{
+							"00"				"POINT POINT POINT"
+						}
+					}
+				
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"			"POINT"
+							"Radius"			"%radius"
+							"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+						
+						"Action"
+						{						
+							"RemoveModifier"
+							{
+								"Target"			"TARGET"
+								"ModifierName"		"modifier_knockback"
+							}
+							
+							"Knockback"
+							{
+								"Target"			"TARGET"
+								"Center"			"CASTER"
+								"Duration"			"%stun_duration"
+								"Distance"			"0"
+								"Height"			"%torrent_height"
+								"IsFixedDistance"	"1"
+								"ShouldStun"		"1"
+							}
+							
+							"ApplyModifier"
+							{
+								"Target"			"TARGET"
+								"ModifierName"		"modifier_torrent_damage_thinker_datadriven"
+							}
+
+							"Damage"
+							{
+								"Target"			"TARGET"
+								"Damage"			"%AbilityDamage / 2"
+								"Type"				"DAMAGE_TYPE_MAGICAL"
+							}
+							
+							"ApplyModifier"
+							{
+								"Target"			"TARGET"
+								"ModifierName"		"modifier_torrent_slow_debuff_datadriven"
+							}						
+						}
+					}				
+				}
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_torrent_damage_thinker_datadriven"
+			{
+				"IsPurgable"				"0"
+				"IsHidden"					"1"
+				
+				"Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Duration"					"%stun_duration"
+				"ThinkInterval"				"%stun_duration / %tick_count"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"			"TARGET"
+						"Damage"			"%AbilityDamage / ( 2 * %tick_count )"
+						"Type"				"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			
+			"modifier_torrent_slow_debuff_datadriven"
+			{
+				"IsDebuff"					"1"
+			
+				"Duration"					"%stun_duration + %slow_duration"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"movespeed_bonus"
+				}
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 015 - trap_unselectable
+	//-----------------------------------------------
+	"trap_unselectable"
+  	{
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    
+	    "BaseClass"             "ability_datadriven"
+	    
+	    "Modifiers"
+	    {
+			"modifier_unselectable"
+			{
+				"Passive" "1"
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_BLOCK_DISABLED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_BLIND"					"MODIFIER_STATE_VALUE_ENABLED"
+		        }
+	      	}
+	    }
+	}

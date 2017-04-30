@@ -1,0 +1,524 @@
+	// SHREK Ability by Champi
+	// 2017
+	// 001 - shrek_acid
+	// 002 - shrek_veno
+	// 003 - shrek_blink
+	// 004 - shrek_aoe
+	// 005 - Maybe shrek_passive
+	// ----------------------------------------------
+	// 001 - shrek
+	//-----------------------------------------------
+	"shrek_acid"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/shrek_acid"
+		"AbilityProcsMagicStick"		"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800 825 850 875"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24.0 23.0 22.0 21.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 115 130 145"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.0 12.0 14.0 16.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_damage"			"50 75 100 125"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tick_damage"			"15 30 45 60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"2.0 2.0 2.0 2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-30 -40 -50 -60"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"130 130 130 130"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000 1100 1200 1300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800 825 850 875"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Venomancer.VenomousGale"
+				"Target"		"CASTER"
+			}
+
+			"LinearProjectile"
+			{
+				"Target"      "POINT"
+				"EffectName"  "particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+				"MoveSpeed"   "%speed"
+				"StartRadius"   "%radius"
+				"StartPosition" "attach_origin"
+				"EndRadius"     "%radius"
+				"FixedDistance" "%distance"
+				"TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"    "0"
+				"ProvidesVision" "0"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_Venomancer.VenomousGaleImpact"
+				"Target"		"TARGET"
+			}
+
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%strike_damage"
+			}		
+
+			"RunScript"
+			{
+				"ScriptFile"	"spell/shrek/shrek_acid.lua"
+				"Function"		"VenomousGaleImpact"
+				"modifier"		"modifier_venomous_gale_debuff_datadriven"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_venomous_gale_debuff_datadriven"
+			{
+				"IsDebuff"	"1"			
+
+				"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"		"%tick_interval"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%tick_damage"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
+				}
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 002 - shrek_veno
+	//-----------------------------------------------
+	"shrek_veno"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/shrek_veno"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0 7.0 9.0 11.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"5 15 25 35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"0 -5 -10 -15"
+			}			
+		}
+
+		"Modifiers"
+		{
+			"modifier_shrek_veno"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_shrek_veno_debuff"
+						"Target"		"TARGET"
+					}
+				}
+			}
+
+			"modifier_shrek_veno_debuff"
+			{
+				"IsDebuff"	"1"
+				"Duration"	"%duration"
+
+				"ThinkInterval"	"1.0"
+
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%damage"
+					}
+				}
+
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%damage"
+					}
+					
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_speed"
+				}
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 002 - shrek_blink
+	//-----------------------------------------------
+	"shrek_blink"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"	"custom/shrek_blink"
+		"AbilityProcsMagicStick"		"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_TAUNT"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"			
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 12.0 10.0 8.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90 80 70 60"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_distance"			"500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_speed"			"1600.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_acceleration"		"7000.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"leap_radius"		"775"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Ability.Leap"
+				"Target"		"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"spell/shrek/shrek_blink.lua"
+				"Function"		"Leap"
+			}
+
+			"ApplyMotionController"
+			{
+				"Target" 		"CASTER"
+				"ScriptFile"    "spell/shrek/shrek_blink.lua"
+				"HorizontalControlFunction" "LeapHorizonal"
+				"VerticalControlFunction" 	"LeapVertical"         
+			}
+		}
+	}
+	
+	
+	"shrek_aoe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"custom/shrek_aoe"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_debuff_nova.vpcf"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova_cast.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2 0.2 0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180.0 170.0 160.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 300 400"		
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// just does damage
+		"HasScepterUpgrade" "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"800 850 900"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"start_radius"				"150 150 150"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10.0 11.0 12.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"30 40 50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"160.0 150.0 140.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_scepter"			"12.0 13.0 14.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"60 70 80"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"500 500 500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Venomancer.PoisonNova"
+				"Target"		"CASTER"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"	"spell/shrek/shrek_aoe.lua"
+				"Function"		"check_agha"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_nova_cast.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"Target"		"CASTER"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				
+				"ControlPointEntities"
+				{
+					"CASTER"	"attach_origin"
+				}
+
+				"ControlPoints"
+				{
+					"01"	"%radius 1 %radius"
+					"02"	"0 0 0"
+				}
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/shrek/shrek_aoe.lua"
+						"Function"		"PoisonEffect"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_poison_nova_debuff_datadriven"
+			{
+				"IsDebuff"	"1"
+				"IsPurgable"	"0"			
+
+				"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_debuff_nova.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"	"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/shrek/shrek_aoe.lua"
+						"Function"		"PoisonNova"
+						"Target"		"TARGET"
+					}
+				}
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Venomancer.PoisonNovaImpact"
+						"Target"		"TARGET"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"spell/shrek/shrek_aoe.lua"
+						"Function"		"PoisonNova"
+						"Target"		"TARGET"
+					}
+				}
+			}
+		}
+	}

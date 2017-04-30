@@ -1,0 +1,80 @@
+	// SANIC by Champi
+	"npc_dota_hero_viper"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"		"models/heroes/sanic/sanic.vmdl"
+		"Portrait"		""
+		"IdleExpression"		""
+		"SoundSet"		"Hero_Windrunner"
+		"PickSound"		"windrunner_wind_spawn_01"
+		"BanSound"		"windrunner_wind_anger_01"
+		"Enabled"		"1"
+		"HeroPool1"		"1"
+		"HeroUnlockOrder"		"2"
+		"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+		"Rolelevels"	"1,3,2,0,0,0,0,1,0"
+		"Complexity"	"2"
+		"Team"		"Good"
+		"BotImplemented"		"0"
+		"ModelScale"		"1.40000"
+		"LoadoutScale"		"1.400000"
+		"HeroGlowColor"		"185 220 20"
+		"CMEnabled"		"1"
+		"NameAliases"		"wr"
+		"url"		"Windranger"
+		"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+		"HeroSelectSoundEffect"		""
+		"DisableWearables" "1"
+		
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"sanic_go_fast"
+		"Ability2"		"sanic_too_slow"
+		"Ability3"		"sanic_speed_up"
+		"Ability4"		"sanic_hegehog"
+		"Ability10"		"special_bonus_exp_boost_25"
+		"Ability11"		"special_bonus_gold_income_20"
+		"Ability12"		"special_bonus_intelligence_8"
+		"Ability13"		"special_bonus_hp_regen_7"
+		"Ability14"		"special_bonus_respawn_reduction_25"
+		"Ability15"		"special_bonus_cooldown_reduction_10"
+		"Ability16"		"special_bonus_attack_speed_40"
+		"Ability17"		"special_bonus_movement_speed_40"
+		
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-3"
+		
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"15"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.100000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"1350"
+		
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"15"
+		"AttributeStrengthGain"		"1.500000"
+		"AttributeBaseIntelligence"		"10"
+		"AttributeIntelligenceGain"		"1.50000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"2.000000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"160"
+		
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"		"475"
+		"MovementTurnRate"		"0.500000"
+		"particle_folder"		""
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		"VoiceFile"		""
+	}

@@ -1,0 +1,35 @@
+"addon"
+{
+	"Unassigned"      					"Unassigned Team"
+	"Spectator"       					"Spectator Team"
+	"Neutrals"        					"Neutral Team"
+	"NoTeam"          					"No Team"
+
+	"DOTA_GoodGuys"   					"Gay Lord"
+	"DOTA_BadGuys"    					"The blood of my enemies"
+	"DOTA_Custom1"    					"Egg yolk"
+	"DOTA_Custom2"    					"Orange mecanic"
+	"DOTA_Custom3"    					"Blue Jazz"
+	"DOTA_Custom4"    					"Peace Green"
+	"DOTA_Custom5"    					"Shit"
+	"DOTA_Custom6"    					"Ultra-Violet"
+	"DOTA_Custom7"    					"Olive Snake"
+	"DOTA_Custom8"    					"Purple Horse"
+	
+	"addonname"							"Battle of the Memes"
+	"DOTA_GAMEMODE_15"					"Battle of the Memes"
+	
+	"npc_dota_hero_tusk"				"Bruce Lee"
+	"npc_dota_hero_windrunner"			"Nyan Cat"
+	"npc_dota_hero_antimage"			"Catmancer"
+	"npc_dota_hero_axe"					"Donald Trump"
+	"npc_dota_hero_viper"				"SANIC"
+	"npc_dota_hero_sven"				"Shrek"
+	"npc_dota_hero_omniknight"			"Jesus"
+	"npc_dota_hero_ursa"				"Marshmallow"
+	"npc_dota_hero_bounty_hunter"		"Pedobear"
+	"npc_dota_hero_doom_bringer"		"AT-ST"
+	"npc_dota_hero_queenofpain"			"Microphone"
+
+	"error_trumpinate"					"Unable to find target."
+}

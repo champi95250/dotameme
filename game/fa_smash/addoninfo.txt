@@ -1,0 +1,14 @@
+"AddonInfo"
+{
+	"addontitle"					"WTF ISN'T DOTA"
+	"addon_game_name"				"WTF ISN'T DOTA"
+	"addonversion"					"0.6"
+	"addontagline"					"WTF"
+	"addonauthor"					"Champi"
+	"IsPlayable"  "1"
+	"arena_solo"
+	{
+		"TeamCount" 					"8"
+		"MaxPlayers"                    "16"
+	}
+}

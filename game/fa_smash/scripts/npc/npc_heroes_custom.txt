@@ -1,0 +1,1038 @@
+//Generated using Dota Custom File Generator by cris9696
+"DOTAHeroes"
+{
+
+
+	//Start of file npc_dota_hero_antimage.txt
+		// Nyan Cat by Champi
+		"npc_dota_hero_antimage"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/items/lycan/ultimate/ambry_true_form/ambry_true_form.vmdl"
+			"SoundSet"		"Hero_Antimage"
+			"HeroID"		"1"
+			"Enabled"		"1"
+			"HeroUnlockOrder"		"1"
+			"Role"			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"2,2,2,3,2,1,0,0,0"
+			"Complexity"	"1"
+			"Team"		"Good"
+			"Portrait"		"vgui/hud/heroportraits/portrait_antimage"
+			"ModelScale"		"0.900000"
+			"HeroGlowColor"		"120 64 148"
+			"PickSound"		"antimage_anti_spawn_01"
+			"BanSound"		"antimage_anti_anger_04"
+			"CMEnabled"		"1"
+			"NameAliases"		"am"
+			"url"		"Anti-Mage"
+			"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+			"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
+			"DisableWearables" "1"
+	
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"catmancer_miaulement"
+			"Ability2"		"catmancer_pelote"
+			"Ability3"		"catmancer_walk_cat"
+			"Ability4"		"catmancer_cat"
+			"Ability10"		"special_bonus_movement_speed_40"
+			"Ability11"		"special_bonus_attack_speed_30"
+			"Ability12"		"special_bonus_spell_amplify_15"
+			"Ability13"		"special_bonus_all_stats_10"
+			"Ability14"		"special_bonus_attack_damage_75"
+			"Ability15"		"special_bonus_cooldown_reduction_15"
+			"Ability16"		"special_bonus_agility_25"
+			"Ability17"		"special_bonus_evasion_20"
+	
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"-2"
+	
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"24"
+			"AttackDamageMax"		"31"
+			"AttackRate"		"1.400000"
+			"AttackAnimationPoint"		"0.400000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileSpeed"		"0"
+	
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+			"AttributeBaseStrength"		"20"
+			"AttributeStrengthGain"		"1.500000"
+			"AttributeBaseIntelligence"		"16"
+			"AttributeIntelligenceGain"		"2.000000"
+			"AttributeBaseAgility"		"22"
+			"AttributeAgilityGain"		"2.800000"
+	
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"335"
+			"MovementTurnRate"		"0.500000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"140"
+			"particle_folder"		"particles/units/heroes/hero_antimage"
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"VoiceFile"				""
+	
+		}
+	//End of file npc_dota_hero_antimage.txt
+
+
+	//Start of file npc_dota_hero_axe.txt
+		// Nyan Cat by Champi
+		"npc_dota_hero_axe"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/trump/trump.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"1,1,1,2,0,1,0,0,0"
+			"Complexity"	"3"
+			"Team"		"Good"
+			"HeroID"		"2"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.20000"
+			"LoadoutScale"		"1.200000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"trump_hurle"
+			"Ability2"		"trump_wall" //mur
+			"Ability3"		"trump_gold" // gold
+			"Ability4"		"track_cia" // track
+			"Ability5"		"trump_assasinate" // assasinate
+			"Ability10"		"special_bonus_day_vision_400"
+			"Ability11"		"special_bonus_vision_200"
+			"Ability12"		"special_bonus_attack_damage_25"
+			"Ability13"		"special_bonus_gold_income_10"
+			"Ability14"		"special_bonus_spell_amplify_10"
+			"Ability15"		"special_bonus_cooldown_reduction_10"
+			"Ability16"		"special_bonus_respawn_reduction_25"
+			"Ability17"		"special_bonus_all_stats_15"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"-2"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"25"
+			"AttackDamageMax"		"30"
+			"AttackRate"		"1.700000"
+			"AttackAnimationPoint"		"0.300000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1350"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"25"
+			"AttributeStrengthGain"		"2.400000"
+			"AttributeBaseIntelligence"		"18"
+			"AttributeIntelligenceGain"		"1.800000"
+			"AttributeBaseAgility"		"18"
+			"AttributeAgilityGain"		"1.700000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"310"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_axe.txt
+
+
+	//Start of file npc_dota_hero_bounty_hunter.txt
+		// PEDOBEAR by Champi
+		"npc_dota_hero_bounty_hunter"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/pedobear/pedobear.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"0,0,3,0,0,1,0,0,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.30000"
+			"LoadoutScale"		"1.300000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"pedobear_candy"
+			"Ability2"		"pedobear_intimidation"
+			"Ability3"		"pedobear_arena"
+			"Ability4"		"pedobear_kidnap"
+			"Ability10"		"special_bonus_exp_boost_25"
+			"Ability11"		"special_bonus_hp_200"
+			"Ability12"		"special_bonus_armor_4"
+			"Ability13"		"special_bonus_hp_regen_7"
+			"Ability14"		"special_bonus_movement_speed_25"
+			"Ability15"		"special_bonus_cooldown_reduction_10"
+			"Ability16"		"special_bonus_attack_speed_40"
+			"Ability17"		"special_bonus_attack_damage_100"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"1"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"21"
+			"AttackDamageMax"		"31"
+			"AttackRate"		"1.500000"
+			"AttackAnimationPoint"		"0.200000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1350"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+			"AttributeBaseStrength"		"18"
+			"AttributeStrengthGain"		"1.900000"
+			"AttributeBaseIntelligence"		"16"
+			"AttributeIntelligenceGain"		"1.70000"
+			"AttributeBaseAgility"		"21"
+			"AttributeAgilityGain"		"2.600000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"340"
+			"MovementTurnRate"		"0.500000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_bounty_hunter.txt
+
+
+	//Start of file npc_dota_hero_doom_bringer.txt
+		// Shrek by Champi
+		"npc_dota_hero_doom_bringer"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/atst/atst.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"3,0,1,0,3,0,1,0,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.00000"
+			"LoadoutScale"		"1.000000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"at_st_visee"
+			"Ability2"		"at_st_missile" //mur
+			"Ability3"		"at_st_critical" // gold
+			"Ability4"		"at_st_double_attack" // track
+			"Ability5"		"" // assasinate
+			"Ability6"		"" 
+			"Ability7"		"" 
+			"Ability8"		"" 
+			"Ability9"		"" 
+			"Ability10"		"special_bonus_magic_resistance_15"
+			"Ability11"		"special_bonus_attack_range_100"
+			"Ability12"		"special_bonus_attack_speed_25"
+			"Ability13"		"special_bonus_gold_income_20"
+			"Ability14"		"special_bonus_hp_250"
+			"Ability15"		"special_bonus_agility_15"
+			"Ability16"		"special_bonus_cooldown_reduction_10"
+			"Ability17"		"special_bonus_armor_9"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"6"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+			"AttackDamageMin"		"12"
+			"AttackDamageMax"		"20"
+			"AttackRate"		"2.50000"
+			"AttackAnimationPoint"		"0.300000"
+			"AttackAcquisitionRange"		"950"
+			"AttackRange"		"800"
+			"ProjectileModel"		"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+			"ProjectileSpeed"		"2000"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"25"
+			"AttributeStrengthGain"		"3.000000"
+			"AttributeBaseIntelligence"		"15"
+			"AttributeIntelligenceGain"		"1.850000"
+			"AttributeBaseAgility"		"9.5"
+			"AttributeAgilityGain"		"1.600000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"215"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_doom_bringer.txt
+
+
+	//Start of file npc_dota_hero_omniknight.txt
+		// Jesus by Champi
+		"npc_dota_hero_omniknight"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/jesus/jesus.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_omniknight"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"0,0,0,2,0,3,0,0,0"
+			"Complexity"	"1"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.20000"
+			"LoadoutScale"		"1.200000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"jesus_heal"
+			"Ability2"		"jesus_protect"
+			"Ability3"		"jesus_recall"
+			"Ability4"		"jesus_ressurect"
+			"Ability10"		"special_bonus_spell_lifesteal_20"
+			"Ability11"		"special_bonus_spell_amplify_5"
+			"Ability12"		"special_bonus_magic_resistance_15"
+			"Ability13"		"special_bonus_respawn_reduction_25"
+			"Ability14"		"special_bonus_gold_income_25"
+			"Ability15"		"special_bonus_cast_range_100"
+			"Ability16"		"special_bonus_hp_regen_14"
+			"Ability17"		"special_bonus_all_stats_15"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"-1"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+			"AttackDamageMin"		"30"
+			"AttackDamageMax"		"40"
+			"AttackRate"		"1.700000"
+			"AttackAnimationPoint"		"0.300000"
+			"AttackAcquisitionRange"		"850"
+			"AttackRange"		"450"
+			"ProjectileModel"		"particles/econ/items/puck/puck_alliance_set/puck_base_attack_aproset.vpcf"
+			"ProjectileSpeed"		"1150"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+			"AttributeBaseStrength"		"17"
+			"AttributeStrengthGain"		"2.000000"
+			"AttributeBaseIntelligence"		"19"
+			"AttributeIntelligenceGain"		"2.350000"
+			"AttributeBaseAgility"		"17"
+			"AttributeAgilityGain"		"1.850000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"310"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_omniknight.txt
+
+
+	//Start of file npc_dota_hero_puck.txt
+		// King Boo by Champi
+		"npc_dota_hero_puck"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/nyan/nyan_cat.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"0,0,0,0,0,0,0,0,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.20000"
+			"LoadoutScale"		"1.200000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"king_boo_invis"
+			"Ability2"		"nyan_cat_mine_mushroom"
+			"Ability3"		"nyan_cat_youtube"
+			"Ability4"		"nyan_cat_john_cena"
+			"Ability10"		"special_bonus_attack_damage_20"
+			"Ability11"		"special_bonus_mp_regen_6"
+			"Ability12"		"special_bonus_hp_250"
+			"Ability13"		"special_bonus_intelligence_15"
+			"Ability14"		"special_bonus_spell_amplify_15"
+			"Ability15"		"special_bonus_magic_resistance_15"
+			"Ability16"		"special_bonus_attack_range_175"
+			"Ability17"		"special_bonus_cooldown_reduction_15"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"			"-1"
+			"MagicalResistance" 	"50"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+			"AttackDamageMin"		"15"
+			"AttackDamageMax"		"22"
+			"AttackRate"		"1.600000"
+			"AttackAnimationPoint"		"0.200000"
+			"AttackAcquisitionRange"		"670"
+			"AttackRange"		"450"
+			"ProjectileModel"		"particles/nyan/base_attack/base_attack.vpcf"
+			"ProjectileSpeed"		"1150"
+			
+			// Status
+			//----------------------------------------------------------------
+			"StatusHealth"				"175"		// Base health.
+			"StatusHealthRegen"			"1"			// Health regeneration rate.
+			"StatusMana"				"150"			// Base mana.
+			"StatusManaRegen" 			"5" // Mana regeneration rate.
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+			"AttributeBaseStrength"		"10"
+			"AttributeStrengthGain"		"3.000000"
+			"AttributeBaseIntelligence"		"15"
+			"AttributeIntelligenceGain"		"3.00000"
+			"AttributeBaseAgility"		"12"
+			"AttributeAgilityGain"		"2.500000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"310"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_puck.txt
+
+
+	//Start of file npc_dota_hero_queenofpain.txt
+		// Nyan Cat by Champi
+		"npc_dota_hero_queenofpain"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/microphone/microphone.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"0,0,0,0,0,0,0,0,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.20000"
+			"LoadoutScale"		"1.200000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"microphone_voice_scream"
+			"Ability2"		"microphone_shuup_i_singing"
+			"Ability3"		"microphone_ultrasound"
+			"Ability4"		"microphone_song_complete"
+			"Ability5"		"microphone_song_complete_stop"
+			"Ability10"		"special_bonus_attack_damage_20"
+			"Ability11"		"special_bonus_mp_regen_6"
+			"Ability12"		"special_bonus_hp_250"
+			"Ability13"		"special_bonus_intelligence_15"
+			"Ability14"		"special_bonus_spell_amplify_15"
+			"Ability15"		"special_bonus_magic_resistance_15"
+			"Ability16"		"special_bonus_attack_range_175"
+			"Ability17"		"special_bonus_cooldown_reduction_15"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"2"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"15"
+			"AttackDamageMax"		"25"
+			"AttackRate"		"1.400000"
+			"AttackAnimationPoint"		"0.200000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1350"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+			"AttributeBaseStrength"		"15"
+			"AttributeStrengthGain"		"2.500000"
+			"AttributeBaseIntelligence"		"25"
+			"AttributeIntelligenceGain"		"2.50000"
+			"AttributeBaseAgility"		"20"
+			"AttributeAgilityGain"		"1.650000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"320"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_queenofpain.txt
+
+
+	//Start of file npc_dota_hero_sven.txt
+		// Shrek by Champi
+		"npc_dota_hero_sven"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/shrek/shrek.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"3,2,2,3,1,0,0,0,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.10000"
+			"LoadoutScale"		"1.100000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"shrek_acid"
+			"Ability2"		"shrek_veno" //mur
+			"Ability3"		"shrek_blink" // gold
+			"Ability4"		"shrek_aoe" // track
+			"Ability5"		"" // assasinate
+			"Ability10"		"special_bonus_attack_damage_25"
+			"Ability11"		"special_bonus_attack_range_100"
+			"Ability12"		"special_bonus_movement_speed_15"
+			"Ability13"		"special_bonus_cast_range_60"
+			"Ability14"		"special_bonus_spell_lifesteal_20"
+			"Ability15"		"special_bonus_all_stats_12"
+			"Ability16"		"special_bonus_cooldown_reduction_20"
+			"Ability17"		"special_bonus_armor_9"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"0"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+			"AttackDamageMin"		"19"
+			"AttackDamageMax"		"25"
+			"AttackRate"		"1.750000"
+			"AttackAnimationPoint"		"0.300000"
+			"AttackAcquisitionRange"		"850"
+			"AttackRange"		"500"
+			"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+			"ProjectileSpeed"		"990"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"24"
+			"AttributeStrengthGain"		"2.400000"
+			"AttributeBaseIntelligence"		"15"
+			"AttributeIntelligenceGain"		"1.900000"
+			"AttributeBaseAgility"		"13"
+			"AttributeAgilityGain"		"1.700000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"300"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_sven.txt
+
+
+	//Start of file npc_dota_hero_tusk.txt
+		// Bruce Lee by Sly and Champi
+		"npc_dota_hero_tusk"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/tuskarr/tuskarr.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_tusk"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"3,0,2,1,0,0,0,1,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"HeroID"		"100"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.00000"
+			"LoadoutScale"		"1.000000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "0"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"bruce_lee_blink"
+			"Ability2"		"bruce_lee_dash"
+			"Ability3"		"bruce_lee_aoe"
+			"Ability4"		"bruce_lee_kick"
+			"Ability5"		""
+			"Ability6"		""
+			"Ability7"		""
+			"Ability8"		""
+			"Ability9"		""
+			"Ability10"		"special_bonus_movement_speed_20"
+			"Ability11"		"special_bonus_hp_150"
+			"Ability12"		"special_bonus_exp_boost_25"
+			"Ability13"		"special_bonus_gold_income_25"
+			"Ability14"		"special_bonus_attack_damage_75"
+			"Ability15"		"special_bonus_cooldown_reduction_15"
+			"Ability16"		"special_bonus_cast_range_200"
+			"Ability17"		"special_bonus_evasion_12"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"0"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"25"
+			"AttackDamageMax"		"35"
+			"AttackRate"		"1.600000"
+			"AttackAnimationPoint"		"0.360000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"600"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"24"
+			"AttributeStrengthGain"		"2.300000"
+			"AttributeBaseIntelligence"		"18"
+			"AttributeIntelligenceGain"		"1.70000"
+			"AttributeBaseAgility"		"23"
+			"AttributeAgilityGain"		"2.200000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"315"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_tusk.txt
+
+
+	//Start of file npc_dota_hero_ursa.txt
+		// Bruce Lee by Sly and Champi
+		"npc_dota_hero_ursa"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/guimauve/guimauve.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_tusk"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"3,2,2,0,1,0,2,0,0"
+			"Complexity"	"3"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"0.70000"
+			"LoadoutScale"		"0.700000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"guimauve_skewer"
+			"Ability2"		"guimauve_sprint"
+			"Ability3"		"guimauve_untouchable"
+			"Ability4"		"meepo_divided_we_stand"
+			"Ability5"		""
+			"Ability6"		""
+			"Ability7"		""
+			"Ability8"		""
+			"Ability9"		""
+			"Ability10"		"special_bonus_cooldown_reduction_8"
+			"Ability11"		"special_bonus_hp_100"
+			"Ability12"		"special_bonus_strength_5"
+			"Ability13"		"special_bonus_attack_damage_15"
+			"Ability14"		"special_bonus_movement_speed_30"
+			"Ability15"		"special_bonus_armor_6"
+			"Ability16"		"special_bonus_lifesteal_25"
+			"Ability17"		"special_bonus_hp_regen_25"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"0"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"18"
+			"AttackDamageMax"		"22"
+			"AttackRate"		"1.600000"
+			"AttackAnimationPoint"		"0.300000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"600"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"19"
+			"AttributeStrengthGain"		"2.200000"
+			"AttributeBaseIntelligence"		"17"
+			"AttributeIntelligenceGain"		"1.70000"
+			"AttributeBaseAgility"		"14"
+			"AttributeAgilityGain"		"1.600000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"300"
+			"MovementTurnRate"		"0.500000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_ursa.txt
+
+
+	//Start of file npc_dota_hero_viper.txt
+		// SANIC by Champi
+		"npc_dota_hero_viper"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/sanic/sanic.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"1,3,2,0,0,0,0,1,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.40000"
+			"LoadoutScale"		"1.400000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"sanic_go_fast"
+			"Ability2"		"sanic_too_slow"
+			"Ability3"		"sanic_speed_up"
+			"Ability4"		"sanic_hegehog"
+			"Ability10"		"special_bonus_exp_boost_25"
+			"Ability11"		"special_bonus_gold_income_20"
+			"Ability12"		"special_bonus_intelligence_8"
+			"Ability13"		"special_bonus_hp_regen_7"
+			"Ability14"		"special_bonus_respawn_reduction_25"
+			"Ability15"		"special_bonus_cooldown_reduction_10"
+			"Ability16"		"special_bonus_attack_speed_40"
+			"Ability17"		"special_bonus_movement_speed_40"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"-3"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"15"
+			"AttackDamageMax"		"25"
+			"AttackRate"		"1.500000"
+			"AttackAnimationPoint"		"0.100000"
+			"AttackAcquisitionRange"		"600"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1350"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+			"AttributeBaseStrength"		"15"
+			"AttributeStrengthGain"		"1.500000"
+			"AttributeBaseIntelligence"		"10"
+			"AttributeIntelligenceGain"		"1.50000"
+			"AttributeBaseAgility"		"15"
+			"AttributeAgilityGain"		"2.000000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"475"
+			"MovementTurnRate"		"0.500000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_viper.txt
+
+
+	//Start of file npc_dota_hero_windrunner.txt
+		// Nyan Cat by Champi
+		"npc_dota_hero_windrunner"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/nyan/nyan_cat.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"1,3,2,2,0,1,1,1,0"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"HeroID"		"21"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.20000"
+			"LoadoutScale"		"1.200000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"nyan_cat_meme"
+			"Ability2"		"nyan_cat_mine_mushroom"
+			"Ability3"		"nyan_cat_youtube"
+			"Ability4"		"nyan_cat_john_cena"
+			"Ability10"		"special_bonus_attack_damage_20"
+			"Ability11"		"special_bonus_mp_regen_6"
+			"Ability12"		"special_bonus_hp_250"
+			"Ability13"		"special_bonus_intelligence_15"
+			"Ability14"		"special_bonus_spell_amplify_15"
+			"Ability15"		"special_bonus_magic_resistance_15"
+			"Ability16"		"special_bonus_attack_range_175"
+			"Ability17"		"special_bonus_cooldown_reduction_15"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"		"-1"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+			"AttackDamageMin"		"20"
+			"AttackDamageMax"		"35"
+			"AttackRate"		"1.500000"
+			"AttackAnimationPoint"		"0.200000"
+			"AttackAcquisitionRange"		"850"
+			"AttackRange"		"650"
+			"ProjectileModel"		"particles/nyan/base_attack/base_attack.vpcf"
+			"ProjectileSpeed"		"1350"
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+			"AttributeBaseStrength"		"14"
+			"AttributeStrengthGain"		"2.300000"
+			"AttributeBaseIntelligence"		"22"
+			"AttributeIntelligenceGain"		"2.650000"
+			"AttributeBaseAgility"		"18"
+			"AttributeAgilityGain"		"1.550000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"310"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+	//End of file npc_dota_hero_windrunner.txt
+}

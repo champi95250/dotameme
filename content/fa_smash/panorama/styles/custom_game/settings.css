@@ -1,0 +1,167 @@
+#Settings
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: left;
+	vertical-align: top;  
+	margin-right: 40px;
+	margin-top: 10px;
+	flow-children: down;
+
+	background-color: gray;
+	box-shadow: inset #000000 0px 2px 6px 3px;
+	border-bottom: 1px solid #404b4a11;
+	border-radius: 10px;
+	opacity: 0.3;
+
+	padding: 0px;
+}
+
+.player_has_host_privileges #Settings
+{
+	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+	box-shadow: inset #000000 0px 2px 6px 3px;
+	border-bottom: 1px solid #404b4a11;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+#ActSettings
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: left;
+	vertical-align: top;  
+	flow-children: right;
+
+	padding: 10px;
+}
+
+#Settings1
+{
+	width: 325px;
+	height: fit-children;
+	horizontal-align: left;
+	vertical-align: top;  
+	margin-right: 10px;
+	margin-top: 0px;
+	flow-children: down;
+
+	padding: 0px;
+}
+
+#Settings2
+{
+	width: 250px;
+	height: fit-children;
+	horizontal-align: left;
+	vertical-align: top;  
+	margin-right: 0px;
+	margin-top: 1px;
+	flow-children: down;
+
+	padding: 0px;
+}
+
+.SettingsHeader
+{
+	margin-top: 3px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 40px;
+	color: #ffffff;
+}
+
+.EntryPanel
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.OptionLabel
+{
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 20px;
+	margin-left: 5px;
+	color: #ffffff;
+	text-align: left;
+	vertical-align: center;
+	horizontal-align: left;
+}
+
+TextEntry
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111FF ), to( #222222FF ) );
+	border: 1px solid baseBorder;
+	
+	color: lightgrey;
+	font-size: 20px;
+
+	height: 30px;
+	width: 55px;
+	padding: 3px 5px 5px 5px;
+}
+
+.ValuePanel
+{
+	width: 100px;
+	horizontal-align: right;
+}
+
+.LabelEntry
+{
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: 35px;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.RadioBox
+{
+    min-width: 25px;
+    min-height: 25px;
+  
+}
+
+RadioButton
+{
+	width: 50%;
+}
+
+RadioButton Label
+{
+    margin-left: 20px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3.0 #000;
+}
+
+#RadioButtons
+{
+	width: 100%;
+    flow-children: down;
+}
+
+.RadioSection
+{
+	margin-left: 10px;
+	flow-children: right;
+	width: 100%;
+}
+
+#Host
+{
+	horizontal-align: center;
+}
+
+#ToggleSettings
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

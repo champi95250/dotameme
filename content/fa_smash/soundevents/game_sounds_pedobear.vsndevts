@@ -1,0 +1,126 @@
+"Pedobear.girl"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/pedobear/scream_woman.vsnd"
+						}
+					}
+					"volume"            {   "value"     "5.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.300000"  }
+                    "pitch_rand_max"    {   "value"     "0.300000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "73.00000" }
+                    "distance_max"      {   "value"     "2000.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+"Pedobear.song"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_2d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/pedobear/music.vsnd"
+						}
+					}
+					"volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "50.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Pedobear.happy"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_2d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/pedobear/happy_pedo.vsnd"
+						}
+					}
+					"volume"            {   "value"     "0.60000"  }
+                    "pitch_rand_min"    {   "value"     "0.000000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "75.00000" }
+                    "distance_max"      {   "value"     "1600.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}
+
+"Pedobear.rape"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"       "dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/spell/pedobear/scream_noo.vsnd"
+						}
+					}
+					"volume"            {   "value"     "11.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.020000"  }
+                    "pitch_rand_max"    {   "value"     "0.020000"  }
+                    "pitch"             {   "value"     "1.000000"  }
+                    "soundlevel"        {   "value"     "67.00000" }
+                    "distance_max"      {   "value"     "2700.000"  }
+                    "event_type"        {   "value"     "1.000000"  }
+				}
+			}
+		}
+	}
+}

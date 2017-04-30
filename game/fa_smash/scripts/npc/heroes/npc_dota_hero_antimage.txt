@@ -1,0 +1,77 @@
+	// Nyan Cat by Champi
+	"npc_dota_hero_antimage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"		"models/items/lycan/ultimate/ambry_true_form/ambry_true_form.vmdl"
+		"SoundSet"		"Hero_Antimage"
+		"HeroID"		"1"
+		"Enabled"		"1"
+		"HeroUnlockOrder"		"1"
+		"Role"			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+		"Rolelevels"	"2,2,2,3,2,1,0,0,0"
+		"Complexity"	"1"
+		"Team"		"Good"
+		"Portrait"		"vgui/hud/heroportraits/portrait_antimage"
+		"ModelScale"		"0.900000"
+		"HeroGlowColor"		"120 64 148"
+		"PickSound"		"antimage_anti_spawn_01"
+		"BanSound"		"antimage_anti_anger_04"
+		"CMEnabled"		"1"
+		"NameAliases"		"am"
+		"url"		"Anti-Mage"
+		"LastHitChallengeRival"		"npc_dota_hero_bounty_hunter"
+		"HeroSelectSoundEffect"		"Hero_Antimage.Pick"
+		"DisableWearables" "1"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"catmancer_miaulement"
+		"Ability2"		"catmancer_pelote"
+		"Ability3"		"catmancer_walk_cat"
+		"Ability4"		"catmancer_cat"
+		"Ability10"		"special_bonus_movement_speed_40"
+		"Ability11"		"special_bonus_attack_speed_30"
+		"Ability12"		"special_bonus_spell_amplify_15"
+		"Ability13"		"special_bonus_all_stats_10"
+		"Ability14"		"special_bonus_attack_damage_75"
+		"Ability15"		"special_bonus_cooldown_reduction_15"
+		"Ability16"		"special_bonus_agility_25"
+		"Ability17"		"special_bonus_evasion_20"
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-2"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.400000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"20"
+		"AttributeStrengthGain"		"1.500000"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"2.000000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"2.800000"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementSpeed"		"335"
+		"MovementTurnRate"		"0.500000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"HealthBarOffset"		"140"
+		"particle_folder"		"particles/units/heroes/hero_antimage"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		"VoiceFile"				""
+
+	}

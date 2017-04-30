@@ -1,0 +1,36 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "global_lit_simple.vfx"
+
+	//---- Normal Maps ----
+	F_NORMAL_MAP 1
+
+	//---- Specular ----
+	F_SPECULAR 1
+
+	//---- Tint Mask ----
+	F_TINT_MASK 1
+
+	//---- Color ----
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vColorTint2 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor "materials/models/traps/traps_v2.png"
+	TextureTintMask "materials/models/traps/traps_v2_tint.png"
+
+	//---- Normal Map ----
+	g_flBumpStrength "0.069"
+	TextureNormal "materials/models/traps/traps_v2_normal.png"
+
+	//---- Self Illum ----
+	TextureSelfIllumMask "materials/models/traps/traps_v2_ambiante.png"
+
+	//---- Specular ----
+	g_flSpecularBloom "3.517"
+	g_flSpecularIntensity "3.331"
+	TextureBloom "materials/models/traps/traps_v2_spec.png"
+	TextureReflectance "materials/models/traps/traps_v2_spec.png"
+}

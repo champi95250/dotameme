@@ -1,0 +1,679 @@
+	// Nyan Cat Ability by Champi
+	// 2017
+	// ----------------------------------------------
+	// 001 - nyan_cat_meme
+	//-----------------------------------------------
+	"nyan_cat_meme"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType" 	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName" 	"custom/nyan_cat02"
+		"AbilityProcsMagicStick"		"1"
+		
+		// Time	Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"		"23 20 17 14"
+		"AbilityManaCost" 		"45 55 65 75" 
+
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_nyan.vsndevts"	
+			"particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+			"particle"			"particles/status_fx/status_effect_thirst_vision.vpcf"
+			"particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_vision.vpcf"
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+
+		{
+			"01"
+			{
+				"var_type"  			"FIELD_FLOAT"
+				"movement_speed" 		"600 700 800 900"
+			} 
+			"02"
+			{
+				"var_type" 				"FIELD_FLOAT"
+				"duration_move_speed" 	"6.6"
+			} 
+		} 
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{                             
+				"ScriptFile" "spell/nyan/nyan_cat_move.lua"
+				"Function" 	"addbuff"
+			}	
+			"FireSound"
+			{
+				"EffectName"	"Nyan.nyan.Cast"
+				"Target"		"CASTER"
+			}
+		}
+		
+	}
+	
+	// ----------------------------------------------
+	// 002 - nyan cat Mushroom
+	//-----------------------------------------------
+	
+	"nyan_cat_mine_mushroom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/nyan_cat04"
+		"AOERadius"						"%small_radius"
+		"AbilityProcsMagicStick"		"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_nyan.vsndevts"		
+			"particle"		"particles/units/heroes/hero_techies/techies_land_mine.vpcf"
+			"particle"		"particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+			"model"			"models/heroes/nyan/mushroom/mushroom.vmdl"	
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19 16 13 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175 205"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"50 100 150 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"small_radius"				"230"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"big_radius"				"480"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activation_time"			"1.0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_mines"					"10"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"explode_delay"				"0.2"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"1.0"
+			}
+			// Extra
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_radius"				"300"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"vision_duration"			"1.0"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"total_damage"				"100 200 300 400"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Techies.LandMine.Plant"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile" 	"spell/nyan/nyan_cat_mushroom.lua"
+				"Function"		"LandMinesPlant"
+				"Target"		"POINT"
+				"modifier_land_mine"	"modifier_land_mine_datadriven"
+				"modifier_tracker"		"modifier_land_mine_tracker_datadriven"
+				"modifier_caster"		"modifier_land_mine_caster_datadriven"
+				"modifier_land_mine_invisibility"	"modifier_land_mine_invisibility_datadriven"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_land_mine_datadriven"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"OnDeath"
+				{
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_land_mine_thinker"
+						"Target" 		"UNIT"
+					}				
+
+					"FireEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+						"EffectAttachType"  "follow_hitloc"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"UNIT"
+							"Radius" 	"%small_radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+					
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"
+								{
+									"Center"	"TARGET"
+									"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+								}
+								"Type"			"DAMAGE_TYPE_PHYSICAL"
+								"Damage"		"%damage"
+							}
+						}
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"UNIT"
+							"Radius" 	"%big_radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+					
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"
+								{
+									"Center"	"TARGET"
+									"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+								}
+								"Type"			"DAMAGE_TYPE_PHYSICAL"
+								"Damage"		"%damage"
+							}
+						}					
+					}
+
+					"RunScript"
+					{
+						"ScriptFile" 	"spell/nyan/nyan_cat_mushroom.lua"
+						"Function"		"LandMinesDeath"
+						"modifier_caster"	"modifier_land_mine_caster_datadriven"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_land_mine_tracker_datadriven"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"EffectName"	"particles/units/heroes/hero_techies/techies_land_mine.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile" 	"spell/nyan/nyan_cat_mushroom.lua"
+						"Function"		"LandMinesTracker"
+					}
+				}
+			}
+
+			"modifier_land_mine_caster_datadriven"
+			{
+				"IsBuff"		"1"
+				"IsPurgable"	"0"
+			}
+
+			"modifier_land_mine_invisibility_datadriven"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_land_mine_thinker"
+			{
+				"Duration"	"0.03"
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Techies.LandMine.Detonate"
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// ----------------------------------------------
+	// 003 - nyan cat Meme of youtube
+	//-----------------------------------------------
+	
+	"nyan_cat_youtube"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/nyan_cat01"
+		"AbilityProcsMagicStick"		"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35.0 30.0 25.0 20.0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 100 120 140"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"nombre_meme"				"4"
+			}
+			"02"  // Call Enemy - Armor
+			{
+				"var_type"					"FIELD_INTEGER"
+				"meme_effect_banana"		"5 15 25 35"  
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_duration_banana"		"7.2 7.2 7.2 7.2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"meme_range_banana"			"1000 1300 1600 1900"
+			}
+			"05" // Heal
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_effect_heyeyey"		"0.7 1.2 1.7 2.2"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_duration_heyeyey"		"8.0"
+			}
+			"07" // Attack Speed - Move Speed
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_effect_tunak_as"		"10 45 80 125"
+			}
+			"08" // Attack Speed - Move Speed
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_effect_tunak_ms"		"9.0 14.0 19.0 24.0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_duration_tunak"		"7.5"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_jihad_bomdelay"		"2.33"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"meme_jihad_bomb_range"		"600 625 650 675"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"meme_jihad_bomb_damage"	"550 700 950 1100"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meme_jihad_respawn_time"	"0.5"
+			}
+		}
+
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_techies/techies_suicide.vpcf"
+			"particle"		"particles/econ/items/juggernaut/bladekeeper_healing_ward/juggernaut_healing_ward_dc.vpcf"
+			"soundfile"		"soundevents/game_sounds_nyan.vsndevts"	
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/nyan/nyan_cat_youtube.lua"
+				"Function"		"damage"
+				"Target"
+				{
+					"Center"  		"CASTER"
+					"Radius" 		"%meme_range_banana"
+					"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_nyan_cat_tunak"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%meme_effect_tunak_as"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%meme_effect_tunak_ms" 
+				}	
+			}
+			"modifier_nyan_cat_jihad"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_techies/techies_suicide.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+							"01"	"330 0 0"
+							"02"	"%meme_jihad_bomb_damage %meme_jihad_bomb_damage %meme_jihad_bomb_damage"
+						}
+					}
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%meme_jihad_bomb_range"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+					
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"
+								{
+									"Center"	"TARGET"
+									"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+								}
+								"Type"			"DAMAGE_TYPE_PHYSICAL"
+								"Damage"		"%meme_jihad_bomb_damage"
+							}
+							
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"spell/nyan/nyan_cat_youtube.lua"
+						"Function"		"Suicide"
+					}	
+				}
+			}
+			"modifier_nyan_cat_banana_caster"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%meme_effect_banana"
+				}
+			}
+			"modifier_nyan_cat_banana_unit"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+
+				"StatusEffectName" 		"particles/status_fx/status_effect_beserkers_call.vpcf" 	   
+				"StatusEffectPriority"  "10"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/nyan/nyan_cat_youtube.lua"
+						"Function"		"Bananacall"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/nyan/nyan_cat_youtube.lua"
+						"Function"		"BananacallEnd"
+					}
+				}
+			}
+			"modifier_nyan_cat_hey_aura"
+			{
+				"Passive"				"0"
+				"IsPurgable"			"0"
+				"IsHidden"				"1"
+				"Aura"					"modifier_nyan_cat_hey_aura_effect"
+				"Aura_Radius"			"10000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%meme_effect_heyeyey"
+				}
+			}
+		
+			"modifier_nyan_cat_hey_aura_effect"
+			{
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/econ/items/juggernaut/bladekeeper_healing_ward/juggernaut_healing_ward_dc.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%meme_effect_heyeyey"
+				}
+			}
+		}
+		
+	}
+	
+	// ----------------------------------------------
+	// 004 - John Cena
+	//-----------------------------------------------
+	
+	"nyan_cat_john_cena"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityProcsMagicStick"		"1"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/nyan_cat3"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastRange" 				"160"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"200 190 180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"prc_life_max"				"35 40 45"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5 2.5 3.5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"air_time"					"1.5 1.7 1.9"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delay_action"				"1.1 1.1 1.1"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"prc_life_max_multi"		"0.35 0.40 0.45"
+			}
+		}
+		
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"soundfile"		"soundevents/game_sounds_nyan.vsndevts"	
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Nyan.John.Cast"
+				"Target"		"CASTER"
+			}
+			"DelayedAction"
+			{
+				"Delay"		"%delay_action"
+
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/nyan/nyan_cat_john_cena.lua"
+						"Function"		"DamageTarget"
+					}
+				}
+			}
+		
+		}
+	}
+	
