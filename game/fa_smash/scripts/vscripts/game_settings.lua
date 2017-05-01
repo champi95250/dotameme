@@ -2,6 +2,7 @@ GameSettings = {
 	-- Item
 	["aghanim"] = 0, 			--( tous avec agha )
 	--["nuclear_bomb"] = 0, 	--( tous avec une nucléare bomb au début de game )
+	["multicast"] = 0,
 	
 	-- Mechanics
 	["smash_bros"] = 0,  		--( smash bros )
@@ -25,6 +26,7 @@ GameSettings = {
 	["mult_exp"] = 100,
 	["mult_respawn"] = 100,
 	["all_random"] = 0,
+	["all_random_sh"] = 0,
 	["attack_allie"] = 0,
 	
 	-- rivers

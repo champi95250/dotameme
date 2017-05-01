@@ -57,6 +57,7 @@ require('internal/gamemode')
 require('internal/events')
 require('settings')
 require('events')
+require('gold')
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")    
@@ -71,7 +72,7 @@ end
 
 function GameMode:OnAllPlayersLoaded()
 	DebugPrint("[BAREBONES] All Players have loaded into the game")
-	if GameSettings.all_random > 0 then
+	if GameSettings.all_random > 0 and GameSettings.all_random_sh == 0 then
 	print("All Random Activé")
 		for player_id = 0, 15 do
 			if PlayerResource:IsImbaPlayer(player_id) then
@@ -80,6 +81,17 @@ function GameMode:OnAllPlayersLoaded()
 				PlayerResource:SetHasRandomed(player_id)
 			end
 		end
+	end	
+	if GameSettings.all_random_sh > 0 then
+	--print("All Random Same hero Activé")
+	--	for player_id = 0, 15 do
+	--		if PlayerResource:IsImbaPlayer(player_id) then
+	--			PlayerResource:GetPlayer(player_id):MakeRandomHeroSelection()
+	--			PlayerResource:SetCanRepick(player_id, false)
+	--			PlayerResource:SetHasRandomed(player_id)
+	--			PlayerResource:ReplaceHeroWith(player_id, "npc_dota_hero_sven", 750, 0)
+	--		end
+	--	end
 	end	
 end
 
@@ -124,10 +136,12 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameMode, 'OnPlayerLevelUp'), self)
 	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( self, "OnNPCSpawned" ), self )
 	ListenToGameEvent( "entity_killed", Dynamic_Wrap( self, "OnEntityKilled" ), self )
+	ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( self, "OnItemPickUp"), self )
 
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( GameMode, "FilterExecuteOrder" ), self )
 	CustomGameEventManager:RegisterListener( "setting_change", Dynamic_Wrap( self, "OnSettingChange" ) )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	
 
 	GameRules:GetGameModeEntity():SetModifyGoldFilter( Dynamic_Wrap( self, "GoldFilter" ), self )
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter( Dynamic_Wrap( self, "ExpFilter" ), self )
@@ -195,19 +209,19 @@ end
 function GameMode:OnThink( event )
 	local player_id = event.PlayerID
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		print( "Game In Progress" )
+		--print( "Game In Progress" )
 		--EmitGlobalSound("Mlg.start_game")
-		return nil
+		GameMode:ThinkGoldDrop()
+		return 2
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		print( "Post game" )
-		return nil
 	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		if GameSettings.mlg_sound > 0 then
-		local random_start_sound = RandomInt(1, 3) 
-		print(random_start_sound)
-		EmitGlobalSound("Mlg.start_game_" .. random_start_sound)
+			local random_start_sound = RandomInt(1, 3) 
+			print(random_start_sound)
+			EmitGlobalSound("Mlg.start_game_" .. random_start_sound)
+			return 30
 		end
-		return nil
 	end
 	return 1
 end

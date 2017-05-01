@@ -32,4 +32,6 @@
 	"npc_dota_hero_queenofpain"			"Microphone"
 
 	"error_trumpinate"					"Machala, tu peux pas cast si la cia voit personne de track !"
+	
+	"DOTA_Tooltip_ability_item_bag_of_gold"			"ARGENT DE JOKO"
 }

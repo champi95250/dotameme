@@ -46,7 +46,7 @@ if IsServer() then
 	function modifier_branches:OnIntervalThink()
 		local parent = self:GetParent()
 		if parent.GetGold then
-			self:SetStackCount( math.floor( parent:GetGold() / 200 ) )
+			self:SetStackCount( math.floor( parent:GetGold() / 250 ) )
 			parent:CalculateStatBonus()
 		end
 	end

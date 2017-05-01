@@ -50,7 +50,7 @@ print(trigger.activator:GetName())
 				for _, obs in pairs(DoorObs) do
 					obs:SetEnabled(true, false)
 				end
-				DoEntFire("door_mid"..i, "SetAnimation", "gate_entrance002_idle", 0, nil, nil)
+				DoEntFire("door_mid"..i, "SetAnimation", "gate_entrance002_close", 0, nil, nil)
 			end
 			Timers:CreateTimer(10.0,function()
 				for i = 1, 4 do

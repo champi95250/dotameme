@@ -23,6 +23,9 @@
 					<Panel>
 						<ToggleButton id="brawl" text="Super Smash bros" onactivate="Toggle('brawl')"/>
 					</Panel>
+					<!--<Panel>
+						<ToggleButton id="multicast" text="Multicast Ultimate" onactivate="Toggle('multicast')"/>
+					</Panel>-->
 					<Panel>
 						<ToggleButton id="attack_allie" text="Allies Attack" onactivate="Toggle('attack_allie')"/>
 					</Panel>
@@ -40,7 +43,7 @@
 						<ToggleButton id="smash_bros" text="Super Smash Bros" onactivate="Toggle('smash_bros')"/>
 					</Panel>-->
 					<Panel>
-						<ToggleButton id="hero_branches" text="Gain +1 stats for every 200 gold " onactivate="Toggle('hero_branches')"/>
+						<ToggleButton id="hero_branches" text="Gain +1 stats for every 250 gold " onactivate="Toggle('hero_branches')"/>
 					</Panel>
 					
 					<Panel class="EntryPanel">
@@ -128,6 +131,9 @@
 					<Panel class="EntryPanel">
 						<ToggleButton id="all_random" text="All Random" onactivate="Toggle('all_random')"/>
 					</Panel>
+					<!--<Panel>
+						<ToggleButton id="all_random_sh" text="All Random Same Hero" onactivate="Toggle('all_random_sh')"/>
+					</Panel>-->
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="" />
 					</Panel>

@@ -3,7 +3,7 @@ modifier_mlg_sound = class({})
 --------------------------------------------------------------------------------
 
 function modifier_mlg_sound:IsHidden()
-	return false
+	return true
 end
 
 function modifier_mlg_sound:IsDebuff()

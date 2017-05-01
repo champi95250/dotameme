@@ -106,6 +106,9 @@ function GameMode:OnNPCSpawned(event)
 	if GameSettings.reduce_cd > 0 then
 		npc:AddNewModifier( npc, nil, "modifier_ryze", {} )
 	end
+	if GameSettings.multicast > 0 and npc:IsRealHero() and not npc:IsClone() then
+		npc:AddAbility("multi_cast_ability")
+	end
 	if GameSettings.hero_branches > 0 and npc:IsRealHero() and not npc:IsClone() then
 		npc:AddNewModifier( npc, nil, "modifier_branches", {} )
 	end
