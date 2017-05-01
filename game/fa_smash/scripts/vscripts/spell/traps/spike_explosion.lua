@@ -28,10 +28,5 @@ function spike_explosion:OnSpellStart()
 
 	target:RemoveModifierByName("modifier_knockback")
 	target:AddNewModifier(caster, ability, "modifier_knockback", headshot_knockback)
+	EmitSoundOn("Hero_KeeperOfTheLight.BlindingLight", caster)
 end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
-

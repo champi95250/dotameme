@@ -211,7 +211,12 @@ function GameMode:OnThink( event )
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--print( "Game In Progress" )
 		--EmitGlobalSound("Mlg.start_game")
-		GameMode:ThinkGoldDrop()
+		if not Gamerules:IsGamePaused() then
+			GameMode:ThinkGoldDrop()
+			return 2
+		else
+			return 2
+		end
 		return 2
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		print( "Post game" )
