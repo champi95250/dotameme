@@ -4,125 +4,122 @@
 
 
 	//Start of file arena_ability.txt
-		// Ability Arena
-		"dota_ability_xp_global"
+	// Ability Arena
+	"dota_ability_xp_global"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_xp_global"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
 		{
-			"BaseClass"          			    "ability_datadriven"
-			"AbilityName"           			"dota_ability_xp_global"
-			"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-			"Modifiers"
+			"modifier_dota_ability_xp_global"
 			{
-				"modifier_dota_ability_xp_global"
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_get_xp_global"
+				"Aura_Radius"			"10000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+				"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+
+				"States"
 				{
-					"IsHidden"				"1"
-					"Passive"				"1"
-					
-					"Aura"					"modifier_get_xp_global"
-					"Aura_Radius"			"10000"
-					"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-					"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-					"Aura_ApplyToCaster"	"0"
-					"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-	
-					"States"
-					{
-						"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
-	
-					"ThinkInterval"	".5"
-	
-					"OnIntervalThink"
-					{
-						"GrantXPGold"
-						{
-							"Target"
-							{
-								"Center"		"CASTER"
-								"radius"		"3450"
-								"Types"			"DOTA_UNIT_TARGET_HERO"
-								"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-							}
-							"XPAmount"		"5" //7
-							"SplitEvenly"	"0"
-							"GoldAmount"	"2"
-							"ReliableGold"	"0"
-						}
-					}
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
-	
-				"modifier_get_xp_global"
+
+				"ThinkInterval"	".5"
+
+				"OnIntervalThink"
 				{
-					"Passive"       "1"
-					"EffectName"	"particles/econ/courier/courier_greevil_yellow/courier_greevil_yellow_ambient_3_b.vpcf"
-					"TextureName"	"alchemist_goblins_greed"
+					"GrantXPGold"
+					{
+						"Target"
+						{
+							"Center"		"CASTER"
+							"radius"		"3450"
+							"Types"			"DOTA_UNIT_TARGET_HERO"
+							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+						}
+						"XPAmount"		"5" //7
+						"SplitEvenly"	"0"
+						"GoldAmount"	"2"
+						"ReliableGold"	"0"
+					}
 				}
 			}
-		}
-		
-		"dota_ability_xp_granter"
-		{
-			"BaseClass"          			    "ability_datadriven"
-			"AbilityName"           			"dota_ability_xp_granter"
-			"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-			"Modifiers"
+
+			"modifier_get_xp_global"
 			{
-				"modifier_dota_ability_xp_granter"
-				{
-					"IsHidden"				"1"
-					"Passive"				"1"
-					
-					"Aura"					"modifier_get_xp"
-					"Aura_Radius"			"1200"
-					"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-					"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-					"Aura_ApplyToCaster"	"0"
-					"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-	
-					"States"
-					{
-						"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
-					}
-	
-					"ThinkInterval"	".5"
-	
-					"OnIntervalThink"
-					{
-						"GrantXPGold"
-						{
-							"Target"
-							{
-								"Center"		"CASTER"
-								"radius"		"1000"
-								"Types"			"DOTA_UNIT_TARGET_HERO"
-								"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-							}
-							"XPAmount"		"10" //10
-							"SplitEvenly"	"0"
-							"GoldAmount"	"5"
-							"ReliableGold"	"0"
-						}
-					}
-				}
-	
-				"modifier_get_xp"
-				{
-					"Passive"       "1"
-					"EffectName"	""
-					"TextureName"	"custom_games_xp_coin"
-				}
+				"Passive"       "1"
+				"EffectName"	"particles/econ/courier/courier_greevil_yellow/courier_greevil_yellow_ambient_3_b.vpcf"
+				"TextureName"	"alchemist_goblins_greed"
 			}
 		}
+	}
 	
-	
-		
+	"dota_ability_xp_granter"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_xp_granter"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_xp_granter"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_get_xp"
+				"Aura_Radius"			"1000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+				"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"ThinkInterval"	".5"
+
+				"OnIntervalThink"
+				{
+					"GrantXPGold"
+					{
+						"Target"
+						{
+							"Center"		"CASTER"
+							"radius"		"1000"
+							"Types"			"DOTA_UNIT_TARGET_HERO"
+							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+						}
+						"XPAmount"		"10" //10
+						"SplitEvenly"	"0"
+						"GoldAmount"	"5"
+						"ReliableGold"	"0"
+					}
+				}
+			}
+
+			"modifier_get_xp"
+			{
+				"Passive"       "1"
+				"EffectName"	""
+				"TextureName"	"custom_games_xp_coin"
+			}
+		}
+	}
 	//End of file arena_ability.txt
 
 
@@ -1726,13 +1723,13 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 			"FightRecapLevel"				"1"
 			"AbilityTextureName"			"custom/guimauve_skewer"
-			
+
 			"precache"
 			{
 				"particle" 		"particles/units/heroes/hero_magnataur/magnataur_skewer.vpcf"
@@ -1740,10 +1737,11 @@
 				"particle"		"particles/units/heroes/hero_magnataur/magnataur_skewer_horn.vpcf"
 				"soundfile" 	"sounds/weapons/hero/magnataur/skewer_cast.vsnd"
 			}
-			
+
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+			"AbilityCastPoint"				"0.0"
+			"AbilityCastRange"				"600 800 1000 1200"
 	
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
@@ -1760,7 +1758,7 @@
 				"01"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"skewer_speed"					"950"
+					"skewer_speed"			"950"
 				}
 				"02"
 				{
@@ -1775,7 +1773,7 @@
 				"04"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"skewer_radius"				"145"
+					"skewer_radius"			"145"
 				}
 				"05"
 				{
@@ -1790,12 +1788,12 @@
 				"07"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"hero_offset"				"210"
+					"hero_offset"			"210"
 				}
 				"08"
 				{
 					"var_type"				"FIELD_INTEGER"
-					"tree_radius"				"210"
+					"tree_radius"			"210"
 				}
 			}
 			

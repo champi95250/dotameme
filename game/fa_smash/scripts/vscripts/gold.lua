@@ -11,7 +11,7 @@ function GameMode:SpawnGold()
 end
 
 function GameMode:SpawnGoldEntity( spawnPoint )
-	EmitGlobalSound("Item.PickUpGemWorld")
+	EmitSoundOn("Item.PickUpGemWorld", spawnPoint)
 	local newItem = CreateItem( "item_bag_of_gold", nil, nil )
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 	local dropRadius = RandomFloat( 40, 860 )
