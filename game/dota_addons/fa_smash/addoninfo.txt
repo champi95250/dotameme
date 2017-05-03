@@ -8,7 +8,7 @@
 	"IsPlayable"  "1"
 	"arena_solo"
 	{
-		"TeamCount" 					"8"
-		"MaxPlayers"                    "16"
+		"TeamCount"						"8"
+		"MaxPlayers"					"8"
 	}
 }
