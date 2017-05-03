@@ -1,3 +1,3 @@
 ## Welcome to Dota : Battle Of The meme
 
-Liste bugs / idées à faire : https://framacalc.org/0SD9WXc26X
+https://docs.google.com/spreadsheets/d/1XHwLoK9RwlOvNuvXsDiAbhU5M8oWveioTfbqBVEbnKw/edit#gid=0
