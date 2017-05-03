@@ -109,6 +109,7 @@ function GameMode:OnGameInProgress()
 		end
 		DoEntFire("door_mid"..i, "SetAnimation", "gate_entrance002_open", 0, nil, nil)
 	end
+	GameMode:ThinkGoldDrop()
 end
 
 function GameMode:InitGameMode()
@@ -121,14 +122,14 @@ function GameMode:InitGameMode()
 		--MAX_NUMBER_OF_TEAMS = 8
 		GameRules:SetShowcaseTime(0)
 		GameRules:SetPreGameTime(13)
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 2 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 2 )		
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )		
 	end
 
 	GameRules.knockback = LoadKeyValues("scripts/kv/knockback.kv")
@@ -211,13 +212,6 @@ function GameMode:OnThink( event )
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--print( "Game In Progress" )
 		--EmitGlobalSound("Mlg.start_game")
-		if not Gamerules:IsGamePaused() then
-			GameMode:ThinkGoldDrop()
-			return 2
-		else
-			return 2
-		end
-		return 2
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		print( "Post game" )
 	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_STRATEGY_TIME then

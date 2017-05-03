@@ -173,12 +173,12 @@
 				"04"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"atspeed_diminution"		"-40 -38 -36 -34"
+					"atspeed_diminution"	"-40 -38 -36 -34"
 				}
 				"05"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"movespeed_diminution"		"-15 -10 -5 0"
+					"movespeed_diminution"	"-15 -10 -5 0"
 				}
 			}
 	
@@ -479,17 +479,16 @@
 			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 			"AbilityTextureName"			"custom/at_st_double_attack"
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"3.75 2.5 1.25"
+			"AbilityCooldown"				"7.0 5.0 3.0"
 			
-			// Modifiers
+			// Special
 			//-------------------------------------------------------------------------------------------------------------
-			
 			"AbilitySpecial"
 			{
 				"04"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"cdtool"				"3.75 2.5 1.25"
+					"cdtool"				"7.0 5.0 3.0"
 				}
 			}
 	
@@ -513,7 +512,6 @@
 		} 
 	//End of file atst_ability.txt
 
-
 	//Start of file bruce_lee_ability.txt
 		// Bruce Lee Ability by Sly and Champi
 		// 2017
@@ -524,7 +522,7 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -866,7 +864,7 @@
 					"cd_scepter"		"15.0 12.5 10.0"
 				}
 			}
-	
+
 			"OnSpellStart"
 			{
 				"FireSound"
@@ -1238,11 +1236,11 @@
 					"Target"		"TARGET"
 				}
 			}
-	
+
 			"OnProjectileHitUnit"
 			{
 				"DeleteOnHit"	"1"
-	
+
 				"RunScript"
 				{
 					"ScriptFile"	"spell/catmancer/catmancer_pelote.lua"
@@ -1250,7 +1248,7 @@
 					"particle"		"particles/units/heroes/hero_rubick/rubick_telekinesis.vpcf"
 				}
 			}
-	
+
 			"Modifiers"
 			{
 				"modifier_telekinesis_datadriven"
@@ -1260,7 +1258,7 @@
 	
 					"EffectName"		"particles/units/heroes/hero_rubick/rubick_telekinesis_debuff.vpcf"
 					"EffecAttachType"	"follow_origin"
-	
+
 					"OnDestroy"
 					{
 						"ApplyModifier"
@@ -1269,7 +1267,7 @@
 							"Target"		"TARGET"
 						}
 					}
-	
+
 					"States"
 					{
 						"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -1730,14 +1728,6 @@
 			"FightRecapLevel"				"1"
 			"AbilityTextureName"			"custom/guimauve_skewer"
 
-			"precache"
-			{
-				"particle" 		"particles/units/heroes/hero_magnataur/magnataur_skewer.vpcf"
-				"particle" 		"particles/units/heroes/hero_magnataur/magnataur_skewer_debuff.vpcf"
-				"particle"		"particles/units/heroes/hero_magnataur/magnataur_skewer_horn.vpcf"
-				"soundfile" 	"sounds/weapons/hero/magnataur/skewer_cast.vsnd"
-			}
-
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastPoint"				"0.0"
@@ -1746,11 +1736,11 @@
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCooldown"				"50.0 45.0 40.0 35.0"
-	
+
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityManaCost"				"100 120 140 160"
-	
+
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"

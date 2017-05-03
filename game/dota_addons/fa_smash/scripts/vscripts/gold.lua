@@ -1,9 +1,11 @@
 function GameMode:ThinkGoldDrop()
-
-	local r = RandomInt( 1, 100 )
-	if r > ( 100 - 42 ) then
-		GameMode:SpawnGold()
-	end
+	Timers:CreateTimer(0.0, function()
+		local r = RandomInt( 1, 100 )
+		if r > ( 100 - 42 ) then
+			GameMode:SpawnGold()
+		end
+		return 5
+	end)
 end
 
 function GameMode:SpawnGold()
@@ -11,10 +13,10 @@ function GameMode:SpawnGold()
 end
 
 function GameMode:SpawnGoldEntity( spawnPoint )
-	EmitSoundOn("Item.PickUpGemWorld", spawnPoint)
+--	EmitSoundOn("Item.PickUpGemWorld", spawnPoint)
 	local newItem = CreateItem( "item_bag_of_gold", nil, nil )
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
-	local dropRadius = RandomFloat( 40, 860 )
+	local dropRadius = RandomFloat( 40, 820 )
 	newItem:LaunchLootInitialHeight( false, 0, 350, 0.75, spawnPoint + RandomVector( dropRadius ) )
 	newItem:SetContextThink( "KillLoot", function() return self:KillLoot( newItem, drop ) end, 20 )
 end
