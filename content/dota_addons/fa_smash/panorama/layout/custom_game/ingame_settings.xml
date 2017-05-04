@@ -1,0 +1,17 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_game/ingame_settings.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/ingame_settings.js" />
+	</scripts>
+
+	<Panel class="ScoreboardLeft">
+		<Panel class="VictoryPanel">
+			<Label id="Goal" text="#Goal" />
+			<Label id="VictoryPoints" text="999" />
+		</Panel>
+	</Panel>
+</root>

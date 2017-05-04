@@ -10,30 +10,30 @@ _G.vip_members = {
 	134026389,	-- Hypérion (Friend)5
 	54896080,	-- Cookies (Friend)6
 	43305444,	-- Baumi( Because why not? )7
-	80027579, -- JOKO (Friend) [U:1:80027579]8
-	29129859, -- Guiamuve (Friend)9
-	158581004, -- Shiroune Friend10
-	129031445, -- Trungk11
-	88064214, -- Hearen
-	98883570, -- Sean Gollum
-	89498388 -- Sly
+	80027579,	-- JOKO (Friend) [U:1:80027579]8
+	29129859,	-- Guiamuve (Friend)9
+	158581004,	-- Shiroune Friend10
+	129031445,	-- Trungk11
+	88064214,	-- Hearen
+	98883570,	-- Sean Gollum
+	89498388	-- Sly
 }
 
 _G.pseudo = {
-	"MechJesus",	-- MechJesus (Friend)1
-	"Sexus",	-- FrenchDeath (Friend)2
+	"MechJesus",		-- MechJesus (Friend)1
+	"Sexus",			-- FrenchDeath (Friend)2
 	"GayLord Champi",	-- Champi (ME :D )3
 	"Ou Sen Ben Laden",	-- Ou Sen (Friend)4
-	"Hypércon",	-- Hypérion (Friend)5
-	"Cookies",	-- Cookies (Friend)6
-	"Baumi",	-- Baumi( Because why not? )7
-	"Feedoloaz", -- JOKO (Friend) [U:1:80027579]8
-	"Putamauve", -- Guiamuve (Friend)9
-	"Catmancer", -- Shiroune Friend10
-	"TK", -- Trungk11
-	"Hearen", -- Hearen
-	"LE PETIT PD", -- Sean Gollum
-	"Slyp"  -- Sly
+	"Hypércon",			-- Hypérion (Friend)5
+	"Cookie$",			-- Cookies (Friend)6
+	"Baumi",			-- Baumi( Because why not? )7
+	"Feedoloaz",		-- JOKO (Friend) [U:1:80027579]8
+	"Putamauve",		-- Guiamuve (Friend)9
+	"Catmancer",		-- Shiroune Friend10
+	"TK",				-- Trungk11
+	"Hearen",			-- Hearen
+	"LE PETIT PD",		-- Sean Gollum
+	"Slyp"				-- Sly
 }
 
 if GameMode == nil then
@@ -115,12 +115,15 @@ end
 function GameMode:InitGameMode()
 	GameMode = self
 	DebugPrint('[BAREBONES] Starting to load Barebones gamemode...')
-	
+
 	self:GatherAndRegisterValidTeams()
-	
+
 	if GetMapName() == "arena_solo" then
 		--MAX_NUMBER_OF_TEAMS = 8
+		GameRules:SetGoldTickTime(0.0) --This is not dota bitch
+		GameRules:SetGoldPerTick(0.0) --This is not dota bitch
 		GameRules:SetShowcaseTime(0)
+		GameRules:SetStrategyTime(0)
 		GameRules:SetPreGameTime(13)
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
@@ -135,14 +138,14 @@ function GameMode:InitGameMode()
 	GameRules.knockback = LoadKeyValues("scripts/kv/knockback.kv")
 
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(GameMode, 'OnPlayerLevelUp'), self)
-	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( self, "OnNPCSpawned" ), self )
-	ListenToGameEvent( "entity_killed", Dynamic_Wrap( self, "OnEntityKilled" ), self )
-	ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap( self, "OnItemPickUp"), self )
+	ListenToGameEvent("npc_spawned", Dynamic_Wrap(self, "OnNPCSpawned" ), self)
+	ListenToGameEvent("entity_killed", Dynamic_Wrap(self, "OnEntityKilled" ), self)
+	ListenToGameEvent("dota_item_picked_up", Dynamic_Wrap(self, "OnItemPickUp"), self)
 
-	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( GameMode, "FilterExecuteOrder" ), self )
-	CustomGameEventManager:RegisterListener( "setting_change", Dynamic_Wrap( self, "OnSettingChange" ) )
-	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-	
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, "FilterExecuteOrder"), self)
+	CustomGameEventManager:RegisterListener("setting_change", Dynamic_Wrap(self, "OnSettingChange"))
+	CustomGameEventManager:RegisterListener("setting_change_radio", Dynamic_Wrap(self, "OnRadioButtonChange"))
+	GameRules:GetGameModeEntity():SetThink("OnThink", self, "GlobalThink", 2)
 
 	GameRules:GetGameModeEntity():SetModifyGoldFilter( Dynamic_Wrap( self, "GoldFilter" ), self )
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter( Dynamic_Wrap( self, "ExpFilter" ), self )
@@ -160,6 +163,18 @@ function GameMode:InitGameMode()
 	for k,v in pairs( GameSettings ) do
 		CustomNetTables:SetTableValue( "settings", k, { value = v } )
 	end
+
+	self.m_VictoryMessages = {}
+	self.m_VictoryMessages[DOTA_TEAM_GOODGUYS] = "#DOTA_GoodGuys"
+	self.m_VictoryMessages[DOTA_TEAM_BADGUYS]  = "#DOTA_BadGuys"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_1] = "#DOTA_Custom1"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_2] = "#DOTA_Custom2"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_3] = "#DOTA_Custom3"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_4] = "#DOTA_Custom4"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_5] = "#DOTA_Custom5"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_6] = "#DOTA_Custom6"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_7] = "#DOTA_Custom7"
+	self.m_VictoryMessages[DOTA_TEAM_CUSTOM_8] = "#DOTA_Custom8"
 
 	DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
@@ -191,18 +206,18 @@ function GameMode:GatherAndRegisterValidTeams()
 
 	self.m_GatheredShuffledTeams = ShuffledList( foundTeamsList )
 
-	print( "Final shuffled team list:" )
-	for _, team in pairs( self.m_GatheredShuffledTeams ) do
-		print( " - " .. team .. " ( " .. GetTeamName( team ) .. " )" )
-	end
+--	print( "Final shuffled team list:" )
+--	for _, team in pairs( self.m_GatheredShuffledTeams ) do
+--		print( " - " .. team .. " ( " .. GetTeamName( team ) .. " )" )
+--	end
 
-	print( "Setting up teams:" )
+--	print( "Setting up teams:" )
 	for team = 0, (DOTA_TEAM_COUNT-1) do
 		local maxPlayers = 0
 		if ( nil ~= TableFindKey( foundTeamsList, team ) ) then
 			maxPlayers = maxPlayersPerValidTeam
 		end
-		print( " - " .. team .. " ( " .. GetTeamName( team ) .. " ) -> max players = " .. tostring(maxPlayers) )
+--		print( " - " .. team .. " ( " .. GetTeamName( team ) .. " ) -> max players = " .. tostring(maxPlayers) )
 		GameRules:SetCustomGameTeamMaxPlayers( team, maxPlayers )
 	end
 end

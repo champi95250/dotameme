@@ -1,14 +1,14 @@
 <root>
-    <styles>
+	<styles>
 		<include src="file://{resources}/styles/dotastyles.css" />
 		<include src="file://{resources}/styles/custom_game/lia_hero_select_overlay.css" />
-    </styles>
+	</styles>
 
-    <scripts>
-        <include src="file://{resources}/scripts/custom_game/lia_hero_select_overlay.js" />
-    </scripts>
+	<scripts>
+			<include src="file://{resources}/scripts/custom_game/lia_hero_select_overlay.js" />
+	</scripts>
 
-  <Panel class="HeroSelectOverlayRoot" hittest="false">
+	<Panel class="HeroSelectOverlayRoot" hittest="false">
 		<Panel id="HeroSelectPlayersContainer" hittest="false"/>
-  </Panel>
+	</Panel>
 </root>

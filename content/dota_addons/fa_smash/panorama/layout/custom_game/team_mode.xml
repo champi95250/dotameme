@@ -1,22 +1,31 @@
 <root> 
-    <styles>
-        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
-        <include src="s2r://panorama/styles/play.vcss_c" />
-        <include src="file://{resources}/styles/custom_game/team_select.vcss_c" />
-        <include src="s2r://panorama/styles/custom_game/settings.vcss_c" />
-    </styles>
-    <scripts>
-        <include src="s2r://panorama/scripts/custom_game/team_select.vjs_c" />
-        <include src="s2r://panorama/scripts/settings.vjs_c" />
-    </scripts>
-    <Panel hittest="false" class="TeamSelect">
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/play.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/team_select.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/settings.vcss_c" />
+	</styles>
 
-        <!-- Custom Host Settings Panel-->
-         <Panel id="Settings">
-            <Label class='SettingsHeader' text="WTF ISN'T DOTA 2 but ..." style="" />
-            
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/team_select.vjs_c" />
+		<include src="s2r://panorama/scripts/settings.vjs_c" />
+	</scripts>
+
+	<Panel hittest="false" class="TeamSelect">
+		<!-- Custom Host Settings Panel-->
+		 <Panel id="Settings">
+			<Label class='SettingsHeader' text="WTF ISN'T DOTA 2 but ..." style="" />
 			<Panel id="ActSettings">
 				<Panel id="Settings1">
+					<Panel>
+						<Label class='RadioHeader' text="Max Kills:" style="" />
+					</Panel>
+					<Panel class="RadioBox" hittest="false">
+						<RadioButton id="RadioButton1" text="15" onactivate="OnRadioPressed('max_kills', 15)"/>
+						<RadioButton id="RadioButton2" text="30" onactivate="OnRadioPressed('max_kills', 30)"/>
+						<RadioButton id="RadioButton3" text="50" onactivate="OnRadioPressed('max_kills', 50)"/>
+						<RadioButton id="RadioButton4" text="100" onactivate="OnRadioPressed('max_kills', 100)"/>
+					</Panel>
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="All heroes have:" />		
 					</Panel>
@@ -32,7 +41,6 @@
 					<!--<Panel>
 						<ToggleButton id="aghanim" text="Aghanim Scepter" onactivate="Toggle('aghanim')"/>
 					</Panel>-->
-					
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Mechanics:" />
 					</Panel>
@@ -80,7 +88,6 @@
 					<!--<Panel>
 						<ToggleButton id="kill_explosion" text="Causes it to Explode" onactivate="Toggle('kill_explosion')"/>
 					</Panel>-->
-					
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="The River is:" />
 					</Panel>
@@ -93,7 +100,6 @@
 					<Panel>
 						<ToggleButton id="river_slippery" text="Slippery" onactivate="Toggle('river_slippery')"/>
 					</Panel>-->
-					
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Other:" />
 					</Panel>
@@ -103,31 +109,17 @@
 
 					<Label id="Host" text="" style="" />
 				</Panel>
-				
 				<Panel id="Settings2">
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Gold Multiplier: " />
 						<TextEntry id="mult_gold" maxchars="4" text="100"
 							ontabbackward="ValueChange('mult_gold')" ontabforward="ValueChange('mult_gold')" onblur="ValueChange('mult_gold')" oninputsubmit="ValueChange('mult_gold')"/>
 					</Panel>
-					
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Experience Multiplier: " />
 						<TextEntry id="mult_exp" maxchars="4" text="100"
 							ontabbackward="ValueChange('mult_exp')" ontabforward="ValueChange('mult_exp')" onblur="ValueChange('mult_exp')" oninputsubmit="ValueChange('mult_exp')"/>
 					</Panel>
-					
-					<!--<Panel class="EntryPanel">
-						<Label class="OptionLabel" text="Kill limit: " />
-						<TextEntry id="kill_limit" maxchars="2" text="50"
-							ontabbackward="ValueChange('kill_limit')" ontabforward="ValueChange('kill_limit')" onblur="ValueChange('kill_limit')" oninputsubmit="ValueChange('kill_limit')"/>
-					</Panel>
-					<Panel class="EntryPanel">
-						<Label class="OptionLabel" text="Respawn: " />
-						<TextEntry id="kill_limit" maxchars="4" text="100"
-							ontabbackward="ValueChange('mult_respawn')" ontabforward="ValueChange('mult_respawn')" onblur="ValueChange('mult_respawn')" oninputsubmit="ValueChange('mult_respawn')"/>
-					</Panel>-->
-					
 					<Panel class="EntryPanel">
 						<ToggleButton id="all_random" text="All Random" onactivate="Toggle('all_random')"/>
 					</Panel>
@@ -163,14 +155,12 @@
 					</Panel>-->
 				</Panel>
 			</Panel>
-        </Panel>
-        
-        <!-- Default UI -->
+		</Panel>
+		<!-- Default UI -->
 		<Panel hittest="false" class="TeamSelect">
 			<Panel hittest="false" id="TeamSelectContainer" selectionpos="auto">`
 				<!--Empty space to let the loading screen and chat be visible-->
 				<Panel hittest="false" id="TeamsSelectEmptySpace" />
-
 				<!--Teams List, left hand panel-->
 				<Panel id="TeamsList" >
 					<Panel id="TeamsListGroup" >
@@ -185,12 +175,10 @@
 						</Button>
 					</Panel>
 				</Panel>
-
 				<!--Game Info and Unassigned players, right hand panel-->
 				<Panel id="GameAndPlayersRoot">
 					
 					<Panel id="GameInfoPanel" >
-						
 						<!--Game mode and map-->
 						<Panel id="CustomGameModeName">
 							<Label id="GameModeNameLabel" text="#addon_game_name" />
@@ -198,7 +186,6 @@
 						<Panel id="MapInfo">
 							<Label id="MapInfoLabel" text="#LoadingScreenMapInfo" />
 						</Panel>
-						
 						<!--Countdown timer-->
 						<Panel id="StartGameCountdownTimer">
 							<Image id="TimerBg" src="file://{images}/status_icons/timer_background.psd" />
@@ -209,9 +196,7 @@
 								<Label id="TimerLabelGameStart" text="#custom_game_team_select_starting" />
 							</Panel>
 						</Panel>
-						
 					</Panel>
-
 					<!--Unassigned players-->
 					<Panel id="UnassignedPlayerPanel" >
 						<Button id="UnassignedPlayersButton" onactivate="OnLeaveTeamPressed()">
@@ -221,13 +206,11 @@
 							<Panel id="UnassignedPlayersDivider" />
 							<Panel id="UnassignedPlayersContainer" />
 						</Button>		
-					
 						<Button id="AutoAssignButton" onactivate="OnAutoAssignPressed()">
 							<Image src="file://{images}/control_icons/double_arrow_left.png" />
 							<Label text="#custom_game_team_select_auto_assign" />
 						</Button>
 					</Panel>
-					
 					<!--Start and lock button-->
 					<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
 						<Label text="#custom_game_team_select_lock_start" />
@@ -235,7 +218,6 @@
 					<Button id="CancelAndUnlockButton" class="PlayButton" onactivate="OnCancelAndUnlockPressed()">
 						<Label text="#custom_game_team_select_cancel_unlock" />
 					</Button>
-					
 				</Panel>
 			</Panel>
 		</Panel>

@@ -1,0 +1,33 @@
+.ScoreboardLeft
+{
+	margin-top: 11.5%;
+	background-color: gradient(linear, 0% 0%, 100% 0%, from(#425663cc), color-stop(.5, #42566355), to(#0000));
+	margin-right: 0px;
+	width: 8%;
+	flow-children: right;
+	opacity: 1.0;
+}
+
+#Goal
+{
+	margin-left: 15%;
+	font-size: 18.0px;
+	font-weight: thin;
+	color: #A3B5D0cc;
+	width: 100%;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px 2 #00000099;
+}
+
+#VictoryPoints
+{
+	margin-left: 71%;
+	flow-children: down;
+	width: 200px;
+	color: white;
+	font-size: 18.0px;
+	font-weight: thin;
+
+	horizontal-align: center;
+	background-repeat: no-repeat;
+}

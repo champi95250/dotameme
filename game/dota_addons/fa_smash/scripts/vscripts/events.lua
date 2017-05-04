@@ -12,13 +12,21 @@ LinkLuaModifier( "modifier_brawl", "modifier_but/modifier_brawl.lua" ,LUA_MODIFI
 LinkLuaModifier( "modifier_denied", "modifier_but/modifier_denied.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
 
-function GameMode:OnSettingChange( event )
+function GameMode:OnSettingChange(event)
 local setting = event.setting
-local value = tonumber( event.value )
+local value = tonumber(event.value)
 
-	print( "Setting Change: ", setting, value )
+	print("Setting Change: ", setting, value)
+	CustomNetTables:SetTableValue("settings", setting, {value = value})
+	GameSettings[setting] = value
+end
 
-	CustomNetTables:SetTableValue( "settings", setting, { value = value } )
+function GameMode:OnRadioButtonChange(event)
+local setting = event.setting
+local value = tonumber(event.value)
+
+	print("Setting Change: ", setting, value)
+	CustomNetTables:SetTableValue("settings", setting, {value = value})
 	GameSettings[setting] = value
 end
 
@@ -50,24 +58,19 @@ function GameMode:OnGameRulesStateChange(keys)
 	print("[BotM] GameRules State Changed: ",gamestates[newState])
 
 	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		local player_id = keys.PlayerID
-		
-		--print("LIA_MODE_SURVIVAL")
-		--self.GameMode = LIA_MODE_SURVIVAL
-
-		Timers:CreateTimer(HERO_SELECTION_TIME - 10.1, function()
-			for player_id = 0, 20 do
-				-- If this player still hasn't picked a hero, random one
-				if not PlayerResource:HasSelectedHero(player_id) then
-					PlayerResource:GetPlayer(player_id):MakeRandomHeroSelection()
-					PlayerResource:SetCanRepick(player_id, false)
-					PlayerResource:SetHasRandomed(player_id)
-					print("tried to random a hero for "..player_id)
+		Timers:CreateTimer(HERO_SELECTION_TIME, function()
+			for i = 0, DOTA_MAX_TEAM_PLAYERS do
+				if PlayerResource:IsValidPlayer(i) then
+					if PlayerResource:HasSelectedHero(i) == false then
+						local player = PlayerResource:GetPlayer(i)
+						player:MakeRandomHeroSelection()
+					end
 				end
 			end
 		end)
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+		CustomNetTables:SetTableValue( "game_state", "victory_condition", { kills_to_win = GameSettings.max_kills } );
 		for i = 1, 9 do
 			AddFOWViewer(i, Vector(0, 0, 0), 1600, 9999, false)
 		end
@@ -353,13 +356,19 @@ function GameMode:OnPlayerPickHero(keys)
 end
 
 function GameMode:OnTeamKillCredit(keys)
-	DebugPrint('[BAREBONES] OnTeamKillCredit')
-	DebugPrintTable(keys)
+DebugPrint('[BAREBONES] OnTeamKillCredit')
+DebugPrintTable(keys)
 
-	local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
-	local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
-	local numKills = keys.herokills
-	local killerTeamNumber = keys.teamnumber
+local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
+local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
+local numKills = keys.herokills
+local killerTeamNumber = keys.teamnumber
+
+	if numKills >= GameSettings.max_kills then
+		GameRules:SetCustomVictoryMessage(self.m_VictoryMessages[killerTeamNumber].." #VictoryMessage")
+		print(self.m_VictoryMessages[killerTeamNumber].."#VictoryMessage")
+		GameRules:SetGameWinner(killerTeamNumber)
+	end
 end
 
 function GameMode:OnEntityKilled( keys )

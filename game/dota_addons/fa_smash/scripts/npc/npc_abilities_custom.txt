@@ -19,7 +19,7 @@
 				"Passive"				"1"
 				
 				"Aura"					"modifier_get_xp_global"
-				"Aura_Radius"			"10000"
+				"Aura_Radius"			"15000"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
 				"Aura_ApplyToCaster"	"0"
