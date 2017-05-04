@@ -37,7 +37,7 @@
 						<ToggleButton id="multicast" text="Multicast" onactivate="Toggle('multicast')"/>
 					</Panel>
 					<Panel>
-						<ToggleButton id="attack_allie" text="Allies Attack" onactivate="Toggle('attack_allie')"/>
+						<ToggleButton id="attack_allie" text="Friendly Fire" onactivate="Toggle('attack_allie')"/>
 					</Panel>
 					<Panel>
 						<ToggleButton id="aghanim" text="Aghanim Scepter" onactivate="Toggle('aghanim')"/>
@@ -108,13 +108,21 @@
 					</Panel>-->
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Gold Multiplier: " />
-						<TextEntry id="mult_gold" maxchars="3" text="100"
-							ontabbackward="ValueChange('mult_gold')" ontabforward="ValueChange('mult_gold')" onblur="ValueChange('mult_gold')" oninputsubmit="ValueChange('mult_gold')"/>
+					</Panel>
+					<Panel class="RadioBox" hittest="false">
+						<RadioButton group="GameLength2" id="RadioButton1" text="100" onactivate="OnRadioPressed('mult_gold', 100)"/>
+						<RadioButton group="GameLength2" id="RadioButton2" text="200" onactivate="OnRadioPressed('mult_gold', 200)"/>
+						<RadioButton group="GameLength2" id="RadioButton3" text="300" onactivate="OnRadioPressed('mult_gold', 300)"/>
+						<RadioButton group="GameLength2" id="RadioButton4" text="400" onactivate="OnRadioPressed('mult_gold', 400)"/>
 					</Panel>
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Experience Multiplier: " />
-						<TextEntry id="mult_exp" maxchars="3" text="100"
-							ontabbackward="ValueChange('mult_exp')" ontabforward="ValueChange('mult_exp')" onblur="ValueChange('mult_exp')" oninputsubmit="ValueChange('mult_exp')"/>
+					</Panel>
+					<Panel class="RadioBox" hittest="false">
+						<RadioButton group="GameLength3" id="RadioButton1" text="100" onactivate="OnRadioPressed('mult_exp', 100)"/>
+						<RadioButton group="GameLength3" id="RadioButton2" text="200" onactivate="OnRadioPressed('mult_exp', 200)"/>
+						<RadioButton group="GameLength3" id="RadioButton3" text="300" onactivate="OnRadioPressed('mult_exp', 300)"/>
+						<RadioButton group="GameLength3" id="RadioButton4" text="400" onactivate="OnRadioPressed('mult_exp', 400)"/>
 					</Panel>
 					<Panel class="EntryPanel">
 						<Label class="OptionLabel" text="Other:" />

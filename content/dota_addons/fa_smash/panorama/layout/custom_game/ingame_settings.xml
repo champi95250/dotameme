@@ -13,9 +13,29 @@
 			<Label class="OnValue" id="MaxKills" text="#MaxKills" />
 			<Label class="Value" id="Kills" text="999" />
 		</Panel>
-		<!--<Panel class="EntryPanel">
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnBrawl" text="Smash Bros:" />
+			<Label class="Value" id="Brawl" text="999" />	
+		</Panel>
+		<Panel class="EntryPanel">
 			<Label class="OnValue" id="OnMulticast" text="Multicast:" />
 			<Label class="Value" id="Multicast" text="999" />	
-		</Panel>-->
+		</Panel>
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnFriendlyFire" text="Friendly Fire:" />
+			<Label class="Value" id="FriendlyFire" text="999" />	
+		</Panel>
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnAghanim" text="Aghanim:" />
+			<Label class="Value" id="Aghanim" text="999" />	
+		</Panel>
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnGoldMult" text="Gold Mult:" />
+			<Label class="Value" id="GoldMult" text="999" />	
+		</Panel>
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnXPMult" text="XP Mult:" />
+			<Label class="Value" id="XPMult" text="999" />	
+		</Panel>
 	</Panel>
 </root>

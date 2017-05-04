@@ -70,7 +70,13 @@ function GameMode:OnGameRulesStateChange(keys)
 		end)
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		CustomNetTables:SetTableValue( "game_state", "victory_condition", { kills_to_win = GameSettings.max_kills } );
+		CustomNetTables:SetTableValue( "game_state", "victory_condition", { value = GameSettings.max_kills } );
+		CustomNetTables:SetTableValue( "game_state", "brawl", { value = GameSettings.brawl } );
+		CustomNetTables:SetTableValue( "game_state", "attack_allie", { value = GameSettings.attack_allie } );
+		CustomNetTables:SetTableValue( "game_state", "aghanim", { value = GameSettings.aghanim } );
+		CustomNetTables:SetTableValue( "game_state", "multicast", { value = GameSettings.multicast } );
+		CustomNetTables:SetTableValue( "game_state", "mult_gold", { value = GameSettings.mult_gold } );
+		CustomNetTables:SetTableValue( "game_state", "mult_exp", { value = GameSettings.mult_exp } );
 		for i = 1, 11 do
 			AddFOWViewer(i, Vector(0, 0, 0), 1600, 9999, false)
 		end
