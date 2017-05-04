@@ -1,14 +1,19 @@
 "AddonInfo"
 {
-	"addontitle"					"WTF ISN'T DOTA"
-	"addon_game_name"				"WTF ISN'T DOTA"
-	"addonversion"					"0.6"
+	"addontitle"					"Battle of the Memes"
+	"addon_game_name"				"Battle of the Memes"
+	"addonversion"					"1.01"
 	"addontagline"					"WTF"
 	"addonauthor"					"Champi"
 	"IsPlayable"  "1"
-	"arena_solo"
+	"arena_solo arena_duo"
 	{
 		"TeamCount"						"8"
 		"MaxPlayers"					"8"
+	}
+	"arena_duo"
+	{
+		"TeamCount"						"6"
+		"MaxPlayers"					"12"
 	}
 }

@@ -1,11 +1,11 @@
 #Settings
 {
-	width: fit-children;
-	height: fit-children;
+	width: 36%;
+	height: 55%;
 	horizontal-align: left;
-	vertical-align: top;  
+	vertical-align: top;
 	margin-right: 40px;
-	margin-top: 10px;
+	margin-top: 1%;
 	flow-children: down;
 
 	background-color: gray;
@@ -17,13 +17,32 @@
 	padding: 0px;
 }
 
+#Credits
+{
+	width: 20%;
+	height: 55%;
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 1%;
+	margin-left: 36.5%;
+	flow-children: down;
+
+	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+	box-shadow: inset #000000 0px 2px 6px 3px;
+	border-bottom: 1px solid #404b4a11;
+	border-radius: 10px;
+	opacity: 0.96;
+
+	padding: 0px;
+}
+
 .player_has_host_privileges #Settings
 {
 	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
 	box-shadow: inset #000000 0px 2px 6px 3px;
 	border-bottom: 1px solid #404b4a11;
 	border-radius: 10px;
-	opacity: 0.97;
+	opacity: 0.96;
 }
 
 #ActSettings
@@ -52,7 +71,7 @@
 
 #Settings2
 {
-	width: 250px;
+	width: fit-children;
 	height: fit-children;
 	horizontal-align: left;
 	vertical-align: top;  
@@ -69,6 +88,15 @@
 	horizontal-align: center;
 	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
 	font-size: 40px;
+	color: #ffffff;
+}
+
+.SettingsCredits
+{
+	margin-top: -13px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 20px;
 	color: #ffffff;
 }
 
@@ -123,7 +151,7 @@ TextEntry
 .RadioHeader
 {
 	margin-top: 0px;
-	margin-left: 100px;
+	margin-left: 35px;
 	horizontal-align: center;
 	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
 	font-size: 22px;
@@ -136,103 +164,45 @@ TextEntry
 	min-height: 25px;
 }
 
-#RadioButton1
+#RadioButton1,
+#RadioButton2,
+#RadioButton3,
+#RadioButton4
 {
 	margin-top: 5px;
+}
+
+#RadioButton1
+{
 	margin-left: 10px;
 }
 
 #RadioButton2
 {
-	margin-top: 5px;
-	margin-left: 80px;
+	margin-left: 70px;
 }
 
 #RadioButton3
 {
-	margin-top: 5px;
-	margin-left: 150px;
+	margin-left: 130px;
 }
 
 #RadioButton4
 {
-	margin-top: 5px;
-	margin-left: 220px;
+	margin-left: 190px;
 }
 
 RadioButton Label
 {
-	margin-left: 20px;
+	margin-left: 6px;
 	color: #FFF;
 	font-size: 18px;
 	font-weight: bold;
 	text-shadow: 0px 0px 3px 3.0 #000;
 }
 
-#RadioButtons
-{
-	width: 100%;
-	flow-children: down;
-}
-
-.RadioSection
-{
-	margin-left: 10px;
-	flow-children: right;
-	width: 100%;
-}
-
 #Host
 {
-	horizontal-align: center;
-}
-
-#ToggleSettings
-{
-	horizontal-align: center;
-	flow-children: right;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-.CGSRadio
-{
-	width: 100%;
-
-	margin: 0px;
-	margin-top: 0px;
-	margin-left: 5px;
-}
-
-.CGSRadio Label
-{
-	font-size: 16px;
-	letter-spacing: 1px;
-	text-shadow: 2px 2px 2px black;
-	vertical-align: center;
-}
-
-.CGSRadio Label
-{
-	color: dodgerBlue;
-}
-
-.CGSRadio1 Label
-{
-	color: green;
-}
-
-.CGSRadio2 Label
-{
-	color: yellow;
-}
-
-.CGSRadio3 Label
-{
-	color: orange;
-}
-
-.CGSRadio4 Label
-{
-	color: red;
+	margin-top: 20px;
+	margin-left: 25%;
 }

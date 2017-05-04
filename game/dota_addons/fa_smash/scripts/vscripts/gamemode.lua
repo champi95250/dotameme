@@ -118,21 +118,27 @@ function GameMode:InitGameMode()
 
 	self:GatherAndRegisterValidTeams()
 
+	GameRules:SetGoldTickTime(0.0) --This is not dota bitch
+	GameRules:SetGoldPerTick(0.0) --This is not dota bitch
+	GameRules:SetShowcaseTime(0.0)
+	GameRules:SetStrategyTime(0.0)
+	GameRules:SetPreGameTime(13.0)
 	if GetMapName() == "arena_solo" then
-		--MAX_NUMBER_OF_TEAMS = 8
-		GameRules:SetGoldTickTime(0.0) --This is not dota bitch
-		GameRules:SetGoldPerTick(0.0) --This is not dota bitch
-		GameRules:SetShowcaseTime(0)
-		GameRules:SetStrategyTime(0)
-		GameRules:SetPreGameTime(13)
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
-		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )		
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_1, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_2, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_3, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_4, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_5, 1)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_6, 1)
+	else
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_1, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_2, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_3, 2)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_4, 2)
 	end
 
 	GameRules.knockback = LoadKeyValues("scripts/kv/knockback.kv")

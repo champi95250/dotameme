@@ -605,6 +605,7 @@
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCooldown"				"8 7 6 5"
+			"AbilityCastRange"				"710 820 930 1040"
 			
 			// Precache
 			//-------------------------------------------------------------------------------------------------------------
@@ -3244,20 +3245,11 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 			"AbilityTextureName"			"custom/multi_cast_ability"
-	
-			// Precache
-			//-------------------------------------------------------------------------------------------------------------
-			"precache"
-			{
-				"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast01.vsnd"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast02.vsnd"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast03.vsnd"
-			}
+			"MaxLevel"						"1"
 			
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -3266,19 +3258,19 @@
 				"01"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_2_times"		"25 35 50"
+					"multicast_2_times"		"30"
 				}
 	
 				"02"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_3_times"		"0 15 23"
+					"multicast_3_times"		"20"
 				}
 	
 				"03"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_4_times"		"0 0 16"
+					"multicast_4_times"		"10"
 				}
 			}
 			
@@ -6561,30 +6553,19 @@
 			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 			"AbilityTextureName"			"custom/track_cia"
-	
-			// Precache
-			//-------------------------------------------------------------------------------------------------------------
-			"precache"
-			{
-				"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-			}
-			
+
 			// Unit Targeting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			
+
 			// Stats
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"30000"
-			"AbilityCastPoint"				"0.3 0.3 0.3"
-			"AbilityCooldown"				"3.0 2.0 1.0"
+			"AbilityCastRange"				"2000"
+			"AbilityCastPoint"				"0.3"
+			"AbilityCooldown"				"10.0 7.5 5.0"
 			"AbilityGoldCost"				"150 200 250"
-				
+
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"

@@ -9,8 +9,11 @@ function Precache( context )
 	DebugPrint("[BAREBONES] Performing pre-load precache")
 
 	PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
+	PrecacheUnitByNameSync("npc_dota_hero_bounty_hunter", context)
 	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
+	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
 	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
+	PrecacheUnitByNameSync("npc_dota_hero_tusk", context)
 end
 
 -- Create the game mode when we activate

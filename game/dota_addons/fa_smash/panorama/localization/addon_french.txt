@@ -10,7 +10,7 @@
 	"DOTA_Custom1"    					"Jaune D'oeuf"
 	"DOTA_Custom2"    					"Orange mecanique"
 	"DOTA_Custom3"    					"Blue Jazz"
-	"DOTA_Custom4"    					"Peace Green"
+	"DOTA_Custom4"    					"420"
 	"DOTA_Custom5"    					"Merdique"
 	"DOTA_Custom6"    					"Ultra-Violet"
 	"DOTA_Custom7"    					"Olive Snake"

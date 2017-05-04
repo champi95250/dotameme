@@ -27,8 +27,10 @@ function ValueChange(name)
 }
 
 function Toggle(setting) {
-	if (IsHost)
-	GameEvents.SendCustomGameEventToServer("setting_change", {setting: setting, value: value});
+	if (!IsHost)
+		$("#"+setting).checked = !$("#"+setting).checked;
+	else
+		GameEvents.SendCustomGameEventToServer("setting_change", {setting: setting, value: $("#"+setting).checked}); 
 }
 
 function OnRadioPressed(setting, value) {

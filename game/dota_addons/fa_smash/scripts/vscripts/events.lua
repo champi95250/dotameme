@@ -83,11 +83,33 @@ function GameMode:OnNPCSpawned(event)
 
 	local npc = EntIndexToHScript(event.entindex)
 	local unitName = npc:GetUnitName()
+	local ability = npc:GetAbilityByIndex(0)
 	
 	if unitName == "npc_dota_thinker" or unitName == "npc_dota_companion" then
 		return
 	end	
-	
+
+	if npc:IsRealHero() then
+		if not npc:IsClone() then
+			if GameSettings.multicast > 0 and not npc:HasAbility("multi_cast_ability") then
+				local multicast = npc:AddAbility("multi_cast_ability")
+				multicast:SetLevel(1)
+			end
+			if GameSettings.hero_branches > 0 then
+				npc:AddNewModifier( npc, nil, "modifier_branches", {} )
+			end
+			if GameSettings.mlg_sound > 0 then
+				npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
+			end
+		end
+		if GameSettings.attack_allie > 0 then
+			npc:AddNewModifier( npc, nil, "modifier_denied", {} )
+		end
+		if GameSettings.aghanim > 0 and not npc:HasModifier("modifier_item_ultimate_scepter_consumed") then
+			npc:AddNewModifier(npc, ability, "modifier_item_ultimate_scepter_consumed", {})
+		end
+	end
+
 	if GameSettings.kill_soul > 0 then
 		npc:AddNewModifier( npc, nil, "modifier_souls", {} )
 	end
@@ -109,18 +131,7 @@ function GameMode:OnNPCSpawned(event)
 	if GameSettings.reduce_cd > 0 then
 		npc:AddNewModifier( npc, nil, "modifier_ryze", {} )
 	end
-	if GameSettings.multicast > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddAbility("multi_cast_ability")
-	end
-	if GameSettings.hero_branches > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddNewModifier( npc, nil, "modifier_branches", {} )
-	end
-	if GameSettings.mlg_sound > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
-	end
-	if GameSettings.attack_allie > 0 then
-		npc:AddNewModifier( npc, nil, "modifier_denied", {} )
-	end
+
 	if GameSettings.brawl > 0 then
 		-- npc:AddNewModifier( npc, nil, "modifier_brawl", {} )
 		if not npc.hasPhysics then

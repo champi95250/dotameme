@@ -7,7 +7,6 @@ function Multicast(keys)
 	local three_times = ability:GetLevelSpecialValueFor( "multicast_3_times", ability:GetLevel() - 1 )
 	local four_times = ability:GetLevelSpecialValueFor( "multicast_4_times", ability:GetLevel() - 1 )
 	local rand = math.random(1,130)
-	print(rand)
 	local multicast = 1
 	
 	-- Determines the mulicast multiplier
@@ -18,36 +17,32 @@ function Multicast(keys)
 	elseif rand < two_times + three_times + four_times then	-- 75+15 = 90
 		multicast = 4
 	end
-	print(multicast)
+	print("Multicast: "..multicast)
 	-- Small delay
-	Timers:CreateTimer(0.01,
-    	function()
-	
+	Timers:CreateTimer(0.01, function()
+
 	-- Ensures the caster and ability still exist after the delay
 	if IsValidEntity(caster) and IsValidEntity(ability) then
 		-- Finds the ability that caused the event trigger by checking if the cooldown is equal to the full cooldown
-		for i=0, 15 do
-			if caster:GetAbilityByIndex(i) ~= null then
-				
-				local cd = caster:GetAbilityByIndex(i):GetCooldownTimeRemaining()
-				local full_cd = caster:GetAbilityByIndex(i):GetCooldown(caster:GetAbilityByIndex(i):GetLevel()-1)
-				full_cd = full_cd * GetCooldownReduction(caster)  
-				-- There is a delay after the ability cast event and before the ability goes on cooldown
-				-- If the ability is on cooldown and the cooldown is within a small buffer of the full cooldown
-				-- We set ability_cast
-				if cd > 0 and full_cd - cd < 1.00 then
-					ability_cast = caster:GetAbilityByIndex(i)
-					print(ability_cast)
-				end
+		for i = 0, 23 do
+			local cd = caster:GetAbilityByIndex(i):GetCooldownTimeRemaining()
+			local full_cd = caster:GetAbilityByIndex(i):GetCooldown(caster:GetAbilityByIndex(i):GetLevel()-1)
+			full_cd = full_cd * GetCooldownReduction(caster)  
+			-- There is a delay after the ability cast event and before the ability goes on cooldown
+			-- If the ability is on cooldown and the cooldown is within a small buffer of the full cooldown
+			-- We set ability_cast
+			if cd > 0 and full_cd - cd < 1.00 then
+				ability_cast = caster:GetAbilityByIndex(i)
+				print(ability_cast)
 			end
 		end
-	
+
 		local fireblast_mana_cost = ability:GetLevelSpecialValueFor( "fireblast_mana_cost", ability:GetLevel() - 1 )
 		local fireblast_cooldown = ability:GetLevelSpecialValueFor( "fireblast_cooldown", ability:GetLevel() - 1 )
 		local bloodlust_cooldown = ability:GetLevelSpecialValueFor( "bloodlust_cooldown", ability:GetLevel() - 1 )
 		local ignite_range = ability:GetLevelSpecialValueFor( "ignite_range", ability:GetLevel() - 1 )
 		-- local distance = math.sqrt((caster:GetAbsOrigin().x - target:GetAbsOrigin().x)^2 + (caster:GetAbsOrigin().y - target:GetAbsOrigin().y)^2)
-		
+
 		if ability_cast ~= nil then
 		print("apls")
 			if multicast ~= 1 then
