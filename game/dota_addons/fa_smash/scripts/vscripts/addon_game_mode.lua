@@ -4,6 +4,7 @@ require('internal/util')
 require('gamemode')
 require('game_settings')
 require('player_resource')
+require('statcollection/init')
 
 function Precache( context )
 	DebugPrint("[BAREBONES] Performing pre-load precache")
