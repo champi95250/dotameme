@@ -6,7 +6,7 @@
 	"addontagline"					"WTF"
 	"addonauthor"					"Champi"
 	"IsPlayable"  "1"
-	"arena_solo arena_duo"
+	"arena_solo"
 	{
 		"TeamCount"						"8"
 		"MaxPlayers"					"8"

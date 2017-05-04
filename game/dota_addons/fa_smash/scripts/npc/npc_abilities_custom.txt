@@ -1,8 +1,6 @@
 //Generated using Dota Custom File Generator by cris9696
 "DOTAAbilities"
 {
-
-
 	//Start of file arena_ability.txt
 	// Ability Arena
 	"dota_ability_xp_global"
@@ -46,7 +44,7 @@
 							"Types"			"DOTA_UNIT_TARGET_HERO"
 							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
 						}
-						"XPAmount"		"5" //7
+						"XPAmount"		"4" //7
 						"SplitEvenly"	"0"
 						"GoldAmount"	"2"
 						"ReliableGold"	"0"
@@ -791,7 +789,7 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -810,11 +808,11 @@
 				"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
 				"particle"			"particles/units/heroes/hero_lion/lion_spell_impale.vpcf"
 			}
-	
+
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"150"
-			"AbilityCastPoint"				"0.1 0.1 0.1"
+			"AbilityCastPoint"				"0.2"
 			"HasScepterUpgrade" "1"
 			
 			// Time		
@@ -3288,9 +3286,6 @@
 							"ScriptFile"		"spell/utilitaires/multicast.lua"
 							"Function"			"Multicast"
 							"particle"			"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
-							"sound1"			"Hero_OgreMagi.Fireblast.x1"
-							"sound2"			"Hero_OgreMagi.Fireblast.x2"
-							"sound3"			"Hero_OgreMagi.Fireblast.x3"
 						}
 					}
 				}

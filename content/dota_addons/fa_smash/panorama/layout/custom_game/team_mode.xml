@@ -33,9 +33,9 @@
 					<Panel>
 						<ToggleButton id="brawl" text="Super Smash bros" onactivate="Toggle('brawl')"/>
 					</Panel>
-					<!--<Panel>
+					<Panel>
 						<ToggleButton id="multicast" text="Multicast" onactivate="Toggle('multicast')"/>
-					</Panel>-->
+					</Panel>
 					<Panel>
 						<ToggleButton id="attack_allie" text="Allies Attack" onactivate="Toggle('attack_allie')"/>
 					</Panel>

@@ -98,15 +98,15 @@ function GameMode:OnNPCSpawned(event)
 			if GameSettings.hero_branches > 0 then
 				npc:AddNewModifier( npc, nil, "modifier_branches", {} )
 			end
-			if GameSettings.mlg_sound > 0 then
-				npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
-			end
 		end
 		if GameSettings.attack_allie > 0 then
 			npc:AddNewModifier( npc, nil, "modifier_denied", {} )
 		end
 		if GameSettings.aghanim > 0 and not npc:HasModifier("modifier_item_ultimate_scepter_consumed") then
 			npc:AddNewModifier(npc, ability, "modifier_item_ultimate_scepter_consumed", {})
+		end
+		if GameSettings.mlg_sound > 0 then
+			npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
 		end
 	end
 

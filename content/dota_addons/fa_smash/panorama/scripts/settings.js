@@ -38,7 +38,7 @@ function OnRadioPressed(setting, value) {
 }
 
 var number_settings = [
-	"mult_gold", "mult_exp", "mult_respawn"//"mult_exp", "mult_neutrals", "mult_respawn",
+	"mult_gold", "mult_exp", "mult_respawn"
 ]
 var bool_settings = [
 	"aghanim",

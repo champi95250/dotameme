@@ -235,7 +235,7 @@ function GameMode:OnThink( event )
 		--EmitGlobalSound("Mlg.start_game")
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		print( "Post game" )
-	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GameSettings.mlg_sound > 0 then
 			local random_start_sound = RandomInt(1, 3) 
 			print(random_start_sound)

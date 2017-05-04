@@ -14,6 +14,17 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_ogre_magi", context)
 	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tusk", context)
+
+	PrecacheModel( "models/heroes/pedobear/pedobear.vmdl", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_bruce.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_catmancer.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_custom.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_jesus.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_microphone.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_mlg.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_nyan.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_pedobear.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_sanic.vsndevts", context)
 end
 
 -- Create the game mode when we activate
