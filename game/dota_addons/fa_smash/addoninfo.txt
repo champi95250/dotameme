@@ -5,7 +5,9 @@
 	"addonversion"					"1.01"
 	"addontagline"					"WTF"
 	"addonauthor"					"Champi"
-	"IsPlayable"  "1"
+
+	"maps"			"arena_solo arena_duo"
+	"IsPlayable"	"1"
 	"arena_solo"
 	{
 		"TeamCount"						"8"
