@@ -71,7 +71,7 @@ function GameMode:OnGameRulesStateChange(keys)
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		CustomNetTables:SetTableValue( "game_state", "victory_condition", { kills_to_win = GameSettings.max_kills } );
-		for i = 1, 9 do
+		for i = 1, 11 do
 			AddFOWViewer(i, Vector(0, 0, 0), 1600, 9999, false)
 		end
 	end

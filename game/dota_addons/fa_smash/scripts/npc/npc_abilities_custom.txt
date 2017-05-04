@@ -239,19 +239,19 @@
 	
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+			"AbilityCastPoint"				"0.2"
 			
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"30.0 30.0 30.0 30.0"
+			"AbilityCooldown"				"30.0"
 	
 			// Damage.
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityDamage"					"150 225 300 375"
+			"AbilityDamage"					"140 200 260 320"
 	
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"150 150 150 150"
+			"AbilityManaCost"				"150"
 	
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -260,7 +260,7 @@
 				"01"
 				{
 					"var_type"			"FIELD_INTEGER"
-					"radius"			"1500 2000 2500 3000"
+					"radius"			"1500 1750 2000 2250"
 				}
 				"02"
 				{
@@ -3987,7 +3987,7 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4007,7 +4007,7 @@
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"525 650 775 900"
-			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			"AbilityCastPoint"				"0.3"
 			
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
@@ -4015,7 +4015,7 @@
 	
 			// Damage.
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityDamage"					"50 75 100 125"
+			"AbilityDamage"					"100 150 200 250"
 	
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
@@ -4384,12 +4384,11 @@
 		// ----------------------------------------------
 		// 004 - pedobear_kidnap
 		//-----------------------------------------------
-		
 		"pedobear_kidnap"
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
@@ -4399,7 +4398,7 @@
 			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 			"FightRecapLevel"				"1"
 			"AbilityTextureName"			"custom/pedobear_kidnap"
-			
+
 			"precache"
 			{
 				"particle"          "particles/units/heroes/hero_life_stealer/life_stealer_infest_cast.vpcf"

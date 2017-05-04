@@ -19,7 +19,7 @@
 	"addonname"							"Battle of the Memes"
 	"addon_game_mode"					"Battle of the Memes"
 	"DOTA_GAMEMODE_15"					"Battle of the Memes"
-	"goal"								"Max Kills:"
+	"MaxKills"							"Max Kills:"
 
 	"npc_dota_hero_tusk"				"Bruce Lee"
 	"npc_dota_hero_windrunner"			"Nyan Cat"

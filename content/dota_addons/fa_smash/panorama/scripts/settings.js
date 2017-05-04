@@ -3,8 +3,6 @@
 //--------------------------------------------------------------------------------------------------
 var IsHost = false;
 
-// $("#also_chen").checked = true;
-
 function ValueChange(name)
 {
 	if (!IsHost) return

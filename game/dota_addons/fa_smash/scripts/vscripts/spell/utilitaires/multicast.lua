@@ -9,6 +9,15 @@ local four_times = ability:GetLevelSpecialValueFor( "multicast_4_times", ability
 local rand = math.random(1,130)
 local multicast = 1
 local cast_time = 0.25
+local cur_pos = caster:GetCursorPosition()
+
+local forbidden_abilities = {
+	"nyan_cat_john_cena",
+	"catmancer_pelote",
+	"pedobear_kidnap",
+	"microphone_song_complete",
+	"pedobear_arena"
+}
 
 	-- Determines the mulicast multiplier
 	if rand < two_times then
@@ -25,16 +34,21 @@ local cast_time = 0.25
 
 	-- Ensures the caster and ability still exist after the delay
 	if IsValidEntity(caster) and IsValidEntity(ability) then
-		for i = 0, 23 do
+		for i = 0, 15 do
 			if caster:GetAbilityByIndex(i) ~= nil then
 				local cd = caster:GetAbilityByIndex(i):GetCooldownTimeRemaining()
 				local full_cd = caster:GetAbilityByIndex(i):GetCooldown(caster:GetAbilityByIndex(i):GetLevel()-1)
-				full_cd = full_cd * GetCooldownReduction(caster)  
-				-- There is a delay after the ability cast event and before the ability goes on cooldown
-				-- If the ability is on cooldown and the cooldown is within a small buffer of the full cooldown
-				-- We set ability_cast
+				full_cd = full_cd * GetCooldownReduction(caster)
+				local ability_name = caster:GetAbilityByIndex(i):GetName()
+
 				if cd > 0 and full_cd - cd < 1.00 then
-					ability_cast = caster:GetAbilityByIndex(i)
+					print(ability_name)
+					if ability_name == "nyan_cat_john_cena" or ability_name == "catmancer_pelote" or ability_name == "pedobear_kidnap" or ability_name == "microphone_song_complete" or ability_name == "pedobear_arena" then
+						print("Ability Forbidden!")
+					else
+						print("Ability Allowed!")
+						ability_cast = caster:GetAbilityByIndex(i)
+					end
 				end
 			end
 		end
@@ -61,7 +75,7 @@ local cast_time = 0.25
 					if ability_cast then						
 						if multicast == 2 then
 							Timers:CreateTimer(cast_time, function()
-								CheckBehavior(caster, target, ability_cast)
+								CheckBehavior(caster, target, ability_cast, cur_pos)
 							end)
 							EmitSoundOn("Hero_OgreMagi.Fireblast.x1", target)
 						end
@@ -69,9 +83,9 @@ local cast_time = 0.25
 						if multicast > 2 then
 							if multicast == 3 then
 								Timers:CreateTimer(cast_time, function()
-									CheckBehavior(caster, target, ability_cast)
+									CheckBehavior(caster, target, ability_cast, cur_pos)
 									Timers:CreateTimer(cast_time, function()
-										CheckBehavior(caster, target, ability_cast)
+										CheckBehavior(caster, target, ability_cast, cur_pos)
 									end)
 								end)
 								
@@ -81,11 +95,11 @@ local cast_time = 0.25
 
 						if multicast > 3 then
 							Timers:CreateTimer(cast_time, function()
-								CheckBehavior(caster, target, ability_cast)
+								CheckBehavior(caster, target, ability_cast, cur_pos)
 								Timers:CreateTimer(cast_time, function()
-									CheckBehavior(caster, target, ability_cast)
+									CheckBehavior(caster, target, ability_cast, cur_pos)
 									Timers:CreateTimer(cast_time, function()
-										CheckBehavior(caster, target, ability_cast)
+										CheckBehavior(caster, target, ability_cast, cur_pos)
 									end)
 								end)
 							end)
@@ -100,14 +114,20 @@ local cast_time = 0.25
 	end)
 end
 
-function CheckBehavior(caster, target, ability_cast)
+function CheckBehavior(caster, target, ability_cast, cur_pos)
 	if bit.band(ability_cast:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NO_TARGET) > 0 then
 		ability_cast:OnSpellStart()
+		print("Cast: No Target")
 	elseif bit.band(ability_cast:GetBehavior(), DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) > 0 then
 		caster:CastAbilityOnTarget(target, cast_ability, caster:GetPlayerOwnerID())
 		caster:SetCursorCastTarget(target)
 		caster:SetCursorPosition(target:GetAbsOrigin())
 		ability_cast:OnSpellStart()
 		print("Cast: Unit Target")
+	elseif bit.band(ability_cast:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT) > 0 then
+		caster:CastAbilityOnTarget(target, cast_ability, caster:GetPlayerOwnerID())
+		caster:SetCursorPosition(cur_pos)
+		ability_cast:OnSpellStart()
+		print("Cast: Target Point")
 	end
 end

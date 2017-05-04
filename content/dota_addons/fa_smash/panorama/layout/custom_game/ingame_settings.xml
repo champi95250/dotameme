@@ -9,9 +9,13 @@
 	</scripts>
 
 	<Panel class="ScoreboardLeft">
-		<Panel class="VictoryPanel">
-			<Label id="Goal" text="#Goal" />
-			<Label id="VictoryPoints" text="999" />
+		<Panel class="EntryPanel">
+			<Label class="OnValue" id="MaxKills" text="#MaxKills" />
+			<Label class="Value" id="Kills" text="999" />
 		</Panel>
+		<!--<Panel class="EntryPanel">
+			<Label class="OnValue" id="OnMulticast" text="Multicast:" />
+			<Label class="Value" id="Multicast" text="999" />	
+		</Panel>-->
 	</Panel>
 </root>
