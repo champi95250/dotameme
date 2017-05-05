@@ -10,14 +10,16 @@
 	"DOTA_Custom1"    					"Jaune D'oeuf"
 	"DOTA_Custom2"    					"Orange mecanique"
 	"DOTA_Custom3"    					"Blue Jazz"
-	"DOTA_Custom4"    					"Peace Green"
+	"DOTA_Custom4"    					"420"
 	"DOTA_Custom5"    					"Merdique"
 	"DOTA_Custom6"    					"Ultra-Violet"
 	"DOTA_Custom7"    					"Olive Snake"
 	"DOTA_Custom8"    					"Purple Horse"
 
 	"addonname"							"Battle of the Memes"
+	"addon_game_mode"					"Battle of the Memes"
 	"DOTA_GAMEMODE_15"					"Battle of the Memes"
+	"MaxKills"							"Max Kills:"
 
 	"npc_dota_hero_tusk"				"Bruce Lee"
 	"npc_dota_hero_windrunner"			"Nyan Cat"
@@ -34,4 +36,6 @@
 	"error_trumpinate"					"Machala, tu peux pas cast si la cia voit personne de track !"
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"ARGENT DE JOKO"
+
+	"#VictoryMessage"			"a gagné!"
 }

@@ -1,18 +1,37 @@
 #Settings
 {
-	width: fit-children;
-	height: fit-children;
+	width: 36%;
+	height: 55%;
 	horizontal-align: left;
-	vertical-align: top;  
+	vertical-align: top;
 	margin-right: 40px;
-	margin-top: 10px;
+	margin-top: 1%;
 	flow-children: down;
 
 	background-color: gray;
 	box-shadow: inset #000000 0px 2px 6px 3px;
 	border-bottom: 1px solid #404b4a11;
 	border-radius: 10px;
-	opacity: 0.3;
+	opacity: 0.0;
+
+	padding: 0px;
+}
+
+#Credits
+{
+	width: 20%;
+	height: 55%;
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 1%;
+	margin-left: 36.5%;
+	flow-children: down;
+
+	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+	box-shadow: inset #000000 0px 2px 6px 3px;
+	border-bottom: 1px solid #404b4a11;
+	border-radius: 10px;
+	opacity: 0.96;
 
 	padding: 0px;
 }
@@ -23,7 +42,7 @@
 	box-shadow: inset #000000 0px 2px 6px 3px;
 	border-bottom: 1px solid #404b4a11;
 	border-radius: 10px;
-	opacity: 0.8;
+	opacity: 0.96;
 }
 
 #ActSettings
@@ -52,7 +71,7 @@
 
 #Settings2
 {
-	width: 250px;
+	width: fit-children;
 	height: fit-children;
 	horizontal-align: left;
 	vertical-align: top;  
@@ -72,6 +91,15 @@
 	color: #ffffff;
 }
 
+.SettingsCredits
+{
+	margin-top: -13px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 20px;
+	color: #ffffff;
+}
+
 .EntryPanel
 {
 	flow-children: right;
@@ -83,6 +111,7 @@
 {
 	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
 	font-size: 20px;
+	margin-top: 5px;
 	margin-left: 5px;
 	color: #ffffff;
 	text-align: left;
@@ -119,49 +148,61 @@ TextEntry
 	text-align: right;
 }
 
-.RadioBox
+.RadioHeader
 {
-    min-width: 25px;
-    min-height: 25px;
-  
+	margin-top: 0px;
+	margin-left: 35px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 22px;
+	color: #ffffff;
 }
 
-RadioButton
+.RadioBox
 {
-	width: 50%;
+	min-width: 400px;
+	min-height: 25px;
+}
+
+#RadioButton1,
+#RadioButton2,
+#RadioButton3,
+#RadioButton4
+{
+	margin-top: 5px;
+}
+
+#RadioButton1
+{
+	margin-left: 10px;
+}
+
+#RadioButton2
+{
+	margin-left: 70px;
+}
+
+#RadioButton3
+{
+	margin-left: 130px;
+}
+
+#RadioButton4
+{
+	margin-left: 190px;
 }
 
 RadioButton Label
 {
-    margin-left: 20px;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0px 0px 3px 3.0 #000;
-}
-
-#RadioButtons
-{
-	width: 100%;
-    flow-children: down;
-}
-
-.RadioSection
-{
-	margin-left: 10px;
-	flow-children: right;
-	width: 100%;
+	margin-left: 6px;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0px 0px 3px 3.0 #000;
 }
 
 #Host
 {
-	horizontal-align: center;
-}
-
-#ToggleSettings
-{
-	horizontal-align: center;
-	flow-children: right;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 20px;
+	margin-left: 25%;
 }

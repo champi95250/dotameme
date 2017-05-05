@@ -489,7 +489,7 @@
 		[
 			{
 				m_sSearchMaterial = "pbear.vmat"
-				m_sReplaceMaterial = "f:\\program files (x86)\\steamlibrary\\steamapps\\common\\dota 2 beta\\content\\dota_addons\\fa_smash\\materials\\models\\heroes\\pedobear\\pedobear01.vmat"
+				m_sReplaceMaterial = "materials/models/heroes/pedobear/pedobear01.vmat"
 			},
 		]
 	}

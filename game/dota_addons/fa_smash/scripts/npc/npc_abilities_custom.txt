@@ -1,8 +1,6 @@
 //Generated using Dota Custom File Generator by cris9696
 "DOTAAbilities"
 {
-
-
 	//Start of file arena_ability.txt
 	// Ability Arena
 	"dota_ability_xp_global"
@@ -19,7 +17,7 @@
 				"Passive"				"1"
 				
 				"Aura"					"modifier_get_xp_global"
-				"Aura_Radius"			"10000"
+				"Aura_Radius"			"15000"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
 				"Aura_ApplyToCaster"	"0"
@@ -46,7 +44,7 @@
 							"Types"			"DOTA_UNIT_TARGET_HERO"
 							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
 						}
-						"XPAmount"		"5" //7
+						"XPAmount"		"4" //7
 						"SplitEvenly"	"0"
 						"GoldAmount"	"2"
 						"ReliableGold"	"0"
@@ -241,19 +239,19 @@
 	
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+			"AbilityCastPoint"				"0.2"
 			
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCooldown"				"30.0 30.0 30.0 30.0"
+			"AbilityCooldown"				"30.0"
 	
 			// Damage.
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityDamage"					"150 225 300 375"
+			"AbilityDamage"					"140 200 260 320"
 	
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityManaCost"				"150 150 150 150"
+			"AbilityManaCost"				"150"
 	
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -262,7 +260,7 @@
 				"01"
 				{
 					"var_type"			"FIELD_INTEGER"
-					"radius"			"1500 2000 2500 3000"
+					"radius"			"1500 1750 2000 2250"
 				}
 				"02"
 				{
@@ -605,6 +603,7 @@
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCooldown"				"8 7 6 5"
+			"AbilityCastRange"				"710 820 930 1040"
 			
 			// Precache
 			//-------------------------------------------------------------------------------------------------------------
@@ -790,7 +789,7 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -809,11 +808,11 @@
 				"soundfile"			"soundevents/game_sounds_bruce.vsndevts"
 				"particle"			"particles/units/heroes/hero_lion/lion_spell_impale.vpcf"
 			}
-	
+
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"150"
-			"AbilityCastPoint"				"0.1 0.1 0.1"
+			"AbilityCastPoint"				"0.2"
 			"HasScepterUpgrade" "1"
 			
 			// Time		
@@ -3244,20 +3243,11 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 			"AbilityTextureName"			"custom/multi_cast_ability"
-	
-			// Precache
-			//-------------------------------------------------------------------------------------------------------------
-			"precache"
-			{
-				"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast01.vsnd"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast02.vsnd"
-				"soundfile"		"sounds/weapons/hero/ogre_magi/multicast03.vsnd"
-			}
+			"MaxLevel"						"1"
 			
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
@@ -3266,19 +3256,19 @@
 				"01"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_2_times"		"25 35 50"
+					"multicast_2_times"		"30"
 				}
 	
 				"02"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_3_times"		"0 15 23"
+					"multicast_3_times"		"20"
 				}
 	
 				"03"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"multicast_4_times"		"0 0 16"
+					"multicast_4_times"		"10"
 				}
 			}
 			
@@ -3296,9 +3286,6 @@
 							"ScriptFile"		"spell/utilitaires/multicast.lua"
 							"Function"			"Multicast"
 							"particle"			"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
-							"sound1"			"Hero_OgreMagi.Fireblast.x1"
-							"sound2"			"Hero_OgreMagi.Fireblast.x2"
-							"sound3"			"Hero_OgreMagi.Fireblast.x3"
 						}
 					}
 				}
@@ -4000,7 +3987,7 @@
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4020,7 +4007,7 @@
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityCastRange"				"525 650 775 900"
-			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			"AbilityCastPoint"				"0.3"
 			
 			// Time		
 			//-------------------------------------------------------------------------------------------------------------
@@ -4028,7 +4015,7 @@
 	
 			// Damage.
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityDamage"					"50 75 100 125"
+			"AbilityDamage"					"100 150 200 250"
 	
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
@@ -4397,12 +4384,11 @@
 		// ----------------------------------------------
 		// 004 - pedobear_kidnap
 		//-----------------------------------------------
-		
 		"pedobear_kidnap"
 		{
 			// General
 			//-------------------------------------------------------------------------------------------------------------
-			"BaseClass"				"ability_datadriven"
+			"BaseClass"						"ability_datadriven"
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
@@ -4412,7 +4398,7 @@
 			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 			"FightRecapLevel"				"1"
 			"AbilityTextureName"			"custom/pedobear_kidnap"
-			
+
 			"precache"
 			{
 				"particle"          "particles/units/heroes/hero_life_stealer/life_stealer_infest_cast.vpcf"
@@ -6561,30 +6547,19 @@
 			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 			"AbilityTextureName"			"custom/track_cia"
-	
-			// Precache
-			//-------------------------------------------------------------------------------------------------------------
-			"precache"
-			{
-				"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
-				"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-			}
-			
+
 			// Unit Targeting
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-			
+
 			// Stats
 			//-------------------------------------------------------------------------------------------------------------
-			"AbilityCastRange"				"30000"
-			"AbilityCastPoint"				"0.3 0.3 0.3"
-			"AbilityCooldown"				"3.0 2.0 1.0"
+			"AbilityCastRange"				"2000"
+			"AbilityCastPoint"				"0.3"
+			"AbilityCooldown"				"10.0 7.5 5.0"
 			"AbilityGoldCost"				"150 200 250"
-				
+
 			// Special
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilitySpecial"

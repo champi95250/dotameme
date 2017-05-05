@@ -12,13 +12,21 @@ LinkLuaModifier( "modifier_brawl", "modifier_but/modifier_brawl.lua" ,LUA_MODIFI
 LinkLuaModifier( "modifier_denied", "modifier_but/modifier_denied.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
 
-function GameMode:OnSettingChange( event )
+function GameMode:OnSettingChange(event)
 local setting = event.setting
-local value = tonumber( event.value )
+local value = tonumber(event.value)
 
-	print( "Setting Change: ", setting, value )
+	print("Setting Change: ", setting, value)
+	CustomNetTables:SetTableValue("settings", setting, {value = value})
+	GameSettings[setting] = value
+end
 
-	CustomNetTables:SetTableValue( "settings", setting, { value = value } )
+function GameMode:OnRadioButtonChange(event)
+local setting = event.setting
+local value = tonumber(event.value)
+
+	print("Setting Change: ", setting, value)
+	CustomNetTables:SetTableValue("settings", setting, {value = value})
 	GameSettings[setting] = value
 end
 
@@ -50,25 +58,26 @@ function GameMode:OnGameRulesStateChange(keys)
 	print("[BotM] GameRules State Changed: ",gamestates[newState])
 
 	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		local player_id = keys.PlayerID
-		
-		--print("LIA_MODE_SURVIVAL")
-		--self.GameMode = LIA_MODE_SURVIVAL
-
-		Timers:CreateTimer(HERO_SELECTION_TIME - 10.1, function()
-			for player_id = 0, 20 do
-				-- If this player still hasn't picked a hero, random one
-				if not PlayerResource:HasSelectedHero(player_id) then
-					PlayerResource:GetPlayer(player_id):MakeRandomHeroSelection()
-					PlayerResource:SetCanRepick(player_id, false)
-					PlayerResource:SetHasRandomed(player_id)
-					print("tried to random a hero for "..player_id)
+		Timers:CreateTimer(HERO_SELECTION_TIME, function()
+			for i = 0, DOTA_MAX_TEAM_PLAYERS do
+				if PlayerResource:IsValidPlayer(i) then
+					if PlayerResource:HasSelectedHero(i) == false then
+						local player = PlayerResource:GetPlayer(i)
+						player:MakeRandomHeroSelection()
+					end
 				end
 			end
 		end)
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		for i = 1, 9 do
+		CustomNetTables:SetTableValue( "game_state", "victory_condition", { value = GameSettings.max_kills } );
+		CustomNetTables:SetTableValue( "game_state", "brawl", { value = GameSettings.brawl } );
+		CustomNetTables:SetTableValue( "game_state", "attack_allie", { value = GameSettings.attack_allie } );
+		CustomNetTables:SetTableValue( "game_state", "aghanim", { value = GameSettings.aghanim } );
+		CustomNetTables:SetTableValue( "game_state", "multicast", { value = GameSettings.multicast } );
+		CustomNetTables:SetTableValue( "game_state", "mult_gold", { value = GameSettings.mult_gold } );
+		CustomNetTables:SetTableValue( "game_state", "mult_exp", { value = GameSettings.mult_exp } );
+		for i = 1, 11 do
 			AddFOWViewer(i, Vector(0, 0, 0), 1600, 9999, false)
 		end
 	end
@@ -80,11 +89,33 @@ function GameMode:OnNPCSpawned(event)
 
 	local npc = EntIndexToHScript(event.entindex)
 	local unitName = npc:GetUnitName()
+	local ability = npc:GetAbilityByIndex(0)
 	
 	if unitName == "npc_dota_thinker" or unitName == "npc_dota_companion" then
 		return
 	end	
-	
+
+	if npc:IsRealHero() then
+		if not npc:IsClone() then
+			if GameSettings.multicast > 0 and not npc:HasAbility("multi_cast_ability") then
+				local multicast = npc:AddAbility("multi_cast_ability")
+				multicast:SetLevel(1)
+			end
+			if GameSettings.hero_branches > 0 then
+				npc:AddNewModifier( npc, nil, "modifier_branches", {} )
+			end
+		end
+		if GameSettings.attack_allie > 0 then
+			npc:AddNewModifier( npc, nil, "modifier_denied", {} )
+		end
+		if GameSettings.aghanim > 0 and not npc:HasModifier("modifier_item_ultimate_scepter_consumed") then
+			npc:AddNewModifier(npc, ability, "modifier_item_ultimate_scepter_consumed", {})
+		end
+		if GameSettings.mlg_sound > 0 then
+			npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
+		end
+	end
+
 	if GameSettings.kill_soul > 0 then
 		npc:AddNewModifier( npc, nil, "modifier_souls", {} )
 	end
@@ -106,18 +137,7 @@ function GameMode:OnNPCSpawned(event)
 	if GameSettings.reduce_cd > 0 then
 		npc:AddNewModifier( npc, nil, "modifier_ryze", {} )
 	end
-	if GameSettings.multicast > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddAbility("multi_cast_ability")
-	end
-	if GameSettings.hero_branches > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddNewModifier( npc, nil, "modifier_branches", {} )
-	end
-	if GameSettings.mlg_sound > 0 and npc:IsRealHero() and not npc:IsClone() then
-		npc:AddNewModifier( npc, nil, "modifier_mlg_sound", {} )
-	end
-	if GameSettings.attack_allie > 0 then
-		npc:AddNewModifier( npc, nil, "modifier_denied", {} )
-	end
+
 	if GameSettings.brawl > 0 then
 		-- npc:AddNewModifier( npc, nil, "modifier_brawl", {} )
 		if not npc.hasPhysics then
@@ -353,13 +373,19 @@ function GameMode:OnPlayerPickHero(keys)
 end
 
 function GameMode:OnTeamKillCredit(keys)
-	DebugPrint('[BAREBONES] OnTeamKillCredit')
-	DebugPrintTable(keys)
+DebugPrint('[BAREBONES] OnTeamKillCredit')
+DebugPrintTable(keys)
 
-	local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
-	local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
-	local numKills = keys.herokills
-	local killerTeamNumber = keys.teamnumber
+local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
+local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
+local numKills = keys.herokills
+local killerTeamNumber = keys.teamnumber
+
+	if numKills >= GameSettings.max_kills then
+		GameRules:SetCustomVictoryMessage(self.m_VictoryMessages[killerTeamNumber].." #VictoryMessage")
+		print(self.m_VictoryMessages[killerTeamNumber].."#VictoryMessage")
+		GameRules:SetGameWinner(killerTeamNumber)
+	end
 end
 
 function GameMode:OnEntityKilled( keys )
