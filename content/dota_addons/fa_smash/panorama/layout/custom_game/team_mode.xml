@@ -137,28 +137,28 @@
 		<Panel id="Credits">
 			<Label class='SettingsHeader' text="CREDITS:" style="" />
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="SwordBacon - Options Menu" />
+					<Label class="CreditLabel" text="SwordBacon - Options Menu" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="Creator: Champi Suicidaire" />
+					<Label class="CreditLabel" text="Creator: Champi Suicidaire" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="Cookies - X HERO SIEGE" />
+					<Label class="CreditLabel" text="Cookies - X HERO SIEGE" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="Plexus - EPIC BOSS FIGHT" />
+					<Label class="CreditLabel" text="Plexus - EPIC BOSS FIGHT" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="SPELL LIBRARY" />
+					<Label class="CreditLabel" text="SPELL LIBRARY" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="SPECIAL thanks to: \nShirou\nKanki\nVaden\nHyperion\nAsart\nTrungk\nSly\nJokoloaz " />
+					<Label class="CreditLabel" text="SPECIAL thanks to: \nShirou\nKanki\nVaden\nHyperion\nAsart\nTrungk\nSly\nJokoloaz " />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="" />
+					<Label class="CreditLabel" text="" />
 				</Panel>
 				<Panel class="EntryPanel">
-					<Label class="OptionLabel" text="Any ideas / suggestions? Submit them on the WorkShop page of the mod." />
+					<Label class="CreditLabel" text="Any ideas / suggestions? Submit them on the WorkShop page of the mod." />
 				</Panel>
 		</Panel>
 		<!-- Default UI -->

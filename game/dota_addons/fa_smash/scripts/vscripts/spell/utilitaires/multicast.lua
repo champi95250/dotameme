@@ -62,7 +62,7 @@ local forbidden_abilities = {
 		if ability_cast ~= nil then
 		print("Ability Valid")
 			if multicast ~= 1 then
-				local particle = ParticleManager:CreateParticle("particles/econ/items/ogre_magi/ogre_magi_jackpot/ogre_magi_jackpot_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, caster) 
+				local particle = ParticleManager:CreateParticle("particles/multicast/multimulticast.vpcf", PATTACH_OVERHEAD_FOLLOW, caster) 
 				ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 100))
 				ParticleManager:SetParticleControl(particle, 1, Vector(multicast, 0, 0))
 

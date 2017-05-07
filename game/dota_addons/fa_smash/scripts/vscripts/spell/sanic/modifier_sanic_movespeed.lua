@@ -22,6 +22,10 @@ function modifier_sanic_movespeed:GetModifierMoveSpeedBonus_Percentage( params )
     return self.prc_movespeed
 end
 
+function modifier_sanic_movespeed:IsPurgable()
+	return false
+end
+
 function modifier_sanic_movespeed:GetModifierMoveSpeed_Max( params )
     return self.limit
 end

@@ -405,7 +405,7 @@
 		[
 			{
 				m_sSearchMaterial = "microphone.vmat"
-				m_sReplaceMaterial = "materials\models\heroes\microphone\microphone01.vmat"
+				m_sReplaceMaterial = "materials/models/heroes/microphone/microphone01.vmat"
 			},
 		]
 	}

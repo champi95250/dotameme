@@ -610,11 +610,11 @@
 							"value0"		"sounds/traps/jokoloaz.vsnd"
 						}
 					}
-					"volume"            {   "value"     "6.50000"  }
+					"volume"            {   "value"     "5.50000"  }
                     "pitch_rand_min"    {   "value"     "0.000000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "76.00000" }
+                    "soundlevel"        {   "value"     "65.00000" }
                     "distance_max"      {   "value"     "35000.000"  }
                     "event_type"        {   "value"     "1.000000"  }
 				}
