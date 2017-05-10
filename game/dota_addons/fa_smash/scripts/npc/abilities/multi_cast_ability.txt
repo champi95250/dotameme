@@ -16,7 +16,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
+			"particle"		"particles/multicast/multimulticast.vpcf"
 			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast01.vsnd"
 			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast02.vsnd"
 			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast03.vsnd"
@@ -58,7 +58,7 @@
 					{
 						"ScriptFile"		"spell/utilitaires/multicast.lua"
 						"Function"			"Multicast"
-						"particle"			"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
+						"particle"			"particles/multicast/multimulticast.vpcf"
 						"sound1"			"Hero_OgreMagi.Fireblast.x1"
 						"sound2"			"Hero_OgreMagi.Fireblast.x2"
 						"sound3"			"Hero_OgreMagi.Fireblast.x3"

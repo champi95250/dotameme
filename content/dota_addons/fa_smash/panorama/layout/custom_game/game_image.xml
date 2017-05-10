@@ -15,7 +15,13 @@
 	<Image src="file://{images}/heroes/npc_dota_hero_windrunner.png"></Image>
 	<Image src="file://{images}/heroes/npc_dota_hero_doom_bringer.png"></Image>
 	<Image src="file://{images}/heroes/npc_dota_hero_queenofpain.png"></Image>
-
+	<Image src="file://{images}/heroes/npc_dota_hero_ancient_apparition.png"></Image>
+	
+	<Image src="file://{images}/heroes/selection/npc_dota_hero_ancient_apparition.png"></Image>
+	<Image src="file://{images}/heroes/selection/npc_dota_hero_antimage.png"></Image>
+	<Image src="file://{images}/heroes/selection/npc_dota_hero_omniknight.png"></Image>
+	<Image src="file://{images}/heroes/selection/npc_dota_hero_viper.png"></Image>
+	<Image src="file://{images}/heroes/selection/npc_dota_hero_windrunner.png"></Image>
 	</Panel>
 	
 

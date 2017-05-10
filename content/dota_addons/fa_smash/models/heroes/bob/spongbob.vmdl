@@ -1,0 +1,704 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	m_meshList = 
+	{
+		m_meshList = 
+		[
+			{
+				m_meshName = "spongbob_model"
+				m_meshFile = "models/heroes/bob/spongbob_model.fbx"
+				m_materialSearchPath = ""
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
+		]
+	}
+	m_clothProxyMeshList = 
+	{
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flFallbackEnvelope = 1.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
+	}
+	m_physicsMeshList = 
+	{
+		m_meshList = [  ]
+	}
+	m_pModelInfo = null
+	m_pBoneFlagList = 
+	{
+		m_pObject = null
+	}
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "ValveBiped.Bip01_Pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Pelvis"
+								m_vMinBounds = [ -26.317116, -1.975887, -14.477287 ]
+								m_vMaxBounds = [ 27.520554, -1.917625, 4.472703 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine1"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine2"
+								m_vMinBounds = [ 1.666397, -9.235823, -27.304628 ]
+								m_vMaxBounds = [ 12.144577, 9.978357, 28.508135 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine4"
+								m_vMinBounds = [ 1.284157, -25.279358, -31.135559 ]
+								m_vMaxBounds = [ 42.209076, 20.092087, 32.338928 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_UpperArm"
+								m_vMinBounds = [ 0.771585, -5.988891, -5.339531 ]
+								m_vMaxBounds = [ 28.976461, 3.926347, 5.22213 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_UpperArm"
+								m_vMinBounds = [ 1.756001, -6.010973, -5.226837 ]
+								m_vMaxBounds = [ 20.849918, 3.905459, 5.170349 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Thigh"
+								m_vMinBounds = [ 0.160633, -4.079501, -4.275246 ]
+								m_vMaxBounds = [ 21.001575, 4.53939, 4.234138 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Thigh"
+								m_vMinBounds = [ 1.710449, -4.426272, -5.369123 ]
+								m_vMaxBounds = [ 20.792694, 4.196203, 3.712457 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Hand"
+								m_vMinBounds = [ -0.169014, -2.728882, -4.490179 ]
+								m_vMaxBounds = [ 3.301544, 1.344818, 3.667872 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Hand"
+								m_vMinBounds = [ -0.487961, -2.722412, -3.921441 ]
+								m_vMaxBounds = [ 3.145943, 1.254135, 4.303624 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Calf"
+								m_vMinBounds = [ 1.729679, -1.502063, -1.644409 ]
+								m_vMaxBounds = [ 9.33788, 1.806312, 1.353399 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Calf"
+								m_vMinBounds = [ 1.600594, -1.887107, -1.307163 ]
+								m_vMaxBounds = [ 9.134783, 1.438902, 1.473056 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger0"
+								m_vMinBounds = [ 1.740307, -4.85659, -6.337051 ]
+								m_vMaxBounds = [ 6.545712, -2.221718, -3.607079 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Wrist"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Wrist"
+								m_vMinBounds = [ 0.315277, -5.357328, -2.410713 ]
+								m_vMaxBounds = [ 14.476704, 4.426836, 3.842323 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger0"
+								m_vMinBounds = [ 2.257206, -5.590839, 2.39756 ]
+								m_vMaxBounds = [ 6.851814, -3.522699, 5.273163 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Wrist"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Wrist"
+								m_vMinBounds = [ -0.103363, -5.143044, -3.864304 ]
+								m_vMaxBounds = [ 14.057724, 4.647999, 2.403343 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Elbow"
+								m_vMinBounds = [ -0.645565, -3.636176, -2.306252 ]
+								m_vMaxBounds = [ 11.173168, 0.339671, 1.614395 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Foot"
+								m_vMinBounds = [ -2.948553, -11.543828, -3.06109 ]
+								m_vMaxBounds = [ 15.581675, 4.593633, 4.420183 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Foot"
+								m_vMinBounds = [ -2.440344, -12.065176, -3.306096 ]
+								m_vMaxBounds = [ 16.080677, 4.077616, 4.183926 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "ValveBiped.Bip01_Spine1"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "ValveBiped.Bip01_R_Hand"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
+	m_pAnimGroup = 
+	{
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
+				{
+					m_Animationname = "spongbob_idle"
+					m_Filepath = "models/heroes/bob/spongbob_idle.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 6.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spongbob_run"
+					m_Filepath = "models/heroes/bob/spongbob_run.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spongbob_cast_ulti"
+					m_Filepath = "models/heroes/bob/spongbob_cast_ulti.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_4"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spongbob_cast1"
+					m_Filepath = "models/heroes/bob/spongbob_cast1.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spongbob_die"
+					m_Filepath = "models/heroes/bob/spongbob_die.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "spongbob_attack"
+					m_Filepath = "models/heroes/bob/spongbob_attack.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 7
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+			m_sCompileScripts = [  ]
+		}
+	}
+	m_pMaterialGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pMeshGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pLodGroupList = 
+	{
+		m_pObject = null
+	}
+	m_pPropBreakableList = 
+	{
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "sbeyes.vmat"
+				m_sReplaceMaterial = "materials/models/heroes/bob/bob02.vmat"
+			},
+			{
+				m_sSearchMaterial = "sb.vmat"
+				m_sReplaceMaterial = "materials/models/heroes/bob/bob01.vmat"
+			},
+		]
+	}
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_bHiddenAssetFlag = false
+	m_pAnimGroups = [  ]
+}
