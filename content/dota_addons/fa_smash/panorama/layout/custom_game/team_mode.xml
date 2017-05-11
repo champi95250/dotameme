@@ -88,10 +88,10 @@
 					<Panel>
 						<ToggleButton id="river_ice" text="Ice" onactivate="Toggle('river_ice')"/>
 					</Panel>
-					<!--<Panel>
+					<Panel>
 						<ToggleButton id="river_irradiated" text="Irradiated" onactivate="Toggle('river_irradiated')"/>
 					</Panel>
-					<Panel>
+				<!--<Panel>
 						<ToggleButton id="river_slippery" text="Slippery" onactivate="Toggle('river_slippery')"/>
 					</Panel>-->
 					<Panel class="EntryPanel">

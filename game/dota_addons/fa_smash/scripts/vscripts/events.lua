@@ -11,6 +11,7 @@ LinkLuaModifier( "modifier_mlg_sound", "modifier_but/modifier_mlg_sound.lua" ,LU
 LinkLuaModifier( "modifier_brawl", "modifier_but/modifier_brawl.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_denied", "modifier_but/modifier_denied.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_river_radiation", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 function GameMode:OnSettingChange(event)
 local setting = event.setting
@@ -70,13 +71,13 @@ function GameMode:OnGameRulesStateChange(keys)
 		end)
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		CustomNetTables:SetTableValue( "game_state", "victory_condition", { value = GameSettings.max_kills } );
-		CustomNetTables:SetTableValue( "game_state", "brawl", { value = GameSettings.brawl } );
-		CustomNetTables:SetTableValue( "game_state", "attack_allie", { value = GameSettings.attack_allie } );
-		CustomNetTables:SetTableValue( "game_state", "aghanim", { value = GameSettings.aghanim } );
-		CustomNetTables:SetTableValue( "game_state", "multicast", { value = GameSettings.multicast } );
-		CustomNetTables:SetTableValue( "game_state", "mult_gold", { value = GameSettings.mult_gold } );
-		CustomNetTables:SetTableValue( "game_state", "mult_exp", { value = GameSettings.mult_exp } );
+		CustomNetTables:SetTableValue("game_state", "victory_condition", {value = GameSettings.max_kills});
+		CustomNetTables:SetTableValue("game_state", "brawl", {value = GameSettings.brawl});
+		CustomNetTables:SetTableValue("game_state", "attack_allie", {value = GameSettings.attack_allie});
+		CustomNetTables:SetTableValue("game_state", "aghanim", {value = GameSettings.aghanim});
+		CustomNetTables:SetTableValue("game_state", "multicast", {value = GameSettings.multicast});
+		CustomNetTables:SetTableValue("game_state", "mult_gold", {value = GameSettings.mult_gold});
+		CustomNetTables:SetTableValue("game_state", "mult_exp", {value = GameSettings.mult_exp});
 		for i = 1, 11 do
 			AddFOWViewer(i, Vector(0, 0, 0), 1600, 9999, false)
 		end
@@ -392,24 +393,62 @@ function GameMode:OnEntityKilled( keys )
 	DebugPrint( '[BAREBONES] OnEntityKilled Called' )
 	DebugPrintTable( keys )
 
-	-- The Unit that was Killed
+	local heroes = HeroList:GetAllHeroes()
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	-- The Killing entity
 	local killerEntity = nil
-
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
+	local numKills = GetTeamHeroKills(killerEntity:GetTeam())
 
-	-- The ability/item used to kill, or nil if not killed by an item/ability
 	local killerAbility = nil
-
 	if keys.entindex_inflictor ~= nil then
 		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
 	end
 
 	if killedUnit ~= nil and killedUnit:IsRealHero() then
+		print("Hero Dead")
 		killedUnit:SetTimeUntilRespawn( killedUnit:GetLevel() * 1.25 )--* ( GameSettings.mult_respawn * 0.01 )
+		if numKills * 3 >= GameSettings.max_kills and GameSettings.multicast == 1 then
+			GameSettings.multicast = 2
+			CustomNetTables:SetTableValue("game_state", "multicast", {value = GameSettings.multicast});
+			Notifications:TopToAll({text="Multicast is now level 2!", style={color="DodgerBlue"}, duration=5.0})
+			EmitGlobalSound("ogre_magi_ogmag_thanks_01")
+			EmitGlobalSound("Hero_OgreMagi.Ignite.Target")
+			print("MULTICAST: "..GameSettings.multicast)
+			for _, hero in pairs(heroes) do
+				local multicast = hero:FindAbilityByName("multi_cast_ability")
+				if hero:HasAbility("multi_cast_ability") then
+					multicast:SetLevel(2)
+				end
+			end
+		elseif numKills * 2 >= GameSettings.max_kills and GameSettings.multicast == 2 then
+			GameSettings.multicast = 3
+			CustomNetTables:SetTableValue("game_state", "multicast", {value = GameSettings.multicast});
+			Notifications:TopToAll({text="Multicast is now level 3!", style={color="DodgerBlue"}, duration=5.0})
+			EmitGlobalSound("ogre_magi_ogmag_thanks_01")
+			EmitGlobalSound("Hero_OgreMagi.Ignite.Target")
+			print("MULTICAST: "..GameSettings.multicast)
+			for _, hero in pairs(heroes) do
+				local multicast = hero:FindAbilityByName("multi_cast_ability")
+				if hero:HasAbility("multi_cast_ability") then
+					multicast:SetLevel(3)
+				end
+			end
+		elseif numKills * 1.5 >= GameSettings.max_kills and GameSettings.multicast == 3 then
+			GameSettings.multicast = 4
+			CustomNetTables:SetTableValue("game_state", "multicast", {value = GameSettings.multicast});
+			Notifications:TopToAll({text="Multicast is now level 4!", style={color="DodgerBlue"}, duration=5.0})
+			EmitGlobalSound("ogre_magi_ogmag_thanks_01")
+			EmitGlobalSound("Hero_OgreMagi.Ignite.Target")
+			print("MULTICAST: "..GameSettings.multicast)
+			for _, hero in pairs(heroes) do
+				local multicast = hero:FindAbilityByName("multi_cast_ability")
+				if hero:HasAbility("multi_cast_ability") then
+					multicast:SetLevel(4)
+				end
+			end
+		end
 	end
 	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 end

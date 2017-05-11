@@ -42,8 +42,6 @@ end
 	Date: February 18, 2016
 	Removes the thinker from the point entity and the sound from the caster when the channel ends]]
 function ChannelEnd(keys)
-
-	
 	if ability.point_entity:IsNull() == false then
 		ability.point_entity:RemoveModifierByName("modifier_black_hole_datadriven")
 		StopSoundOn("Hero_Enigma.Black_Hole", target)
@@ -57,24 +55,10 @@ function ChannelSound( keys )
 	EmitSoundOn( "Hero_Enigma.Black_Hole", dummy )
 	dummy:ForceKill( true )
 	Timers:CreateTimer( 4.01, function()
-			if ability.point_entity:IsNull() == false then
-				ability.point_entity:RemoveModifierByName("modifier_black_hole_datadriven")
-			end
-			StopSoundOn("Hero_Enigma.Black_Hole", dummy)
-			return nil
+		if ability.point_entity:IsNull() == false then
+			ability.point_entity:RemoveModifierByName("modifier_black_hole_datadriven")
 		end
-	)
-	
-end
-
---[[Author: YOLOSPAGHETTI
-	Date: February 18, 2016
-	Gives vision over the aoe]]
-function GiveVision(keys)
-	caster = keys.caster
-	ability = keys.ability
-	local vision_radius = ability:GetLevelSpecialValueFor( "vision_radius", ability:GetLevel() - 1 )
-	local duration = ability:GetLevelSpecialValueFor( "duration", ability:GetLevel() - 1 )
-	
-	AddFOWViewer(caster:GetTeam(), ability:GetCursorPosition(), vision_radius, duration, false)
+		StopSoundOn("Hero_Enigma.Black_Hole", dummy)
+		return nil
+	end)
 end

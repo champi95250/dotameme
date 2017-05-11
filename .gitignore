@@ -1,0 +1,5 @@
+# Cache crap that Valve autogenerates
+*.bin
+
+#Github dump
+*.stackdump
