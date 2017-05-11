@@ -11,6 +11,7 @@ LinkLuaModifier( "modifier_mlg_sound", "modifier_but/modifier_mlg_sound.lua" ,LU
 LinkLuaModifier( "modifier_brawl", "modifier_but/modifier_brawl.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_denied", "modifier_but/modifier_denied.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_river_radiation", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 function GameMode:OnSettingChange(event)
 local setting = event.setting
