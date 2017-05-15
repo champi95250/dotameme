@@ -35,7 +35,7 @@ if IsServer() then
 				local random_sound = RandomInt(1, 14) 
 				print("Mlg.Kill" .. random_sound)
 				EmitGlobalSound("Mlg.Kill" .. random_sound)
-				local mlg_fx = ParticleManager:CreateParticle("particles/mlg/mlg.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+				local mlg_fx = ParticleManager:CreateParticle("particles/mlg/rekt.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 				ParticleManager:SetParticleControl(mlg_fx, 0, parent:GetAbsOrigin() + Vector(0, 0, 100))
 				Timers:CreateTimer(2.7, function()
 					ParticleManager:DestroyParticle(mlg_fx, false)
