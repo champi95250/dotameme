@@ -34,8 +34,10 @@
 	"npc_dota_hero_doom_bringer"		"AT-ST"
 	"npc_dota_hero_queenofpain"			"Microphone"
 	"npc_dota_hero_ancient_apparition"	"SpongeBob"
+	"npc_dota_hero_jakiro"				"Rick"
 
 	"error_trumpinate"					"Unable to find target."
+	"error_portal"						"Unable to find Portal."
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"Gold"
 

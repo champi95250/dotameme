@@ -1,10 +1,6 @@
-//Generated using Dota Custom File Generator by cris9696
+
 "DOTAHeroes"
 {
-
-
-	//Start of file npc_dota_hero_ancient_apparition.txt
-		// Bob Leponge by Champi
 		"npc_dota_hero_ancient_apparition"
 		{
 			// General
@@ -1118,5 +1114,95 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_windrunner.txt
+	
+	"npc_dota_hero_jakiro"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/rick/rick.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroPool1"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"2,2,1,1,1,1,0,1,1"
+			"Complexity"	"2"
+			"Team"		"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"1.34000"
+			"LoadoutScale"		"1.340000"
+			"HeroGlowColor"		"185 220 20"
+			"CMEnabled"		"1"
+			"NameAliases"		"wr"
+			"url"		"Windranger"
+			"LastHitChallengeRival"		"npc_dota_hero_drow_ranger"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"rick_portal_a"
+			"Ability2"		"rick_portal_b"
+			"Ability3"		"rick_laser_gun"
+			"Ability4"		"rick_illusion"
+			"Ability5"		"rick_stop_time"
+			"Ability6"		"rick_portal_a_stop"
+			"Ability7"		"rick_portal_b_stop"
+			"Ability10"		"special_bonus_movement_speed_20"
+			"Ability11"		"special_bonus_cast_range_175"
+			"Ability12"		"special_bonus_magic_resistance_8"
+			"Ability13"		"special_bonus_gold_income_20"
+			"Ability14"		"special_bonus_all_stats_10"
+			"Ability15"		"special_bonus_mp_500"
+			"Ability16"		"special_bonus_armor_5"
+			"Ability17"		"special_bonus_mp_regen_8"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"			"-1"
+			"MagicalResistance" 	"25"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"13"
+			"AttackDamageMax"		"21"
+			"AttackRate"		"1.650000"
+			"AttackAnimationPoint"		"0.200000"
+			"AttackAcquisitionRange"		"550"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1150"
+			
+			// Status
+			//----------------------------------------------------------------
+			"StatusHealth"				"200"		// Base health.
+			"StatusHealthRegen"			"0.3"			// Health regeneration rate.
+			"StatusMana"				"164"			// Base mana.
+			"StatusManaRegen" 			"0.8" // Mana regeneration rate.
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+			"AttributeBaseStrength"		"22"
+			"AttributeStrengthGain"		"1.900000"
+			"AttributeBaseIntelligence"		"28"
+			"AttributeIntelligenceGain"		"3.10000"
+			"AttributeBaseAgility"		"16"
+			"AttributeAgilityGain"		"2.000000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"315"
+			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
 }

@@ -1,4 +1,5 @@
-//Generated using Dota Custom File Generator by cris9696
+//Battle of the meme
+
 "DOTAAbilities"
 {
 	// Ability Arena
@@ -118,11 +119,11 @@
 		}
 	}
 
-	// AT-ST Ability by Champi
-	// 2017
-	// ----------------------------------------------
-	// 001 - at_st_visee
-	//-----------------------------------------------
+	//-----------------------------------------------------------------------------------------------------------------
+	// AT ST 
+	//-----------------------------------------------------------------------------------------------------------------
+	// 1 - Visée Améliorer : at_st_visee
+	//-----------------------------------------------------------------------------------------------------------------
 	"at_st_visee"
 	{
 		// General
@@ -589,11 +590,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-		"AbilityDamage" 				"75 125 175 225" 
+		"AbilityDamage" 				"65 115 165 215" 
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"19.0 16.0 13.0 10.0"
+		"AbilityCooldown"				"16.0 13.0 10.0 7.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -612,7 +613,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"350 375 400 425"
+				"speed"					"500 550 600 650"
 			}
 			"03"
 			{
@@ -783,11 +784,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 20.0 15.0 10.0"
+		"AbilityCooldown"				"23.0 18.0 13.0 8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityGoldCost"				"25 35 45 55"
+		"AbilityGoldCost"				"30 45 60 75"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7174,10 +7175,8 @@
 				
 			}
 		}
-	//End of file trump_ability.txt
 
 
-	//Start of file vip_ability.txt
 		// VIP Ability by Champi ( TY COOKIE )
 		// 2017
 		// ----------------------------------------------
@@ -7210,5 +7209,815 @@
 				}
 			}
 		}
-	//End of file vip_ability.txt
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//-----------------------------------------------------------------------------------------------------------------
+	// RICK
+	//-----------------------------------------------------------------------------------------------------------------
+	// 1 - Portail : rick_portail ( 4 spells, 2 hidden )
+	//-----------------------------------------------------------------------------------------------------------------
+	"rick_portal_a"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"custom/rick_portal_a"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0 50.0 40.0 30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 90 80 70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"15 17 19 21"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"time_for_reuse"			"4.5"
+			}		
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"aura"						"150"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"				"spell/rick/portal_a.lua"
+				"Function"					"LevelUpAbility"
+				"ability_name"				"rick_portal_a_stop"
+				"ability_name_2"			"rick_portal_b_stop"
+				"ability_name_3"			"rick_portal_b"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/rick/portal_a.lua"
+				"Function"		"create"
+				"Target" 		"POINT"
+				"ability_name"				"rick_portal_a_stop"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_no_teleport_a"
+			{
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/rick/portal_a.lua"
+						"Function"		"teleport"
+					}
+				}
+			}
+
+			"modifier_aura_teleport"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"Aura"					"modifier_no_teleport_a"
+				"Aura_Radius"			"%aura"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+			}
+			"modifier_dummy_portal"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+		}
+
+	}
+	"rick_portal_b"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/rick_portal_b"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0 50.0 40.0 30.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 90 80 70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"15 17 19 21"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"time_for_reuse"			"4.5"
+			}		
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"aura"						"150"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/rick/portal_b.lua"
+				"Function"		"create"
+				"Target" 		"POINT"
+				"ability_name"				"rick_portal_b_stop"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_no_teleport_b"
+			{
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"spell/rick/portal_b.lua"
+						"Function"		"teleport"
+					}
+				}
+			}
+
+			"modifier_aura_teleport_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"Aura"					"modifier_no_teleport_b"
+				"Aura_Radius"			"%aura"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+			}
+			"modifier_dummy_portal"
+			{
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+		}
+
+	}
+	"rick_portal_a_stop"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/rick_portal_a_stop"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"spell/rick/portal_a.lua"
+				"Function"				"stop"
+				"sub_ability_name"		"rick_portal_a"
+			}
+		}
+
+	}
+	"rick_portal_b_stop"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/rick_portal_b_stop"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"spell/rick/portal_b.lua"
+				"Function"				"stop"
+				"sub_ability_name"		"rick_portal_b"
+			}
+		}
+
+	}
+	//-----------------------------------------------------------------------------------------------------------------
+	// 2 - Laser : rick_laser_gun = Laser Gun
+	//-----------------------------------------------------------------------------------------------------------------
+	"rick_laser_gun"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom/rick_laser_gun"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.23 0.23 0.23 0.23"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"50 100 150 200"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_hero"			"1.7 2.3 2.7 3.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"10.0 10.0 10.0 10.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"50 60 70 80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_resistance"		"-3 -6 -9 -12"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"particle"					"particles/rick/laser_gun.vpcf"
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.LaserAnim"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.Laser"
+			}
+		
+			"TrackingProjectile"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"particles/rick/laser_gun.vpcf"
+				"MoveSpeed"				"1100"
+				"Dodgeable"				"1"
+				"ProvidesVision"		"0"
+				"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.LaserImpact"
+			}
+		
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Damage"		"%AbilityDamage"
+				"Type"			"DAMAGE_TYPE_PURE"
+			}
+		
+			"ApplyModifier"
+			{
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Types"		"DOTA_UNIT_TARGET_BASIC"
+				}
+				"ModifierName"	"modifier_laser_debuff_datadriven"
+				"Duration"		"%duration_creep"
+			}
+			
+			"ApplyModifier"
+			{
+				"Target"
+				{
+					"Center"	"TARGET"
+					"Types"		"DOTA_UNIT_TARGET_HERO"
+				}
+				"ModifierName"	"modifier_laser_debuff_datadriven"
+				"Duration"		"%duration_hero"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_laser_debuff_datadriven"
+			{
+				"IsDebuff"		"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"				"%miss_rate"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance"
+				}
+			}
+		}
+	}
+	//-----------------------------------------------------------------------------------------------------------------
+	// 3 - Illusion : rick_illusion = Overlapping possibilities
+	//-----------------------------------------------------------------------------------------------------------------
+	"rick_illusion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"custom/rick_illusion"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_phantasm.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"80.0 75.0 70.0 65.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 120 140 160"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"1 3 7 11" //2 4 8 12
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"500"
+			}	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"35"
+			}	
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"-50 -50 -50 -50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage_tooltip"			"50 50 50 50"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"200 200 200 200"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage_tooltip"			"300 300 300 300"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"0.4"
+			}		
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/rick/illusion.lua"
+				"Function"		"PhantasmVision"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_invuln_duration"
+				"Target" 		"CASTER"
+				"Duration"		"%invuln_duration"
+			}		
+		}
+
+		"Modifiers"
+		{
+			"modifier_invuln_duration"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/rick/rick_illusion.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"Hero_ChaosKnight.Phantasm"
+						"Target"		"CASTER"
+					}
+			    }
+
+			    "OnDestroy"
+			    {
+			    	"RunScript"
+				    {
+				        "ScriptFile"    "spell/rick/illusion.lua"
+				        "Function"      "Phantasm"
+				        "sound"			"Hero_ChaosKnight.Phantasm.Plus"
+				    }
+			    }
+
+			    "States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	//-----------------------------------------------------------------------------------------------------------------
+	// Ultimate - Stop Time : rick_stop_time
+	//-----------------------------------------------------------------------------------------------------------------
+	"rick_stop_time"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"custom/rick_stop_time"
+		"AOERadius"						"%radius"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"140.0 120.0 100.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0 5.0 6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_scepter"		"5.0 6.0 7.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_scepter"		"90.0 80.0 70.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"300000"
+			}
+			// Extra
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_interval"			"0.1"
+			}
+			// If you want the Chronosphere to ignore Faceless Void then keep it at 1 otherwise set it to 0
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ignore_rick"			"1"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_FacelessVoid.Chronosphere"
+				"Target"			"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"		"spell/rick/stop_time.lua"
+				"Function"			"Chronosphere"
+				"dummy_aura"		"modifier_chronosphere_aura_datadriven"
+			}
+		}
+
+		"Modifiers"
+		{
+			// Cosmetic
+			"modifier_chronosphere_tooltip_datadriven"
+			{
+				"IsDebuff"		"1"
+				"IsPurgable"	"0"
+			}
+
+			"modifier_chronosphere_aura_datadriven"
+			{
+				
+				"ThinkInterval"		"%aura_interval"
+
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_ALL"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+							"Radius"	"%radius"
+						}
+
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"spell/rick/stop_time.lua"
+								"Function"			"ChronosphereAura"
+								"Target"			"TARGET"
+								"aura_modifier"		"modifier_chronosphere_datadriven"
+							}
+						}
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_chronosphere_datadriven"
+			{
+				"IsHidden"	"1"
+
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

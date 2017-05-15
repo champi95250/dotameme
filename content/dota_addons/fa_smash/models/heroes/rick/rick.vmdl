@@ -45,11 +45,948 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
-	m_pAttachmentLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "ValveBiped.Bip01_Pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Pelvis"
+								m_vMinBounds = [ -12.584656, -7.520821, -15.051431 ]
+								m_vMaxBounds = [ 13.6385, 17.987007, 3.492091 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine"
+								m_vMinBounds = [ -12.440735, -20.532721, -16.722301 ]
+								m_vMaxBounds = [ 16.914063, 19.928778, 18.338074 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine1"
+								m_vMinBounds = [ 2.097435, -4.167828, -10.42028 ]
+								m_vMaxBounds = [ 3.775749, 10.295094, 11.474174 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine2"
+								m_vMinBounds = [ -9.37075, -4.58713, -13.291259 ]
+								m_vMaxBounds = [ 15.646461, 10.756739, 13.624549 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Spine4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Spine4"
+								m_vMinBounds = [ -7.060242, -2.884666, -15.30004 ]
+								m_vMaxBounds = [ 9.836525, 11.698277, 14.345298 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Clavicle"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Clavicle"
+								m_vMinBounds = [ 2.861717, -9.374245, -5.087582 ]
+								m_vMaxBounds = [ 10.662544, 5.072304, 7.565092 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Clavicle"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Clavicle"
+								m_vMinBounds = [ 5.839558, -8.327263, -8.09383 ]
+								m_vMaxBounds = [ 13.682741, 4.095444, 4.170441 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_UpperArm"
+								m_vMinBounds = [ -5.389229, -5.903847, -8.216576 ]
+								m_vMaxBounds = [ 25.572174, 4.152346, 3.275375 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_UpperArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_UpperArm"
+								m_vMinBounds = [ -6.667717, -5.319969, -2.476746 ]
+								m_vMaxBounds = [ 26.406742, 4.184453, 6.083939 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Forearm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Forearm"
+								m_vMinBounds = [ -2.460228, -3.050634, -1.66185 ]
+								m_vMaxBounds = [ 25.119957, 2.464328, 3.313759 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Forearm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Forearm"
+								m_vMinBounds = [ -0.149548, -2.606461, -2.508514 ]
+								m_vMaxBounds = [ 22.118423, 2.455579, 2.454239 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Thigh"
+								m_vMinBounds = [ -6.387911, -2.696895, -29.02149 ]
+								m_vMaxBounds = [ 49.231045, 22.660349, 26.337523 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Thigh"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Thigh"
+								m_vMinBounds = [ -5.957882, -1.156958, -27.076273 ]
+								m_vMaxBounds = [ 51.829174, 23.847164, 29.977201 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Hand"
+								m_vMinBounds = [ -0.291656, -2.657822, -3.009497 ]
+								m_vMaxBounds = [ 7.433899, 2.743279, 3.855239 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Hand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Hand"
+								m_vMinBounds = [ -1.053335, -2.742104, -3.830925 ]
+								m_vMaxBounds = [ 7.905842, 2.015472, 3.033504 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Calf"
+								m_vMinBounds = [ -1.76239, -9.240784, -6.504754 ]
+								m_vMaxBounds = [ 40.621265, 4.312756, 2.621627 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Calf"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Calf"
+								m_vMinBounds = [ -0.13081, -2.209543, -0.964541 ]
+								m_vMaxBounds = [ 36.188961, 4.211425, 5.600093 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger0"
+								m_vMinBounds = [ -2.219418, -0.968613, -1.180576 ]
+								m_vMaxBounds = [ 6.831467, 2.074436, 3.03632 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger1"
+								m_vMinBounds = [ -1.803295, -1.111237, -1.326996 ]
+								m_vMaxBounds = [ 2.39362, 1.739418, 1.44314 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger2"
+								m_vMinBounds = [ -1.293678, -1.24733, -3.548601 ]
+								m_vMaxBounds = [ 2.425789, 1.792961, 1.359108 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger0"
+								m_vMinBounds = [ -1.788548, -1.338461, -2.213654 ]
+								m_vMaxBounds = [ 6.80389, 2.118113, 2.453552 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger1"
+								m_vMinBounds = [ -1.565117, -1.595802, -1.315113 ]
+								m_vMaxBounds = [ 7.290722, 0.783806, 1.635002 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger2"
+								m_vMinBounds = [ -1.489498, -2.260933, -1.493692 ]
+								m_vMaxBounds = [ 4.446629, 0.757729, 3.495387 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Foot"
+								m_vMinBounds = [ -2.698074, -0.125954, -6.48763 ]
+								m_vMaxBounds = [ 9.863159, 9.203482, 2.659977 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Foot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Foot"
+								m_vMinBounds = [ -2.702158, -0.10532, -2.634314 ]
+								m_vMaxBounds = [ 9.859907, 9.215683, 6.499443 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger01"
+								m_vMinBounds = [ -0.54216, -0.652282, -0.879414 ]
+								m_vMaxBounds = [ 5.325264, 1.968512, 2.301491 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger11"
+								m_vMinBounds = [ -2.537567, -0.534092, -0.994307 ]
+								m_vMaxBounds = [ 2.487297, 1.635052, 0.582207 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger21"
+								m_vMinBounds = [ -3.299942, -2.061966, -3.561207 ]
+								m_vMaxBounds = [ 2.901382, 1.490723, 0.835827 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger3"
+								m_vMinBounds = [ -1.268761, -0.986485, -1.317662 ]
+								m_vMaxBounds = [ 2.218742, 1.293064, 1.867153 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger01"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger01"
+								m_vMinBounds = [ -0.645874, -1.006301, -1.380051 ]
+								m_vMaxBounds = [ 5.221348, 1.846999, 1.863121 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger11"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger11"
+								m_vMinBounds = [ -1.917511, -1.526405, -0.928047 ]
+								m_vMaxBounds = [ 4.545517, 0.638721, 0.651979 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger21"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger21"
+								m_vMinBounds = [ -1.894989, -1.98341, -0.899885 ]
+								m_vMaxBounds = [ 4.432213, 0.446701, 3.121297 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger3"
+								m_vMinBounds = [ -1.264366, -2.021103, -1.686522 ]
+								m_vMaxBounds = [ 2.223129, 0.299694, 1.506012 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger4"
+								m_vMinBounds = [ -1.082062, -2.160015, -0.972971 ]
+								m_vMaxBounds = [ 1.910667, -0.109802, 1.684859 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Toe0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Toe0"
+								m_vMinBounds = [ -4.932443, -1.688053, -4.599691 ]
+								m_vMaxBounds = [ -0.438289, 0.782264, 2.276558 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Toe0"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Toe0"
+								m_vMinBounds = [ -4.936411, -1.750853, -2.134896 ]
+								m_vMaxBounds = [ -0.442207, 0.908339, 4.722153 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Trapezius"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Trapezius"
+								m_vMinBounds = [ -7.472202, -1.99514, -4.03797 ]
+								m_vMaxBounds = [ 5.695646, 5.072327, 5.4926 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Shoulder"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Shoulder"
+								m_vMinBounds = [ -7.16095, -5.352083, -7.425819 ]
+								m_vMaxBounds = [ 1.759933, 4.128258, 3.180435 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Elbow"
+								m_vMinBounds = [ -2.519722, -2.619856, -1.332283 ]
+								m_vMaxBounds = [ 2.109688, 1.950031, 3.256386 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Wrist"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Wrist"
+								m_vMinBounds = [ -1.657829, -2.210269, -1.016754 ]
+								m_vMaxBounds = [ 0.512085, 2.110611, 3.313751 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger02"
+								m_vMinBounds = [ -1.034348, -0.052976, -0.139072 ]
+								m_vMaxBounds = [ 3.113224, 1.741519, 1.764732 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger12"
+								m_vMinBounds = [ -0.576118, 0.236528, -0.730778 ]
+								m_vMaxBounds = [ 1.950417, 1.852596, 0.581604 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger22"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger22"
+								m_vMinBounds = [ -2.130074, -1.201189, -3.031437 ]
+								m_vMaxBounds = [ 1.799797, 1.473959, 0.842856 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger31"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger31"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_L_Finger4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_L_Finger4"
+								m_vMinBounds = [ -1.160042, -1.239964, -1.181711 ]
+								m_vMaxBounds = [ 1.817924, 0.572548, 0.904481 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Anim_Attachment_LH"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Anim_Attachment_LH"
+								m_vMinBounds = [ 4.527512, -2.264907, -0.647671 ]
+								m_vMaxBounds = [ 5.41938, 2.586912, 1.948643 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Trapezius"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Trapezius"
+								m_vMinBounds = [ -1.955067, -8.269241, -6.461094 ]
+								m_vMaxBounds = [ 4.683952, 3.622337, 3.26474 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Elbow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Elbow"
+								m_vMinBounds = [ -3.144341, -2.600063, -2.470375 ]
+								m_vMaxBounds = [ 2.924637, 2.32215, 2.460472 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Bicep"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Bicep"
+								m_vMinBounds = [ 8.989567, -2.512176, -2.451385 ]
+								m_vMaxBounds = [ 9.115505, -0.055261, 2.46685 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Shoulder"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Shoulder"
+								m_vMinBounds = [ -1.782013, -2.185586, -2.375496 ]
+								m_vMaxBounds = [ -0.915794, 2.100414, -1.143036 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Wrist"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Wrist"
+								m_vMinBounds = [ -0.896282, -2.219598, -2.014458 ]
+								m_vMaxBounds = [ 6.442146, 2.364121, 2.071281 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger02"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger02"
+								m_vMinBounds = [ -1.246792, -0.348073, -0.779869 ]
+								m_vMaxBounds = [ 2.900719, 1.444118, 1.123669 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger12"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger12"
+								m_vMinBounds = [ -0.27066, -0.711599, -0.9284 ]
+								m_vMaxBounds = [ 2.255875, 0.90156, 0.387058 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger22"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger22"
+								m_vMinBounds = [ -0.145676, -1.640392, -0.908828 ]
+								m_vMaxBounds = [ 2.172844, 0.486502, 1.288954 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger31"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger31"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_R_Finger41"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_R_Finger41"
+								m_vMinBounds = [ -0.813454, -1.226307, 0.156274 ]
+								m_vMaxBounds = [ -0.225426, -0.702362, 0.300023 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Anim_Attachment_RH"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Anim_Attachment_RH"
+								m_vMinBounds = [ -1.226349, -1.294913, -1.222256 ]
+								m_vMaxBounds = [ -0.896004, 2.263901, 0.335495 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "ValveBiped.Bip01_Head1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "ValveBiped.Bip01_Head1"
+								m_vMinBounds = [ -4.290794, -13.148516, -19.46722 ]
+								m_vMaxBounds = [ 39.235222, 22.326162, 18.647804 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "ValveBiped.Bip01_R_Hand"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "ValveBiped.Bip01_Spine4"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
 	m_pAnimGroup = 
 	{
-		m_pObject = null
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
+				{
+					m_Animationname = "rick_idle"
+					m_Filepath = "models/heroes/rick/rick_idle.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 16
+					m_flFps = 8.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "rick_walk"
+					m_Filepath = "models/heroes/rick/rick_walk.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 16
+					m_flFps = 16.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "rick_attack"
+					m_Filepath = "models/heroes/rick/rick_attack.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 9
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "rick_fall"
+					m_Filepath = "models/heroes/rick/rick_fall.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_FLAIL"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "rick_die"
+					m_Filepath = "models/heroes/rick/rick_die.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 11
+					m_flFps = 12.5
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+			m_sCompileScripts = [  ]
+		}
 	}
 	m_pMaterialGroupList = 
 	{

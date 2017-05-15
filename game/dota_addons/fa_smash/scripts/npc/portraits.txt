@@ -35,6 +35,38 @@
 			}
 		}
 	}
+
+	"models/heroes/rick/rick.vmdl"
+	{
+		"PortraitLightPosition"		"202.70 -0.15 288.17"
+		"PortraitLightAngles"		"54.79 150.70 0.00"
+		"PortraitLightFOV"		"200"
+		"PortraitLightDistance"		"377"
+		"PortraitLightColor"		"154 148 142"
+		"PortraitShadowColor"		"74 74 74"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"79 108 108"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/keeper_of_the_light.vmat"
+		"PortraitBackgroundColor1"		"1 1 1"
+		"PortraitBackgroundColor2"		"1 1 1"
+		"PortraitBackgroundColor3"		"1 1 1"
+		"PortraitBackgroundColor4"		"1 1 1"
+		"PortraitLightScale"		"4.500000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-79.070 -84.150 -25.320"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"250.17 -54.29 141.69"
+				"PortraitAngles"		"0.89 166.83 0.00"
+				"PortraitFOV"		"18"
+			}
+		}
+	}
 	
 	"models/heroes/bob/spongbob.vmdl"
 	{

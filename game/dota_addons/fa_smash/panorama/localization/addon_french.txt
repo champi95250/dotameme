@@ -34,8 +34,10 @@
 	"npc_dota_hero_doom_bringer"		"AT-ST"
 	"npc_dota_hero_queenofpain"			"Microphone"
 	"npc_dota_hero_ancient_apparition"	"SpongeBob"
+	"npc_dota_hero_jakiro"				"Rick"
 
 	"error_trumpinate"					"Machala, tu peux pas cast si la cia voit personne de track !"
+	"error_portal"						"Il manque un portail pour pouvoir traverser !"
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"ARGENT DE JOKO"
 
