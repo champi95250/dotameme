@@ -45,9 +45,6 @@
 	transition-timing-function: ease-out;	
 }
 
-
-
-
 DOTAHudPreGame.StartPregameIntro .HeroPickingPlayer
 {
 	transform: translateY(0px);
@@ -67,15 +64,15 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 {
 	background-color: gradient( radial, 50% 90%, 0% 0%, 80% 90%, from( #444D5A ), to( #161B23 ) );
 	width: 118px;
-	height: width-percentage( 56.25% );
-	transform: translateY(6px) translateX(-1px);
+	height: 100%;
+	transform: translateY(-4px) translateX(0px); /* Hero Image Position */
 
 	saturation: 1.0;
 	brightness: 1.0;
 	contrast: 1.0;
 	wash-color: white;
 	pre-transform-scale2d: 1;
-	
+
 	transition-property: transform, saturation, contrast, brightness, wash-color, pre-transform-scale2d;
 	transition-duration: .12s;
 	transition-timing-function: ease-in-out;
@@ -114,42 +111,6 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 	height: 66px;
 }
 
-
-#HeroImagePickBar
-{
-	width: 118px;
-	height: 14px;
-	
-	vertical-align: bottom;
-	margin-bottom: 30px;
-	transform: translateX(14px);
-	visibility: collapse;
-	
-	background-image: url("s2r://panorama/images/masks/topbar_heropick_left_psd.vtex");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	opacity: 1;
-	wash-color: black;
-	wash-color: #99f; 
-	blur: gaussian ( 8 );
-
-	visibility: visible;
-	animation-name: PlayerInControlBorderPulse;
-	animation-duration: 1.1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-out;
-}
-
-
-
-.PlayerInControl #HeroImagePickBar
-{
-
-	//animation-direction: alternate-reverse;
-}
-
-
-
 @keyframes 'PlayerInControlBorderPulse'
 {
 	0%
@@ -166,28 +127,12 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 	}
 }
 
-
-
-.Slot0 #HeroImagePickBar { wash-color: HeroSlot0Color;  }
-.Slot1 #HeroImagePickBar { wash-color: HeroSlot1Color; }
-.Slot2 #HeroImagePickBar { wash-color: HeroSlot2Color; }
-.Slot3 #HeroImagePickBar { wash-color: HeroSlot3Color; }
-.Slot4 #HeroImagePickBar { wash-color: HeroSlot4Color; }
-
-.Slot5 #HeroImagePickBar { wash-color: HeroSlot5Color; }
-.Slot6 #HeroImagePickBar { wash-color: HeroSlot6Color; }
-.Slot7 #HeroImagePickBar { wash-color: HeroSlot7Color; }
-.Slot8 #HeroImagePickBar { wash-color: HeroSlot8Color; }
-.Slot9 #HeroImagePickBar { wash-color: HeroSlot9Color; }
-
-
 #HeroImageContainer
 {
 	height: 72px;
-	opacity-mask: url("s2r://panorama/images/masks/topbar_heroslant_left_psd.vtex");
 	flow-children: none;
 	background-color: #555;
-	margin-left: 4px;
+	margin-left: 0px;
 	pre-transform-scale2d: 1;
 
 	animation-duration: 0.82s;
@@ -225,8 +170,6 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 	animation-duration: .11s;	
 }
 
-
-
 @keyframes 'PlayerConnecting'
 {
 	0%
@@ -239,7 +182,6 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 	}
 }
 
-
 @keyframes 'PlayerFailed'
 {
 	0%
@@ -251,7 +193,6 @@ DOTAHudPreGame.WaitingForPlayers .HeroPickingPlayer.PlayerConnecting
 		background-color: #aa1100;
 	}
 }
-
 
 DOTAHudPreGame.BecomeActive #HeroImageContainer
 {
@@ -272,7 +213,6 @@ DOTAHudPreGame.StartPregameIntro #HeroImageContainer
 .Slot6 #HeroImageContainer { background-color: HeroSlot6Color; transition-delay: 0s;}
 .Slot7 #HeroImageContainer { background-color: HeroSlot7Color; transition-delay: 0s;}
 
-
 .BecomeActive .Slot0 #HeroImageContainer { background-color: HeroSlot0Color; transition-delay: 1.8s;}
 .BecomeActive .Slot1 #HeroImageContainer { background-color: HeroSlot1Color; transition-delay: 1.9s;}
 .BecomeActive .Slot2 #HeroImageContainer { background-color: HeroSlot2Color; transition-delay: 2.0s;}
@@ -281,8 +221,6 @@ DOTAHudPreGame.StartPregameIntro #HeroImageContainer
 .BecomeActive .Slot5 #HeroImageContainer { background-color: HeroSlot5Color; transition-delay: 2.3s;}
 .BecomeActive .Slot6 #HeroImageContainer { background-color: HeroSlot6Color; transition-delay: 2.4s;}
 .BecomeActive .Slot7 #HeroImageContainer { background-color: HeroSlot7Color; transition-delay: 2.5s;}
-
-
 
 .HeroPickTentative #HeroImage
 {
@@ -343,14 +281,14 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 
 #NameContainer > Label
 {
-	width: 100px;
+	width: 100%;
 	height: 100%;
 	text-align: center;
 	horizontal-align: center;
 	font-weight: thin;
 	font-size: 20px;
 	color: #7a8a9d;
-	transform: translateX( 6px );
+	transform: translateX( -4px );
 	text-shadow: 0px 0px 0px 1 transparent;
 	
 	transition-property: color, opacity, text-shadow, wash-color;
@@ -363,7 +301,6 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 	context-menu-position: bottom;
 	context-menu-body-position: 50% 50%;
 }
-
 
 .PlayerInControl ##NameContainer > Label
 {
@@ -406,12 +343,6 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 	opacity: 1;
 }
 
-#NameContainer
-{
-	margin-right: 4px;
-}
-
-
 #HeroName
 {
 	text-overflow: shrink;
@@ -434,7 +365,6 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 	height: 100%;
 	width: 100%;
 }
-
 
 #DisconnectedIcon
 {

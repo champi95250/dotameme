@@ -343,6 +343,27 @@ local numBuildings = 0
 		end
 	end
 
+	if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+		local ability = EntIndexToHScript(abilityIndex)
+		local target = EntIndexToHScript(targetIndex)
+		local Position = point
+		local playerID = unit:GetPlayerOwnerID()
+
+		local rickportal = ability:GetName() == "rick_portal_a" or ability:GetName() == "rick_portal_b"
+
+		if rickportal then
+			local target_location = Position
+			if target_location.x > 3200 or target_location.x < -3200 then
+				SendErrorMessage(issuer, "#portail_hors_zone")
+				return false
+			elseif target_location.y > 3200 or target_location.y < -3200 then
+				SendErrorMessage(issuer, "#portail_hors_zone")
+				return false
+			end
+		end
+
+	end
+
 	if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
 		local ability = EntIndexToHScript(abilityIndex)
 		local target = EntIndexToHScript(targetIndex)

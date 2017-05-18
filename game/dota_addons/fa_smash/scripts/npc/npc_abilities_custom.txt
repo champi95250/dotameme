@@ -507,10 +507,7 @@
 			}
 		}
 	} 
-//End of file atst_ability.txt
 
-
-//Start of file bob_ability.txt
 	// BOB Ability by Champi
 	// 2017
 	// ----------------------------------------------
@@ -1255,17 +1252,17 @@
 				"02"
 				{
 					"var_type"					"FIELD_INTEGER"  // exemple pour une vague de 6 unité = 156
-					"damage_unit_extra"			"5 15 25 35"
+					"damage_unit_extra"			"10 20 30 40"
 				}
 				"03"
 				{
-					"var_type"					"FIELD_INTEGER"  // exemple pour 2 hero = 116
-					"damage_hero_extra"			"15 30 45 60"
+					"var_type"					"FIELD_INTEGER"  // exemple pour 2 hero = 160
+					"damage_hero_extra"			"20 40 60 80"
 				}
 				"04"
 				{
-					"var_type"					"FIELD_INTEGER" // ajouts des base damage a l'exemple = 442
-					"base_damage"				"50 90 130 170"
+					"var_type"					"FIELD_INTEGER" // ajouts des base damage a l'exemple = 125+160+80=365
+					"base_damage"				"75 100 125 150"
 				}
 			}
 			
@@ -1341,12 +1338,12 @@
 				"01"
 				{
 					"var_type"			"FIELD_INTEGER"
-					"critical"			"150 250 350"
+					"critical"			"200 300 400"
 				}
 				"02"
 				{
 					"var_type"			"FIELD_INTEGER"
-					"critical_scepter"	"250 350 450"
+					"critical_scepter"	"300 400 500"
 				}
 				"03"
 				{	
@@ -1485,10 +1482,7 @@
 	
 		}
 		
-	//End of file bruce_lee_ability.txt
 
-
-	//Start of file catmancer_ability.txt
 		// Catmancer Ability by Shiroun and Champi
 		// 2017
 		// ----------------------------------------------
@@ -7288,6 +7282,8 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60.0 50.0 40.0 30.0"
+		"AbilityCastRange"				"70000"
+		"AbilityCastPoint"				"0.1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8005,7 +8001,501 @@
 			}
 		}
 	}
-	
+
+	//-----------------------------------------------------------------------------------------------------------------
+	// Toby the Rock
+	//-----------------------------------------------------------------------------------------------------------------
+	// 1 - Shut Stone
+	// Description : La pierre tombe sur le sol, fait des degats de zone et stun "0.3 0.6 0.9 1.2"
+	//-----------------------------------------------------------------------------------------------------------------
+
+	"toby_shut_stone"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"custom/toby_shut_stone"
+		"MaxLevel" 						"4"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastRange"				"620 760 900 1040"
+		"AbilityCastPoint"				"0.10"
+		"AbilityCastAnimation"   		"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"  		"1"
+		"AnimationIgnoresModelScale" 	"1"
+
+		"AbilityCooldown"				"12.5 10.0 7.5 5.0"
+		"AbilityManaCost"				"50 60 70 80"
+		"AbilityDamage"					"75 125 175 225"
+		"AbilityProcsMagicStick"		"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"			"500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"260"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"	// pas fait encore
+				"duration_slow"			"3.0 3.5 4.0 4.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"	
+				"duration_stun"			"0.3 0.6 0.9 1.2"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"	// pas fait encore
+				"slow"				"-40"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.7 0.7 0.7 0.7"
+			}
+		}
+		"precache"
+		{
+			//"particle"  "particles/dedede/warstomp.vpcf"
+			//"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_windwalk_sparks.vpcf"
+			//"soundfile" "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+			//"soundfile"			"soundevents/bowser_soundset.vsndevts"
+			"soundfile"			"soundevents/game_sounds_toby.vsndevts"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/toby/shut_stone.lua"
+				"Function"		"Toby_stone"
+				"Target"		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_toby_down"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_1"
+		
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"OnDestroy"
+				{	
+					"DestroyTrees"
+					{
+						"Target"		"CASTER"
+						"Radius"		"%radius"
+					}
+
+					"FireEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"EffectRadius"		"%radius"
+						"Target" 			"CASTER"
+						"ControlPoints"
+						{
+							"01"	"%radius 0 %radius"
+						}
+					}
+
+					"FireSound"
+					{
+						"EffectName"	"toby.jump_down"
+						"Target" 		"CASTER"
+					}
+								
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%AbilityDamage"
+							}
+							"Stun"
+							{
+								"Target"		"TARGET"
+								"Duration"		"%duration_stun"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//-----------------------------------------------------------------------------------------------------------------
+	// 2 - Rock Body 
+	// Description : Ajout de resistance Magic (+5 10 15 20) et Armor (+3 +6 +9 +12) et Augmentation des damages (+20 +40 +60 +80) et augmentation du model scale ( +1.2 +1.4 +1.6 +1.8)
+	//-----------------------------------------------------------------------------------------------------------------
+
+	"toby_the_body_rock"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/toby_the_body_rock"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_toby.vsndevts"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"15 30 45 60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_attack_speed"		"-10 -20 -30 -40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_magical_resistance"	"5 10 15 20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"3 6 9 12"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"model_scale"				"1.2 1.4 1.6 1.8"
+			}
+		}
+		"Modifiers"
+		{
+			"toby_rock_modifier"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"Passive"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%bonus_magical_resistance"
+					"MODIFIER_PROPERTY_MODEL_SCALE"						"%model_scale"
+				}
+			}
+		}	
+	}
+
+
+	//-----------------------------------------------------------------------------------------------------------------
+	// 3 - Tombe Pierre
+	// Description : Saute sur le sol plusieur fois ( 4 5 6 7 ) et fait sauté les ennemis dans une zone ( 40 50 60 70 damage par saut = 160 250 360 490  )
+	//-----------------------------------------------------------------------------------------------------------------
+
+	"tomb_pierre"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/tomb_pierre"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_toby.vsndevts"
+			"particle"			"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityChannelTime"			"5.2"
+		"AoERadius" 					"%radius"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"5.0"	// better then the mana cost implies
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_second"			"40 50 60 70" // total*5 = 200 250 300 350 + 100  
+				"LinkedSpecialBonus"    	"special_bonus_unique_toby"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rang_aoe"					"400 400 400 400" // Total + 250
+				"LinkedSpecialBonus"    	"special_bonus_unique_toby_2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"1.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_tomb_pierre"
+				"Target"			"CASTER"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"		"modifier_tomb_pierre"
+				"Target"			"CASTER"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+
+			"RemoveModifier"
+			{
+				"ModifierName"		"modifier_tomb_pierre"
+				"Target"			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_tomb_pierre"
+			{
+				"IsDebuff"	"0"
+				"IsBuff"	"1"
+				"Duration"	"%duration"
+
+				"ThinkInterval"	"%tick_interval"
+				"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_2"
+
+				"OnIntervalThink"
+				{	
+					"FireSound"
+					{
+						"EffectName"	"toby.jump_down"
+						"Target" 		"CASTER"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"spell/toby/tomb_pierre.lua"
+						"Function"		"TombPierre"
+					}
+				}
+			}
+		}
+	}
+
+	"special_bonus_unique_toby"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass" 					"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
+
+	"special_bonus_unique_toby_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass" 					"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"250"
+			}
+		}
+	}
+
+	//-----------------------------------------------------------------------------------------------------------------
+	// 4 - Earthquake
+	// Saute dans une zone et fait de gros degats en fonction du nombres de héros présent dans la zone.
+	//-----------------------------------------------------------------------------------------------------------------
+	"earthquake"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"custom/earthquake"
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam.vpcf"
+			"particle"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
+			"particle"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_fallback_mid.vpcf"
+			"soundfile"		"sounds/weapons/hero/earthshaker/echo_slam.vsnd"
+			"soundfile"		"sounds/weapons/hero/earthshaker/echo_slam_small.vsnd"
+			"soundfile"		"sounds/weapons/hero/earthshaker/echo01.vsnd"
+			"soundfile"		"sounds/weapons/hero/earthshaker/echo02.vsnd"
+			"soundfile"		"sounds/weapons/hero/earthshaker/echo03.vsnd"
+			"soundfile"		"soundevents/game_sounds_toby.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150.0 130.0 110.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"150 200 250"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 160 220"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"echo_slam_damage_range"	"625 675 725"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"echo_slam_echo_search_range" "625 675 725"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"echo_slam_echo_range"		"625 675 725"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"echo_slam_echo_damage"		"50 75 100"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_EarthShaker.EchoSlam"
+				"Target"		"CASTER"
+			}
+			"FireSound"
+			{
+				"EffectName"	"toby.rock"
+				"Target" 		"CASTER"
+			}
+		
+			"RunScript"
+			{
+				"ScriptFile"	"spell/toby/earthquake.lua"
+				"Function"		"earthquake"
+				"particle1"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam.vpcf"
+				"particle2"		"particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
+				"sound1"		"Hero_EarthShaker.EchoSlam"
+				"sound2"		"Hero_EarthShaker.IdleSlam"
+				"sound3"		"Hero_EarthShaker.EchoSlamEcho"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"spell/toby/earthquake.lua"
+				"Function"		"Applyearthquake"
+			}
+		}
+	}
 	
 	
 	

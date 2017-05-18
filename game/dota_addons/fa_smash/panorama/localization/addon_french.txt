@@ -35,9 +35,11 @@
 	"npc_dota_hero_queenofpain"			"Microphone"
 	"npc_dota_hero_ancient_apparition"	"SpongeBob"
 	"npc_dota_hero_jakiro"				"Rick"
+	"npc_dota_hero_earthshaker"			"Toby The Rock"
 
 	"error_trumpinate"					"Machala, tu peux pas cast si la cia voit personne de track !"
 	"error_portal"						"Il manque un portail pour pouvoir traverser !"
+	"portail_hors_zone"					"Portail dans la zone de protection !"
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"ARGENT DE JOKO"
 

@@ -35,9 +35,11 @@
 	"npc_dota_hero_queenofpain"			"Microphone"
 	"npc_dota_hero_ancient_apparition"	"SpongeBob"
 	"npc_dota_hero_jakiro"				"Rick"
+	"npc_dota_hero_earthshaker"			"Toby The Rock"
 
 	"error_trumpinate"					"Unable to find target."
 	"error_portal"						"Unable to find Portal."
+	"portail_hors_zone"					"Portal Protection !"
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"Gold"
 

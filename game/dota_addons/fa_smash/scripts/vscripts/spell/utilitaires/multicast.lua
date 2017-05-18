@@ -16,8 +16,10 @@ local forbidden_abilities = {
 	"catmancer_pelote",
 	"pedobear_kidnap",
 	"microphone_song_complete",
-	"pedobear_arena"
-}
+	"pedobear_arena",
+	"rick_portal_a",
+	"rick_portal_b"
+	}
 
 	-- Determines the mulicast multiplier
 	if rand < two_times then
@@ -43,7 +45,7 @@ local forbidden_abilities = {
 
 				if cd > 0 and full_cd - cd < 1.00 then
 					print(ability_name)
-					if ability_name == "nyan_cat_john_cena" or ability_name == "catmancer_pelote" or ability_name == "pedobear_kidnap" or ability_name == "microphone_song_complete" or ability_name == "pedobear_arena" then
+					if ability_name == "nyan_cat_john_cena" or ability_name == "catmancer_pelote" or ability_name == "pedobear_kidnap" or ability_name == "microphone_song_complete" or ability_name == "rick_portal_a" or ability_name == "rick_portal_b"or ability_name == "pedobear_arena" then
 						print("Ability Forbidden!")
 					else
 						print("Ability Allowed!")

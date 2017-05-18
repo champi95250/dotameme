@@ -1,6 +1,7 @@
 
 "DOTAHeroes"
-{
+{	
+		// bob L'eponge
 		"npc_dota_hero_ancient_apparition"
 		{
 			// General
@@ -81,7 +82,7 @@
 			"VoiceFile"		""
 		}
 
-		// Nyan Cat by Champi
+		// Catmancer by Champi
 		"npc_dota_hero_antimage"
 		{
 			// General
@@ -402,16 +403,13 @@
 			
 			// Movement
 			//-------------------------------------------------------------------------------------------------------------
-			"MovementSpeed"		"215"
+			"MovementSpeed"		"240"
 			"MovementTurnRate"		"0.600000"
 			"particle_folder"		""
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_doom_bringer.txt
 
-
-	//Start of file npc_dota_hero_omniknight.txt
 		// Jesus by Champi
 		"npc_dota_hero_omniknight"
 		{
@@ -492,10 +490,7 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_omniknight.txt
 
-
-	//Start of file npc_dota_hero_puck.txt
 		// King Boo by Champi
 		"npc_dota_hero_puck"
 		{
@@ -584,11 +579,8 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_puck.txt
 
-
-	//Start of file npc_dota_hero_queenofpain.txt
-		// Nyan Cat by Champi
+		// Microphone by Champi
 		"npc_dota_hero_queenofpain"
 		{
 			// General
@@ -669,10 +661,7 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_queenofpain.txt
 
-
-	//Start of file npc_dota_hero_sven.txt
 		// Shrek by Champi
 		"npc_dota_hero_sven"
 		{
@@ -754,10 +743,7 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_sven.txt
 
-
-	//Start of file npc_dota_hero_tusk.txt
 		// Bruce Lee by Sly and Champi
 		"npc_dota_hero_tusk"
 		{
@@ -845,7 +831,7 @@
 			"VoiceFile"		""
 		}
 
-		// Bruce Lee by Sly and Champi
+		// Guimauve by Sly and Champi
 		"npc_dota_hero_ursa"
 		{
 			// General
@@ -930,10 +916,7 @@
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
 		}
-	//End of file npc_dota_hero_ursa.txt
 
-
-	//Start of file npc_dota_hero_viper.txt
 		// SANIC by Champi
 		"npc_dota_hero_viper"
 		{
@@ -1183,6 +1166,92 @@
 			//-------------------------------------------------------------------------------------------------------------
 			"MovementSpeed"		"310"
 			"MovementTurnRate"		"0.600000"
+			"particle_folder"		""
+			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"VoiceFile"		""
+		}
+
+	"npc_dota_hero_earthshaker"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"Model"		"models/heroes/tobytherock/tobytherock.vmdl"
+			"Portrait"		""
+			"IdleExpression"		""
+			"SoundSet"		"Hero_Windrunner"
+			"PickSound"		"windrunner_wind_spawn_01"
+			"BanSound"		"windrunner_wind_anger_01"
+			"Enabled"		"1"
+			"HeroUnlockOrder"		"2"
+			"Role" 			"Carry,Escape,Initiator,Nuker,Pusher,Support,Durable,Disabler,Jungler"
+			"Rolelevels"	"2,1,1,2,1,0,2,1,0"
+			"Complexity"	"2"
+			"Team"			"Good"
+			"BotImplemented"		"0"
+			"ModelScale"		"0.90000"
+			"LoadoutScale"		"0.90000"
+			"HeroGlowColor"		"185 220 20"
+			"HeroSelectSoundEffect"		""
+			"DisableWearables" "1"
+			
+			// Abilities
+			//-------------------------------------------------------------------------------------------------------------
+			"Ability1"		"toby_shut_stone"
+			"Ability2"		"tomb_pierre"
+			"Ability3"		"toby_the_body_rock"
+			"Ability4"		"earthquake"
+			"Ability5"		""
+			"Ability6"		""
+			"Ability7"		""
+			"Ability10"		"special_bonus_all_stats_5"
+			"Ability11"		"special_bonus_attack_speed_10"
+			"Ability12"		"special_bonus_unique_toby"
+			"Ability13"		"special_bonus_unique_toby_2"
+			"Ability14"		"special_bonus_hp_275"
+			"Ability15"		"special_bonus_attack_damage_40"
+			"Ability16"		"special_bonus_movement_speed_50"
+			"Ability17"		"special_bonus_cast_range_250"
+			
+			// Armor
+			//-------------------------------------------------------------------------------------------------------------
+			"ArmorPhysical"			"4"
+			"MagicalResistance" 	"25"
+			
+			// Attack
+			//-------------------------------------------------------------------------------------------------------------
+			"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+			"AttackDamageMin"		"20"
+			"AttackDamageMax"		"25"
+			"AttackRate"		"1.730000"
+			"AttackAnimationPoint"		"0.340000"
+			"AttackAcquisitionRange"		"550"
+			"AttackRange"		"150"
+			"ProjectileModel"		""
+			"ProjectileSpeed"		"1150"
+			
+			// Status
+			//----------------------------------------------------------------
+			"StatusHealth"				"275"		// Base health.
+			"StatusHealthRegen"			"0.4"			// Health regeneration rate.
+			"StatusMana"				"124"			// Base mana.
+			"StatusManaRegen" 			"0.8" // Mana regeneration rate.
+			
+			// Attributes
+			//-------------------------------------------------------------------------------------------------------------
+			"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+			"AttributeBaseStrength"		"30"
+			"AttributeStrengthGain"		"3.100000"
+			"AttributeBaseIntelligence"		"11"
+			"AttributeIntelligenceGain"		"1.30000"
+			"AttributeBaseAgility"		"11"
+			"AttributeAgilityGain"		"1.300000"
+			"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+			"HealthBarOffset"		"160"
+			
+			// Movement
+			//-------------------------------------------------------------------------------------------------------------
+			"MovementSpeed"		"235"
+			"MovementTurnRate"		"1.000000"
 			"particle_folder"		""
 			"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
 			"VoiceFile"		""
