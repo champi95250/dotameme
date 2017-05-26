@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "static_prop"
-								m_vMinBounds = [ -101.506996, -105.880409, 0.784611 ]
-								m_vMaxBounds = [ 101.351112, 92.333382, 318.164612 ]
+								m_vMinBounds = [ -74.404976, -77.610703, 0.577533 ]
+								m_vMaxBounds = [ 74.29071, 67.680687, 234.193054 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},

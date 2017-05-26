@@ -7,6 +7,7 @@ GameSettings = {
 	-- Mechanics
 	["smash_bros"] = 0,  		--( smash bros )
 	["hero_branches"] = 0, 		--( gagne 1 stats tout les 100 gold )
+	["grow"] = 0,
 	["max_kills"] = 15,
 
 	-- Spell

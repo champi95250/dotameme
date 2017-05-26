@@ -12,6 +12,7 @@ LinkLuaModifier( "modifier_brawl", "modifier_but/modifier_brawl.lua" ,LUA_MODIFI
 LinkLuaModifier( "modifier_denied", "modifier_but/modifier_denied.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_river_radiation", "modifier_but/modifier_river.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_grow", "modifier_but/modifier_grow.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 function GameMode:OnSettingChange(event)
 local setting = event.setting
@@ -312,6 +313,21 @@ function GameMode:OnPlayerLevelUp(keys)
 			local unspent_ability_points = hero:GetAbilityPoints()
 			hero:SetAbilityPoints(unspent_ability_points+1)
 		end
+	end
+
+	if GameSettings.grow > 0 then
+		local hero = player:GetAssignedHero()
+
+		if level >= 6 and level < 12 then -- 11 > 6 - 11 < 12
+			hero:AddNewModifier(hero, nil, "modifier_grow", {stacks = 1})
+		elseif level >= 12 and level < 18 then
+			hero:AddNewModifier(hero, nil, "modifier_grow", {stacks = 2})
+		elseif level >= 18 and level < 25 then
+			hero:AddNewModifier(hero, nil, "modifier_grow", {stacks = 3})
+		elseif level == 25 then
+			hero:AddNewModifier(hero, nil, "modifier_grow", {stacks = 4})
+		end
+
 	end
 end
 

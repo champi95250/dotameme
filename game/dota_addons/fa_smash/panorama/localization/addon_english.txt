@@ -42,6 +42,20 @@
 	"portail_hors_zone"					"Portal Protection !"
 	
 	"DOTA_Tooltip_ability_item_bag_of_gold"			"Gold"
+	"DOTA_Tooltip_ability_item_bag_of_gold_ixtra"	"Diamond"
+	"DOTA_Tooltip_ability_item_rune_haste"			"Haste"
+	"DOTA_Tooltip_ability_item_rune_double_damage"	"Double Damage"
+	"DOTA_Tooltip_ability_item_rune_invis"			"Invisibility"
+	"DOTA_Tooltip_ability_item_rune_armor"			"Metal Armor"
+	"DOTA_Tooltip_ability_item_rune_healing"		"Healing"
+	"DOTA_Tooltip_ability_item_rune_grow"			"Grow"
+
+	"DOTA_Tooltip_ability_item_rune_double_damage_description"	"Double Damage"
+	"DOTA_Tooltip_ability_item_rune_haste_description"			"Haste"
+	"DOTA_Tooltip_ability_item_rune_invis_description"			"Invisibility"
+	"DOTA_Tooltip_ability_item_rune_armor_description"			"Metal Armor"
+	"DOTA_Tooltip_ability_item_rune_healing_description"		"Healing"
+	"DOTA_Tooltip_ability_item_rune_grow_description"			"Grow"
 
 	"#VictoryMessage"			"Victory!"
 }

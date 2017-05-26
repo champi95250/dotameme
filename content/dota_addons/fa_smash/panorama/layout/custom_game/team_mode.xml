@@ -34,6 +34,9 @@
 						<ToggleButton id="brawl" text="Super Smash bros" onactivate="Toggle('brawl')"/>
 					</Panel>
 					<Panel>
+						<ToggleButton id="grow" text="Grow" onactivate="Toggle('grow')"/>
+					</Panel>
+					<Panel>
 						<ToggleButton id="multicast" text="Multicast" onactivate="Toggle('multicast')"/>
 					</Panel>
 					<Panel>

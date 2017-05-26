@@ -58,6 +58,7 @@ require('internal/events')
 require('settings')
 require('events')
 require('gold')
+require('custom_rune')
 
 function GameMode:PostLoadPrecache()
 	DebugPrint("[BAREBONES] Performing Post-Load precache")    
@@ -104,12 +105,18 @@ function GameMode:OnGameInProgress()
 
 	for i = 1, 4 do
 		local DoorObs = Entities:FindAllByName("obstruction_mid"..i)
+		local DoorObs2 = Entities:FindAllByName("door_trap"..i)
 		for _, obs in pairs(DoorObs) do
 			obs:SetEnabled(false, true)
 		end
+		for _, obs2 in pairs(DoorObs2) do
+			obs2:SetEnabled(false, true)
+		end
 		DoEntFire("door_mid"..i, "SetAnimation", "gate_entrance002_open", 0, nil, nil)
+		DoEntFire("door_ext"..i, "SetAnimation", "spike_open", 0, nil, nil)
 	end
 	GameMode:ThinkGoldDrop()
+	GameMode:Thinkcustomrune()
 end
 
 function GameMode:InitGameMode()

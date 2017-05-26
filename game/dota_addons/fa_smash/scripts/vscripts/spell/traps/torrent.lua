@@ -41,7 +41,7 @@ function torrent_emit_sound( keys )
 	local ability = keys.ability
 	local dummy = CreateUnitByName( "npc_dummy_unit", keys.target_points[1], false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
 	EmitSoundOn( "Ability.Torrent", dummy )
-	local torrent_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf", PATTACH_CUSTOMORIGIN, dummy)
+	local torrent_fx = ParticleManager:CreateParticle("particles/traps/torrent_splash.vpcf", PATTACH_CUSTOMORIGIN, dummy)
 	ParticleManager:SetParticleControl(torrent_fx, 0, ability.pointage)
 	ParticleManager:SetParticleControl(torrent_fx, 1, Vector(320,0,0))
 	ParticleManager:ReleaseParticleIndex(torrent_fx)

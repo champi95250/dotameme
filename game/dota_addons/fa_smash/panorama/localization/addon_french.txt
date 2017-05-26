@@ -40,8 +40,22 @@
 	"error_trumpinate"					"Machala, tu peux pas cast si la cia voit personne de track !"
 	"error_portal"						"Il manque un portail pour pouvoir traverser !"
 	"portail_hors_zone"					"Portail dans la zone de protection !"
-	
-	"DOTA_Tooltip_ability_item_bag_of_gold"			"ARGENT DE JOKO"
+
+	"DOTA_Tooltip_ability_item_bag_of_gold"			"Argent de Penelope"
+	"DOTA_Tooltip_ability_item_bag_of_gold_ixtra"	"Diamond de François"
+	"DOTA_Tooltip_ability_item_rune_haste"			"Haste"
+	"DOTA_Tooltip_ability_item_rune_double_damage"	"Double Damage"
+	"DOTA_Tooltip_ability_item_rune_invis"			"Invisibility"
+	"DOTA_Tooltip_ability_item_rune_armor"			"Metal Armor"
+	"DOTA_Tooltip_ability_item_rune_healing"		"Healing"
+	"DOTA_Tooltip_ability_item_rune_grow"			"Grow"
+
+	"DOTA_Tooltip_ability_item_rune_double_damage_description"	"Double Damage"
+	"DOTA_Tooltip_ability_item_rune_haste_description"			"Haste"
+	"DOTA_Tooltip_ability_item_rune_invis_description"			"Invisibility"
+	"DOTA_Tooltip_ability_item_rune_armor_description"			"Metal Armor"
+	"DOTA_Tooltip_ability_item_rune_healing_description"		"Healing"
+	"DOTA_Tooltip_ability_item_rune_grow_description"			"Grow"
 
 	"#VictoryMessage"			"a gagné!"
 }

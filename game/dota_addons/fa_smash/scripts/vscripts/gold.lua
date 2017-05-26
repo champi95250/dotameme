@@ -2,6 +2,7 @@ function GameMode:ThinkGoldDrop()
 	Timers:CreateTimer(0.0, function()
 		local r = RandomInt( 1, 100 )
 		if r > ( 100 - 42 ) then
+			print("spawn")
 			GameMode:SpawnGold()
 		end
 		return 5
@@ -14,11 +15,22 @@ end
 
 function GameMode:SpawnGoldEntity( spawnPoint )
 --	EmitSoundOn("Item.PickUpGemWorld", spawnPoint)
+	local r = RandomInt( 1, 100 )
+	print("random item:" .. r)
 	local newItem = CreateItem( "item_bag_of_gold", nil, nil )
+	if r > 15 then
+		print("oka")
+		newItem = CreateItem( "item_bag_of_gold", nil, nil )
+	else
+		print("okb")
+		newItem = CreateItem( "item_bag_of_gold_ixtra", nil, nil )
+	end
+	
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
-	local dropRadius = RandomFloat( 40, 820 )
+	local dropRadius = RandomFloat( 30, 450 )
 	newItem:LaunchLootInitialHeight( false, 0, 350, 0.75, spawnPoint + RandomVector( dropRadius ) )
-	newItem:SetContextThink( "KillLoot", function() return self:KillLoot( newItem, drop ) end, 20 )
+	newItem:SetContextThink( "KillLoot", function() return self:KillLoot( newItem, drop ) end, 25 )
+
 end
 
 function GameMode:KillLoot( item, drop )
@@ -27,29 +39,12 @@ function GameMode:KillLoot( item, drop )
 		return
 	end
 
-	local nFXIndex = ParticleManager:CreateParticle( "particles/items2_fx/veil_of_discord.vpcf", PATTACH_CUSTOMORIGIN, drop )
-	ParticleManager:SetParticleControl( nFXIndex, 0, drop:GetOrigin() )
+	local nFXIndex = ParticleManager:CreateParticle( "particles/items2_fx/veil_of_discord.vpcf", PATTACH_CUSTOMORIGIN, item )
+	ParticleManager:SetParticleControl( nFXIndex, 0, item:GetOrigin() )
 	ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 35, 35, 25 ) )
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
-	EmitGlobalSound("Item.PickUpWorld")
+	--EmitGlobalSound("Item.PickUpWorld")
 
 	UTIL_Remove( item )
 	UTIL_Remove( drop )
-end
-
-function GameMode:OnItemPickUp( event )
-	local item = EntIndexToHScript( event.ItemEntityIndex )
-	local owner = EntIndexToHScript( event.HeroEntityIndex )
-	r = RandomInt(1, 200)
-	if event.itemname == "item_bag_of_gold" then
-		--print("Bag of gold picked up")
-		PlayerResource:ModifyGold( owner:GetPlayerID(), r, true, 0 )
-		SendOverheadEventMessage( owner, OVERHEAD_ALERT_GOLD, owner, r, nil )
-		UTIL_Remove( item ) -- otherwise it pollutes the player inventory
-	--elseif event.itemname == "item_treasure_chest" then
-		--print("Special Item Picked Up")
-		--DoEntFire( "item_spawn_particle_" .. self.itemSpawnIndex, "Stop", "0", 0, self, self )
-		--COverthrowGameMode:SpecialItemAdd( event )
-		--UTIL_Remove( item ) -- otherwise it pollutes the player inventory
-	end
 end

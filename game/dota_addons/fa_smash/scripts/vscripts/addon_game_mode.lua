@@ -18,6 +18,12 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tusk", context)
 
+	PrecacheItemByNameSync("item_rune_haste", context)
+	PrecacheItemByNameSync("item_rune_double_damage", context)
+	PrecacheItemByNameSync("item_rune_invis", context)
+	PrecacheItemByNameSync("item_rune_armor", context)
+	PrecacheItemByNameSync("item_rune_healing", context)
+
 	PrecacheModel( "models/heroes/pedobear/pedobear.vmdl", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_bruce.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_catmancer.vsndevts", context)
@@ -35,3 +41,9 @@ function Activate()
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:_InitGameMode()
 end
+
+transparency = {
+    DeclareFunctions = function () return {MODIFIER_PROPERTY_INVISIBILITY_LEVEL} end,
+    GetModifierInvisibilityLevel = function () return 1 end,
+}
+LinkLuaModifier('transparency', 'addon_game_mode', LUA_MODIFIER_MOTION_NONE)
