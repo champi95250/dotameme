@@ -1,10 +1,7 @@
 <root>
 	<styles>
-		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/custom_game/lia_hero_select_overlay.css" />
-		<include src="file://{resources}/styles/hero_card.css" />
-		<include src="file://{resources}/styles/hero_grid.css" />
-		<include src="file://{resources}/styles/hud/dota_hud_pregame.css" />
 	</styles>
 
 	<scripts>

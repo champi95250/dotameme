@@ -60,16 +60,19 @@ function GameMode:OnGameRulesStateChange(keys)
 	print("[BotM] GameRules State Changed: ",gamestates[newState])
 
 	if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		Timers:CreateTimer(HERO_SELECTION_TIME, function()
-			for i = 0, DOTA_MAX_TEAM_PLAYERS do
-				if PlayerResource:IsValidPlayer(i) then
-					if PlayerResource:HasSelectedHero(i) == false then
-						local player = PlayerResource:GetPlayer(i)
-						player:MakeRandomHeroSelection()
+		if IsInToolsMode() then
+		else
+			Timers:CreateTimer(HERO_SELECTION_TIME, function()
+				for i = 0, DOTA_MAX_TEAM_PLAYERS do
+					if PlayerResource:IsValidPlayer(i) then
+						if PlayerResource:HasSelectedHero(i) == false then
+							local player = PlayerResource:GetPlayer(i)
+							player:MakeRandomHeroSelection()
+						end
 					end
 				end
-			end
-		end)
+			end)
+		end
 	elseif newState == DOTA_GAMERULES_STATE_TEAM_SHOWCASE then
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		CustomNetTables:SetTableValue("game_state", "victory_condition", {value = GameSettings.max_kills});

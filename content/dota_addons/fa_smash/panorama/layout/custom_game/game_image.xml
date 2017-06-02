@@ -1,6 +1,6 @@
 <root>       
 	<styles>
-		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 	</styles>
     <Panel>      
 	
@@ -16,26 +16,12 @@
 	<Image src="file://{images}/heroes/npc_dota_hero_doom_bringer.png"></Image>
 	<Image src="file://{images}/heroes/npc_dota_hero_queenofpain.png"></Image>
 	<Image src="file://{images}/heroes/npc_dota_hero_ancient_apparition.png"></Image>
-	<Image src="file://{images}/heroes/npc_dota_hero_jakiro.png"></Image>
-	<Image src="file://{images}/heroes/npc_dota_hero_earthshaker.png"></Image>
 	
 	<Image src="file://{images}/heroes/selection/npc_dota_hero_ancient_apparition.png"></Image>
 	<Image src="file://{images}/heroes/selection/npc_dota_hero_antimage.png"></Image>
 	<Image src="file://{images}/heroes/selection/npc_dota_hero_omniknight.png"></Image>
 	<Image src="file://{images}/heroes/selection/npc_dota_hero_viper.png"></Image>
 	<Image src="file://{images}/heroes/selection/npc_dota_hero_windrunner.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_jakiro.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_earthshaker.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_doom_bringer.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_ursa.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_axe.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_queenofpain.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_sven.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_bounty_hunter.png"></Image>
-	<Image src="file://{images}/heroes/selection/npc_dota_hero_tusk.png"></Image>
-
-	
-	
 	</Panel>
 	
 

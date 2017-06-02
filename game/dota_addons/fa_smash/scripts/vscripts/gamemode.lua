@@ -166,7 +166,13 @@ function GameMode:InitGameMode()
 
 	ListenToGameEvent('game_rules_state_change', function()
 		local newState = GameRules:State_Get()
-		if newState == 7 then
+		if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+			local heroes = HeroList:GetAllHeroes()
+			local point = Entities:FindByName(nil, "hero_selection_camera")
+			for _, hero in pairs(heroes) do
+				PlayerResource:SetCameraTarget(hero:GetPlayerOwnerID(), point:GetAbsOrigin())
+			end
+		elseif newState == 7 then
 			if GameSettings.brawl > 0 then
 				local brawler = CreateModifierThinker(nil,nil,"modifier_brawl",{},Vector(-10000,0,0),20,false)
 			end
@@ -300,89 +306,90 @@ local unit
 local numUnits = 0
 local numBuildings = 0
 
-	if units then
-		-- Skip Prevents order loops
-		unit = EntIndexToHScript(units["0"])
-		if unit then
-			if unit.skip then
-				unit.skip = false
-				return true
-			end
-		end
-
-		for n,unit_index in pairs(units) do
-			local unit = EntIndexToHScript(unit_index)
-			if unit and IsValidEntity(unit) then
-				unit.current_order = order_type -- Track the last executed order
-				unit.orderTable = filterTable -- Keep the whole order table, to resume it later if needed
---				local bBuilding = IsCustomBuilding(unit) and not IsUprooted(unit)
---				if bBuilding then
---					numBuildings = numBuildings + 1
---				else
---					numUnits = numUnits + 1
---				end
-			end
-		end
-	end
-
-	if order_type == DOTA_UNIT_ORDER_RADAR or order_type == DOTA_UNIT_ORDER_GLYPH then return end
-
-	if order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET then
-		local ability = EntIndexToHScript(abilityIndex)
-		local position = unit:GetAbsOrigin()
-		local nearby_entities = Entities:FindAllByNameWithin("npc_dota_hero_*", position, 350000) -- test 1
-		if not ability then return true end
-		local playerID = unit:GetPlayerOwnerID()
-		local machala = false
-
-		local Trumpinate = ability:GetName() == "trump_assasinate"
-		if Trumpinate then
-			for _,v in pairs(nearby_entities) do
-				if v:HasModifier("modifier_track_datadriven") and v:GetTeamNumber() ~= unit:GetTeamNumber() then -- Condition sous laquelle le spell ne se lance pas, en ajoutant un message d'erreur dans addon_english.txt nommé error_no_tracked_units
-					print(v:GetName())
-					machala = true
+	if not newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+		if units then
+			-- Skip Prevents order loops
+			unit = EntIndexToHScript(units["0"])
+			if unit then
+				if unit.skip then
+					unit.skip = false
+					return true
 				end
 			end
-			if machala == false then
-				SendErrorMessage(issuer, "#error_trumpinate")
-				return false
-			end
-		end
-	end
 
-	if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
-		local ability = EntIndexToHScript(abilityIndex)
-		local target = EntIndexToHScript(targetIndex)
-		local Position = point
-		local playerID = unit:GetPlayerOwnerID()
-
-		local rickportal = ability:GetName() == "rick_portal_a" or ability:GetName() == "rick_portal_b"
-
-		if rickportal then
-			local target_location = Position
-			if target_location.x > 3200 or target_location.x < -3200 then
-				SendErrorMessage(issuer, "#portail_hors_zone")
-				return false
-			elseif target_location.y > 3200 or target_location.y < -3200 then
-				SendErrorMessage(issuer, "#portail_hors_zone")
-				return false
+			for n,unit_index in pairs(units) do
+				local unit = EntIndexToHScript(unit_index)
+				if unit and IsValidEntity(unit) then
+					unit.current_order = order_type -- Track the last executed order
+					unit.orderTable = filterTable -- Keep the whole order table, to resume it later if needed
+--					local bBuilding = IsCustomBuilding(unit) and not IsUprooted(unit)
+--					if bBuilding then
+--						numBuildings = numBuildings + 1
+--					else
+--						numUnits = numUnits + 1
+--					end
+				end
 			end
 		end
 
-	end
+		if order_type == DOTA_UNIT_ORDER_RADAR or order_type == DOTA_UNIT_ORDER_GLYPH then return end
 
-	if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-		local ability = EntIndexToHScript(abilityIndex)
-		local target = EntIndexToHScript(targetIndex)
-		local playerID = unit:GetPlayerOwnerID()
+		if order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET then
+			local ability = EntIndexToHScript(abilityIndex)
+			local position = unit:GetAbsOrigin()
+			local nearby_entities = Entities:FindAllByNameWithin("npc_dota_hero_*", position, 350000) -- test 1
+			if not ability then return true end
+			local playerID = unit:GetPlayerOwnerID()
+			local machala = false
 
-		if target:GetTeam() ~= unit:GetTeam() then
-			if target:TriggerSpellAbsorb(ability) then
-				local cooldown = ability:GetCooldown(ability:GetLevel() - 1)
-				local mana_set = ability:GetManaCost(ability:GetLevel() - 1)
-				ability:StartCooldown(cooldown * GetCooldownReduction(unit))
-				unit:SetMana(unit:GetMana() - mana_set)
-				return
+			local Trumpinate = ability:GetName() == "trump_assasinate"
+			if Trumpinate then
+				for _,v in pairs(nearby_entities) do
+					if v:HasModifier("modifier_track_datadriven") and v:GetTeamNumber() ~= unit:GetTeamNumber() then -- Condition sous laquelle le spell ne se lance pas, en ajoutant un message d'erreur dans addon_english.txt nommé error_no_tracked_units
+						print(v:GetName())
+						machala = true
+					end
+				end
+				if machala == false then
+					SendErrorMessage(issuer, "#error_trumpinate")
+					return false
+				end
+			end
+		end
+
+		if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+			local ability = EntIndexToHScript(abilityIndex)
+			local target = EntIndexToHScript(targetIndex)
+			local Position = point
+--			local playerID = unit:GetPlayerOwnerID()
+
+			local rickportal = ability:GetName() == "rick_portal_a" or ability:GetName() == "rick_portal_b"
+
+			if rickportal then
+				local target_location = Position
+				if target_location.x > 3200 or target_location.x < -3200 then
+					SendErrorMessage(issuer, "#portail_hors_zone")
+					return false
+				elseif target_location.y > 3200 or target_location.y < -3200 then
+					SendErrorMessage(issuer, "#portail_hors_zone")
+					return false
+				end
+			end
+		end
+
+		if order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+			local ability = EntIndexToHScript(abilityIndex)
+			local target = EntIndexToHScript(targetIndex)
+--			local playerID = unit:GetPlayerOwnerID()
+
+			if target:GetTeam() ~= unit:GetTeam() then
+				if target:TriggerSpellAbsorb(ability) then
+					local cooldown = ability:GetCooldown(ability:GetLevel() - 1)
+					local mana_set = ability:GetManaCost(ability:GetLevel() - 1)
+					ability:StartCooldown(cooldown * GetCooldownReduction(unit))
+					unit:SetMana(unit:GetMana() - mana_set)
+					return
+				end
 			end
 		end
 	end

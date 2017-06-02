@@ -1,5 +1,8 @@
 # Cache crap that Valve autogenerates
 *.bin
+*.tmp
+*.vmat_c
+*.vtex_c
 
 #Github dump
 *.stackdump

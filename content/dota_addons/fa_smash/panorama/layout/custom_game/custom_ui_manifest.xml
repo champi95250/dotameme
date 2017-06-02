@@ -64,8 +64,67 @@
 		var newUI = hudElements.FindChildTraverse("minimap_container");
 		newUI.FindChildTraverse("GlyphScanContainer").style.visibility = "collapse";
 
-		var PickScreenTitle = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("PreGame").FindChildTraverse("MainContents").FindChildTraverse("ScreenContainer").FindChildTraverse("HeroPickScreen").FindChildTraverse("TitlesContainer")
+		<!-- Pick Screen, created by [Bear] Cookies #42, on 26/05/2017. -->
+		var PreGame = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("PreGame")
+		var AmbientFX = PreGame.FindChildTraverse("AmbientFXContainer")
+		var MainContents = PreGame.FindChildTraverse("MainContents")
+		var Header = PreGame.FindChildTraverse("Header")
+		var HeaderCenter = PreGame.FindChildTraverse("HeaderCenter")
+		var GameModeLabel = PreGame.FindChildTraverse("GameModeLabel")
+		var ClockLabel = PreGame.FindChildTraverse("ClockLabel")
+		var PickScreenTitle = MainContents.FindChildTraverse("TitlesContainer")
+		var HeroPickScreen = MainContents.FindChildTraverse("MainHeroPickScreenContents")
+		var LeftColumn = HeroPickScreen.FindChildTraverse("HeroPickLeftColumn")
+		var RightColumn = HeroPickScreen.FindChildTraverse("HeroPickRightColumn")
+		var HeroInspect = MainContents.FindChildTraverse("HeroInspect")
+		var LockInButton = MainContents.FindChildTraverse("LockInButton")
+		var RandomButton = MainContents.FindChildTraverse("RandomButton")
+		var HeroFilters = MainContents.FindChildTraverse("HeroFilters")
+		var BottomPanels = PreGame.FindChildTraverse("BottomPanelsContainer")
+		var Minimap = BottomPanels.FindChildTraverse("PreMinimapContainer")
+		var BattlePass = BottomPanels.FindChildTraverse("BattlePassContainer")
+		var GridTeam = BottomPanels.FindChildTraverse("GridTeamComp")
+		var Chat = BottomPanels.FindChildTraverse("Chat")
+		var HeroMovie = LeftColumn.FindChildTraverse("HeroMovie")
+
+		PreGame.style.backgroundColor = "none";
+		GameModeLabel.style.visibility = "visible";
+		GameModeLabel.style.marginTop = "30%";
+		ClockLabel.style.visibility = "visible";
+		ClockLabel.style.marginTop = "25%";
+		Minimap.style.visibility = "collapse";
+		BattlePass.style.visibility = "collapse";
+		GridTeam.style.visibility = "collapse";
+		HeroInspect.style.visibility = "collapse";
+		HeroFilters.style.visibility = "collapse";
 		PickScreenTitle.style.visibility = "collapse";
+		AmbientFX.style.visibility = "collapse";
+		<!--	HeroMovie.style.visibility = "collapse"; <!-- Disables only the first hero movie (and not in server), all other remains... -->
+
+		Header.style.height = "60%"; <!-- THIS IS A HACK TO DISABLE HERO MOVIE ON HOVERING HERO BUTTONS -->
+		Header.style.width = "100%"; <!-- THIS IS A HACK TO DISABLE HERO MOVIE ON HOVERING HERO BUTTONS -->
+
+		Chat.style.marginRight = "30%";
+		Chat.style.marginBottom = "40px";
+
+		HeroPickScreen.style.width = "50%";
+		HeroPickScreen.style.marginLeft = "30%";
+
+		LeftColumn.style.marginTop = "17%";
+		LeftColumn.style.marginLeft = "5%";
+		LeftColumn.style.padding = "0%";
+		LeftColumn.style.verticalAlign = "center";
+		LeftColumn.style.horizontalAlign = "center";
+
+		RightColumn.style.width = "40%";
+		RightColumn.style.height = "12%";
+		RightColumn.style.marginTop = "60%";
+		RightColumn.style.marginRight = "24%";
+		RightColumn.style.verticalAlign = "center";
+		RightColumn.style.horizontalAlign = "center";
+
+		LockInButton.style.backgroundColor = "gradient(linear, 0% 0%, 0% 100%, from(#00B339), to(black))";
+		RandomButton.style.backgroundColor = "gradient(linear, 0% 0%, 0% 100%, from(#00B339), to(black))";
 	</script> 
 
 	<Panel>
